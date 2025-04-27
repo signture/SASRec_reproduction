@@ -62,9 +62,10 @@ class Self_Attention(nn.Module):
             return x_norm + y  # 残差连接  # y: [seq_len, batch_size, hidden_dim]
 
 class SASRec(nn.Module):
-    def __init__(self, item_num, hidden_dim, num_heads, num_blocks, device, dropout=0.2, max_len=200, version='paper'):
+    def __init__(self, item_num, hidden_dim, num_heads, num_blocks, device, l2_emb=0.0, dropout=0.2, max_len=200, version='paper'):
         super(SASRec, self).__init__()
         self.device = device
+        self.l2_emb = l2_emb  # 这个是实现里有的一个正则项
         self.num_blocks = num_blocks
         # 模型首先是一个embedding层
         # item_num + 1是因为要考虑到0这个位置的embedding为0，因为0是用来填充的
@@ -75,13 +76,26 @@ class SASRec(nn.Module):
         self.attention_blocks = nn.ModuleList([Self_Attention(hidden_dim, num_heads, dropout, version) for _ in range(num_blocks)]) 
         self.feed_forward_blocks = nn.ModuleList([Point_Wise_Feed_Forward(hidden_dim, dropout) for _ in range(num_blocks)])
         self.layer_norm = nn.LayerNorm(hidden_dim)  # 对输入进行归一化，防止梯度爆炸
+        self.init_network()  # 初始化网络参数
+    
+    def init_network(self):  # 初始化网络参数
+        for m in self.modules():
+            if isinstance(m, nn.Embedding):
+                nn.init.uniform_(m.weight, -0.05, 0.05)
+            elif isinstance(m, nn.LayerNorm):
+                nn.init.constant_(m.weight, 1.0)
+                nn.init.constant_(m.bias, 0.0)
+            elif isinstance(m, nn.Conv1d) or isinstance(m, nn.Linear):
+                nn.init.xavier_uniform_(m.weight)
+                if m.bias is not None:
+                    nn.init.constant_(m.bias, 0.0)
         
     def log2feat(self, log_seqs):
         # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
         seqs = self.item_emb(torch.LongTensor(log_seqs).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
         seqs *= self.item_emb.embedding_dim ** 0.5  # 似乎是经验设置
         # 提取位置信息
-        positions = np.tile(np.range(1, log_seqs.shape[1] + 1), [log_seqs.shape[0], 1])  # positions: [batch_size, seq_len]
+        positions = torch.tile(torch.arange(1, log_seqs.shape[1] + 1), [log_seqs.shape[0], 1])  # positions: [batch_size, seq_len]
         positions = positions * (log_seqs != 0)
         seqs += self.pos_emb(torch.LongTensor(positions).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim] 
         seqs = self.emb_dropout(seqs)  # seqs: [batch_size, seq_len, hidden_dim] 
@@ -92,7 +106,7 @@ class SASRec(nn.Module):
         
         for i in range(self.num_blocks):  # 这里是多头注意力机制
             seqs = self.attention_blocks[i](seqs, atten_mask)  # seqs: [seq_len, batch_size, hidden_dim]
-            seqs.transpose(0, 1)  # seqs: [batch_size, seq_len, hidden_dim] 
+            seqs = seqs.transpose(0, 1)  # seqs: [batch_size, seq_len, hidden_dim] 
             seqs = self.feed_forward_blocks[i](seqs)  # seqs: [batch_size, seq_len, hidden_dim]
         
         log_feats = self.layer_norm(seqs)  # seqs: [batch_size, seq_len, hidden_dim]
@@ -110,10 +124,30 @@ class SASRec(nn.Module):
         
         return pos_logits, neg_logits  # pos_logits: [batch_size, seq_len]  # neg_logits: [batch_size, seq_len]
     
-    def predict(self, log_seqs, item_indices):  # 这里的item_indices是用来预测的
+    def predict(self, log_seqs, item_indices):  # 这里的item_indices是用来预测的，就是没见过的物品
         # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
+        assert len(log_seqs.shape) == 2, 'log_seqs must be 2D'
+        
         log_feats = self.log2feat(log_seqs)  # log_feats: [batch_size, seq_len, hidden_dim]
         final_feat = log_feats[:, -1, :]  # final_feat: [batch_size, hidden_dim]  # 这里的-1是用来提取最后一个的
         item_embs = self.item_emb(torch.LongTensor(item_indices).to(self.device))  # item_embs: [batch_size, item_num, hidden_dim]
-        logits = item_embs.matmul(final_feat.unsqueeze(-1)).squeeze(-1)  # logits: [batch_size, item_num]
+        if len(item_embs.shape) == 2:
+            item_embs = item_embs.unsqueeze(0)
+        logits = torch.einsum('bih,bh->bi', item_embs, final_feat)  # logits: [batch_size, item_num]
         return logits  # logits: [batch_size, item_num]
+    
+
+if __name__ == "__main__":
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = SASRec(10, 10, 2, 2, device)
+    model.to(device)
+    log_seq = torch.tensor([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]])  # [batch_size, seq_len]
+    pos_seq = torch.tensor([[2, 3, 4, 5, 6], [2, 3, 4, 5, 6]])  # [batch_size, seq_len]
+    neg_seq = torch.tensor([[3, 4, 5, 6, 7], [3, 4, 5, 6, 7]])  # [batch_size, seq_len]
+    pos_logits, neg_logits = model(log_seq, pos_seq, neg_seq)  # [batch_size, seq_len]  # [batch_size, seq_len]
+    print(pos_logits.shape)  # [batch_size, seq_len]  # [batch_size, seq_len]
+    print(neg_logits.shape)  # [batch_size, seq_len]  # [batch_size, seq_len]
+    item_indices = torch.tensor([[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]])  # [batch_size, item_num]
+    logits = model.predict(log_seq, item_indices)  # [batch_size, item_num]
+    print(logits.shape)  # [batch_size, item_num
+    

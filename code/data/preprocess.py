@@ -3,11 +3,12 @@ from collections import defaultdict
 from datetime import datetime 
 
 
-def load_data(data_path:str) -> list:
+def load_raw_data(data_path:str) -> list:
+    # 这个是加载的原始数据，不是处理后的数据
     data = []
     with open(data_path, 'rb') as f:
         data = f.read().split(b'\n')[:-1]
-    return data
+    return data     
 
 def process_data(raw_data:list, save_path:str):
     # rating数据的格式是UserID::MovieID::Rating::Timestamp
@@ -87,7 +88,7 @@ if __name__ == "__main__":
     print(len(real_data))
     print(max([row[0] for row in real_data]))
     print(max([row[1] for row in real_data]))
-    raw_data = load_data(data_path)
+    raw_data = load_raw_data(data_path)
     new_data = process_data(raw_data, save_path)
     print(len(new_data))
     print(max([row[0] for row in new_data]))
