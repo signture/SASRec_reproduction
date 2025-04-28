@@ -3,7 +3,14 @@ import torch.nn
 from torch.utils import data
 import numpy as np
 from multiprocessing import Process, Queue
+from data.augmentation import *
 
+augmentations = {
+    'mask': MaskSeq,
+    'crop': CropSeq,
+    'replace': ReplaceSeq,
+    'none': None
+}
 
 # sampler for batch generation
 def random_neq(l, r, s):
@@ -13,29 +20,55 @@ def random_neq(l, r, s):
     return t
 
 
-def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_queue, SEED):
+def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_queue, augmentation=None):
+    all_item_ids = set(range(1, itemnum + 1))
     def sample(uid):
 
         # uid = np.random.randint(1, usernum + 1)
+        item_ids = user_train[uid]
         while len(user_train[uid]) <= 1: uid = np.random.randint(1, usernum + 1)
 
         seq = np.zeros([maxlen], dtype=np.int32)
         pos = np.zeros([maxlen], dtype=np.int32)
         neg = np.zeros([maxlen], dtype=np.int32)
-        nxt = user_train[uid][-1]
-        idx = maxlen - 1
+        aug1 = np.zeros([maxlen], dtype=np.int32)
+        aug2 = np.zeros([maxlen], dtype=np.int32)
+        # nxt = user_train[uid][-1]
+        # idx = maxlen - 1
+        valid_length = min(len(item_ids) - 1, maxlen)
+        
+        # 赋值seq
+        seq[-valid_length:] = np.array(item_ids[:-1])[-valid_length:]
+        pos[-valid_length:] = np.array(item_ids[1:])[-valid_length:]
 
         ts = set(user_train[uid])
-        for i in reversed(user_train[uid][:-1]):
-            seq[idx] = i
-            pos[idx] = nxt
-            if nxt != 0: neg[idx] = random_neq(1, itemnum + 1, ts)
-            nxt = i
-            idx -= 1
-            if idx == -1: break
+        non_interacted_items = np.array(list(all_item_ids - ts))  # 未交互物品的 ID 数组
+        if len(non_interacted_items) > 0:
+            neg_samples = np.random.choice(non_interacted_items, size=valid_length, replace=True)
+            neg[-valid_length:] = neg_samples
+        # for i in reversed(user_train[uid][:-1]):
+        #     seq[idx] = i
+        #     pos[idx] = nxt
+        #     if nxt != 0: neg[idx] = random_neq(1, itemnum + 1, ts)
+        #     nxt = i
+        #     idx -= 1
+        #     if idx == -1: break
+        
+        if augmentation is not None:
+            aug1 = np.zeros([maxlen], dtype=np.int32)
+            aug2 = np.zeros([maxlen], dtype=np.int32)
+        
+            aug_seq1 = augmentation(item_ids[:-1])
+            aug_seq2 = augmentation(item_ids[:-1])
+            valid_length = min(len(aug_seq1), maxlen)
+            aug1[-valid_length:] = np.array(aug_seq1)[-valid_length:]
+            valid_length = min(len(aug_seq2), maxlen)
+            aug2[-valid_length:] = np.array(aug_seq2)[-valid_length:]
+
+            return (uid, seq, pos, neg, aug1, aug2)
 
         return (uid, seq, pos, neg)
-
+    
     uids = np.arange(1, usernum+1, dtype=np.int32)
     counter = 0
     while True:
@@ -49,7 +82,11 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
 
 
 class WarpSampler(object):
-    def __init__(self, User, usernum, itemnum, batch_size=64, maxlen=10, n_workers=1):
+    def __init__(self, User, usernum, itemnum, batch_size=64, maxlen=10, n_workers=1, augmentation=[None, 1]):
+        assert augmentation[0] in ['mask', 'crop', 'replace', None], 'Invalid augmentation type'
+        assert augmentation[1] >= 0 and augmentation[1] <= 1, 'Invalid augmentation probability'
+        if augmentation[0] is not None:
+            self.augmentation = augmentations[augmentation[0]](augmentation[1], itemnum) 
         self.result_queue = Queue(maxsize=n_workers * 10)
         self.processors = []
         for i in range(n_workers):
@@ -60,7 +97,7 @@ class WarpSampler(object):
                                                       batch_size,
                                                       maxlen,
                                                       self.result_queue,
-                                                      np.random.randint(2e9)
+                                                      self.augmentation, 
                                                       )))
             self.processors[-1].daemon = True
             self.processors[-1].start()
@@ -121,16 +158,23 @@ class SeqItemDataset(data.Dataset):
     
 
 if __name__ == "__main__":
-    u2i = {1: [1, 2, 3, 4, 5], 2: [1, 2, 3, 4, 5]}  # userid: [itemid1, itemid2, ...]  # 这里的itemid是物品id
+    u2i = {1: [1, 2, 3, 4, 5, 8, 10], 2: [4, 5, 6, 7]}  # userid: [itemid1, itemid2, ...]  # 这里的itemid是物品id
     user_num = 2  # 用户数量
     item_num = 12  # 物品数量
-    max_len = 10  # 序列最大长度
-    dataset = SeqItemDataset(u2i, user_num, item_num, max_len)  # 这里的u2i是用户id到物品id的映射，user_num是用户数量，item_num是物品数量，max_len是序列最大长度        
-    dataloader = data.DataLoader(dataset, batch_size=2, shuffle=True, num_workers=4)  # 这里的batch_size是批次大小，shuffle是是否打乱顺序
-    for user_id, seq, pos, neg in dataloader:  # 这里的user_id是用户id，seq是序列，pos是正样本，neg是负样本
-        print(user_id)  # [batch_size]  # 这里的user_id是用户id
-        print(seq)  # [batch_size, max_len]  # 这里的seq是序列
-        print(pos)  # [batch_size, max_len]  # 这里的pos是正样本
-        print(neg)  # [batch_size, max_len]  # 这里的neg是负样本
-        break
-    
+    # max_len = 10  # 序列最大长度
+    # dataset = SeqItemDataset(u2i, user_num, item_num, max_len)  # 这里的u2i是用户id到物品id的映射，user_num是用户数量，item_num是物品数量，max_len是序列最大长度        
+    # dataloader = data.DataLoader(dataset, batch_size=2, shuffle=True, num_workers=4)  # 这里的batch_size是批次大小，shuffle是是否打乱顺序
+    # for user_id, seq, pos, neg in dataloader:  # 这里的user_id是用户id，seq是序列，pos是正样本，neg是负样本
+    #     print(user_id)  # [batch_size]  # 这里的user_id是用户id
+    #     print(seq)  # [batch_size, max_len]  # 这里的seq是序列
+    #     print(pos)  # [batch_size, max_len]  # 这里的pos是正样本
+    #     print(neg)  # [batch_size, max_len]  # 这里的neg是负样本
+    #     break
+    sampler = WarpSampler(u2i, user_num, item_num, batch_size=2, maxlen=10, n_workers=1, augmentation=['crop', 0.5])  # 这里的batch_size是批次大小，maxlen是序列最大长度，n_workers是进程数量
+    user_id, seq, pos, neg, aug1, aug2 = sampler.next_batch() # 这里的user_id是用户id，seq是序列，pos是正样本，neg是负样本
+    print(user_id)  # [batch_size]  # 这里的user_id是用户id
+    print(seq)  # [batch_size, max_len]  # 这里的seq是序列
+    print(pos)  # [batch_size, max_len]  # 这里的pos是正样本
+    print(neg)  # [batch_size, max_len]  # 这里的neg是负样本
+    print(aug1)
+    print(aug2)

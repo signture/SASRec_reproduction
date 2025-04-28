@@ -1,0 +1,16 @@
+hidden_dim: 50
+num_heads: 1
+dropout_rate: 0.2
+num_blocks: 2
+l2_emb: 0.0
+learning_rate: 0.001
+batch_size: 128
+epochs: 500
+patience: 10
+num_workers: 4
+seed: 14531
+device: cuda
+contrastive_type: crop
+contrastive_prob: 0.8
+contrastive_weight: 0.1
+sim_temp: 1.0

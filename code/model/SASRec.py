@@ -4,6 +4,37 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
+class ContrastiveLoss(nn.Module):
+    # 其实不应该写在这个文件里面，但是这样写稍微方便一点就这样写了
+    def __init__(self, temp, device):
+        super(ContrastiveLoss, self).__init__()
+        self.temp = temp
+        self.device = device
+        self.ce_loss = nn.CrossEntropyLoss()
+        
+    def forward(self, emb1, emb2):
+        # emb1\2: [batch_size, (seq_len), hidden_dim]
+        batch_size = emb1.shape[0]
+        score11 = torch.matmul(emb1, emb1.transpose(0, 1)) / self.temp
+        score22 = torch.matmul(emb2, emb2.transpose(0, 1)) / self.temp
+        score12 = torch.matmul(emb1, emb2.transpose(0, 1)) / self.temp
+        
+        pos_diff = torch.diagonal(score12).view(-1, 1)
+        
+        # 构造掩码，忽略对角线上的正样本对
+        mask = (-torch.eye(batch_size).long() + 1).bool()
+        score11 = score11[mask].view(batch_size, -1)
+        score22 = score22[mask].view(batch_size, -1)
+        score12 = score12[mask].view(batch_size, -1)
+        
+        score = torch.cat((pos_diff, score11, score22, score12), dim=1).to(self.device)  # [batch_size, batch_size * 3 - 2]
+        label = torch.zeros(batch_size, dtype=torch.long).to(self.device)  # [batch_size]
+        
+        return self.ce_loss(score, label)
+        
+
+
 class Point_Wise_Feed_Forward(nn.Module):
     def __init__(self, hidden_dim, dropout):
         super(Point_Wise_Feed_Forward, self).__init__()
@@ -39,6 +70,7 @@ class Self_Attention(nn.Module):
         if version != None:
             assert version in ['paper', 'official'], 'version must be paper or official'
         self.version = version
+        
     def forward(self, x, mask):
         # x: [batch_size, seq_len, hidden_dim]
         assert x.shape[2] == self.hidden_dim, 'hidden_dim must be equal to hidden_dim'
@@ -62,7 +94,7 @@ class Self_Attention(nn.Module):
             return x_norm + y  # 残差连接  # y: [seq_len, batch_size, hidden_dim]
 
 class SASRec(nn.Module):
-    def __init__(self, item_num, hidden_dim, num_heads, num_blocks, device, l2_emb=0.0, dropout=0.2, max_len=200, version='paper'):
+    def __init__(self, item_num, hidden_dim, num_heads, num_blocks, device, l2_emb=0.0, dropout=0.2, max_len=200, temp=1, version='paper'):
         super(SASRec, self).__init__()
         self.device = device
         self.l2_emb = l2_emb  # 这个是实现里有的一个正则项
@@ -76,6 +108,7 @@ class SASRec(nn.Module):
         self.attention_blocks = nn.ModuleList([Self_Attention(hidden_dim, num_heads, dropout, version) for _ in range(num_blocks)]) 
         self.feed_forward_blocks = nn.ModuleList([Point_Wise_Feed_Forward(hidden_dim, dropout) for _ in range(num_blocks)])
         self.layer_norm = nn.LayerNorm(hidden_dim)  # 对输入进行归一化，防止梯度爆炸
+        self.cl_loss = ContrastiveLoss(temp, device)
         self.init_network()  # 初始化网络参数
     
     def init_network(self):  # 初始化网络参数
@@ -89,16 +122,24 @@ class SASRec(nn.Module):
                 nn.init.xavier_uniform_(m.weight)
                 if m.bias is not None:
                     nn.init.constant_(m.bias, 0.0)
-        
-    def log2feat(self, log_seqs):
-        # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
+                    
+    def get_embedding(self, log_seqs):
+        # seqs: [batch_size, seq_len]
+        # 函数为对比学习做准备，用于获取一个序列的embedding
         seqs = self.item_emb(torch.LongTensor(log_seqs).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
         seqs *= self.item_emb.embedding_dim ** 0.5  # 似乎是经验设置
+        
         # 提取位置信息
+        # 这个其实会感觉有点奇怪，因为前面有可能被pad为0了，但或许还是可以提供相对位置信息？
         positions = torch.tile(torch.arange(1, log_seqs.shape[1] + 1), [log_seqs.shape[0], 1])  # positions: [batch_size, seq_len]
         positions = positions * (log_seqs != 0)
         seqs += self.pos_emb(torch.LongTensor(positions).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim] 
         seqs = self.emb_dropout(seqs)  # seqs: [batch_size, seq_len, hidden_dim] 
+        return seqs  # seqs: [batch_size, seq_len, hidden_dim]
+        
+    def log2feat(self, log_seqs):
+        # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
+        seqs = self.get_embedding(log_seqs)  # seqs: [batch_size, seq_len, hidden_dim]
         
         # 接下来是mask，感觉就是transformer的decoder的那个mask的做法
         seq_len = log_seqs.shape[1] 

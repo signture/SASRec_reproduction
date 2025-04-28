@@ -1,0 +1,3105 @@
+the number of parameters is 0.21M
+the number of batch for a epoch is 48.00
+the average sequence length is 163.50
+Epoch: 1
+Batch 0, Loss: 1.4009146690368652, CL_loss: 9.798787914405693e-07
+Batch 10, Loss: 1.2891103029251099, CL_loss: 1.1780894482171789e-07
+Batch 20, Loss: 1.169716477394104, CL_loss: 1.4006413096012693e-07
+Batch 30, Loss: 1.0684493780136108, CL_loss: 1.4266591108480497e-07
+Batch 40, Loss: 1.0625923871994019, CL_loss: 4.0232258413652744e-08
+Epoch: 2
+Batch 0, Loss: 1.0202200412750244, CL_loss: 2.947040002254653e-06
+Batch 10, Loss: 0.9869505763053894, CL_loss: 4.959820216754451e-07
+Batch 20, Loss: 1.0000196695327759, CL_loss: 0.0017875678604468703
+Batch 30, Loss: 0.9770234823226929, CL_loss: 0.0001921003422467038
+Batch 40, Loss: 0.9911748766899109, CL_loss: 3.0075929657868983e-07
+Epoch: 3
+Batch 0, Loss: 1.0001708269119263, CL_loss: 0.00010839581955224276
+Batch 10, Loss: 0.9649332761764526, CL_loss: 0.001959089655429125
+Batch 20, Loss: 0.9666029214859009, CL_loss: 8.441602403763682e-07
+Batch 30, Loss: 0.9514349102973938, CL_loss: 0.00015992637781891972
+Batch 40, Loss: 0.9299087524414062, CL_loss: 0.0
+Epoch: 4
+Batch 0, Loss: 0.9039009809494019, CL_loss: 7.450577377277057e-10
+Batch 10, Loss: 0.8863320350646973, CL_loss: 7.823073744361864e-09
+Batch 20, Loss: 0.8911516666412354, CL_loss: 3.070898344503803e-07
+Batch 30, Loss: 0.8598483800888062, CL_loss: 1.8626448994307765e-10
+Batch 40, Loss: 0.8737636804580688, CL_loss: 0.0
+Epoch: 5
+Batch 0, Loss: 0.8653342723846436, CL_loss: 0.0
+Batch 10, Loss: 0.8592966198921204, CL_loss: 1.9557748753840087e-09
+Batch 20, Loss: 0.8204281330108643, CL_loss: 0.0
+Batch 30, Loss: 0.8283506035804749, CL_loss: 0.0
+Batch 40, Loss: 0.8030415773391724, CL_loss: 0.0
+Epoch: 6
+Batch 0, Loss: 0.8385711908340454, CL_loss: 0.0
+Batch 10, Loss: 0.778896152973175, CL_loss: 0.0
+Batch 20, Loss: 0.7975274324417114, CL_loss: 6.519255690839998e-10
+Batch 30, Loss: 0.8217337131500244, CL_loss: 0.0
+Batch 40, Loss: 0.8030068874359131, CL_loss: 5.587934004402939e-10
+Epoch: 7
+Batch 0, Loss: 0.8216850757598877, CL_loss: 0.0
+Batch 10, Loss: 0.7734283804893494, CL_loss: 0.0003659226349554956
+Batch 20, Loss: 0.7641675472259521, CL_loss: 0.0
+Batch 30, Loss: 0.765823245048523, CL_loss: 0.0
+Batch 40, Loss: 0.7805455923080444, CL_loss: 0.0
+Epoch: 8
+Batch 0, Loss: 0.7489475011825562, CL_loss: 0.0
+Batch 10, Loss: 0.7227548360824585, CL_loss: 0.0
+Batch 20, Loss: 0.7489570379257202, CL_loss: 0.0
+Batch 30, Loss: 0.7512418031692505, CL_loss: 0.0
+Batch 40, Loss: 0.7215067148208618, CL_loss: 0.0
+Epoch: 9
+Batch 0, Loss: 0.7239727973937988, CL_loss: 0.0
+Batch 10, Loss: 0.7264407873153687, CL_loss: 0.0
+Batch 20, Loss: 0.6972591876983643, CL_loss: 0.0
+Batch 30, Loss: 0.7054908871650696, CL_loss: 0.0
+Batch 40, Loss: 0.6731747984886169, CL_loss: 0.0
+Epoch: 10
+Batch 0, Loss: 0.6868064403533936, CL_loss: 0.0
+Batch 10, Loss: 0.6928049325942993, CL_loss: 0.0
+Batch 20, Loss: 0.692209005355835, CL_loss: 2.1978904030106605e-08
+Batch 30, Loss: 0.7242817282676697, CL_loss: 1.8697191990213469e-06
+Batch 40, Loss: 0.7073802947998047, CL_loss: 0.0
+Evaluate
+epoch:10, time: 63.454847(s), valid (HT@10: 0.7265, NDCG@10: 0.4563), test (HT@10: 0.7224, NDCG@10: 0.4546)
+Epoch: 11
+Batch 0, Loss: 0.6788318753242493, CL_loss: 0.0
+Batch 10, Loss: 0.6694071292877197, CL_loss: 0.0
+Batch 20, Loss: 0.6669008135795593, CL_loss: 0.0
+Batch 30, Loss: 0.6864579916000366, CL_loss: 0.0
+Batch 40, Loss: 0.645419180393219, CL_loss: 0.0
+Epoch: 12
+Batch 0, Loss: 0.6300903558731079, CL_loss: 0.0
+Batch 10, Loss: 0.6570347547531128, CL_loss: 0.0
+Batch 20, Loss: 0.6496748924255371, CL_loss: 0.0
+Batch 30, Loss: 0.6507359743118286, CL_loss: 0.0
+Batch 40, Loss: 0.6532596349716187, CL_loss: 0.0
+Epoch: 13
+Batch 0, Loss: 0.6235536336898804, CL_loss: 0.0
+Batch 10, Loss: 0.617603063583374, CL_loss: 0.0
+Batch 20, Loss: 0.6344128847122192, CL_loss: 0.0
+Batch 30, Loss: 0.6140245199203491, CL_loss: 0.0
+Batch 40, Loss: 0.6456640362739563, CL_loss: 0.0
+Epoch: 14
+Batch 0, Loss: 0.6035051345825195, CL_loss: 0.0
+Batch 10, Loss: 0.6505327820777893, CL_loss: 0.0
+Batch 20, Loss: 0.6021956205368042, CL_loss: 0.0
+Batch 30, Loss: 0.6528905630111694, CL_loss: 0.0
+Batch 40, Loss: 0.6352477073669434, CL_loss: 0.0
+Epoch: 15
+Batch 0, Loss: 0.6124992370605469, CL_loss: 0.0
+Batch 10, Loss: 0.6068457365036011, CL_loss: 0.0
+Batch 20, Loss: 0.6043869853019714, CL_loss: 0.0
+Batch 30, Loss: 0.6316014528274536, CL_loss: 0.0
+Batch 40, Loss: 0.5857579708099365, CL_loss: 0.0
+Epoch: 16
+Batch 0, Loss: 0.5951189994812012, CL_loss: 0.0
+Batch 10, Loss: 0.6236746311187744, CL_loss: 0.0
+Batch 20, Loss: 0.5821583867073059, CL_loss: 0.0
+Batch 30, Loss: 0.6019213199615479, CL_loss: 0.0
+Batch 40, Loss: 0.5975903272628784, CL_loss: 0.0
+Epoch: 17
+Batch 0, Loss: 0.5699082612991333, CL_loss: 0.0
+Batch 10, Loss: 0.6009684205055237, CL_loss: 0.0
+Batch 20, Loss: 0.5749365091323853, CL_loss: 0.0
+Batch 30, Loss: 0.5679451823234558, CL_loss: 5.196607233415307e-08
+Batch 40, Loss: 0.5825168490409851, CL_loss: 0.0
+Epoch: 18
+Batch 0, Loss: 0.5837774276733398, CL_loss: 0.0
+Batch 10, Loss: 0.5915331840515137, CL_loss: 0.0
+Batch 20, Loss: 0.5952942371368408, CL_loss: 0.0
+Batch 30, Loss: 0.6202496886253357, CL_loss: 0.0
+Batch 40, Loss: 0.6154828071594238, CL_loss: 0.0
+Epoch: 19
+Batch 0, Loss: 0.5758523941040039, CL_loss: 3.5712189855985343e-05
+Batch 10, Loss: 0.5829206705093384, CL_loss: 0.0
+Batch 20, Loss: 0.5590425729751587, CL_loss: 0.0
+Batch 30, Loss: 0.5452990531921387, CL_loss: 0.0
+Batch 40, Loss: 0.5440630912780762, CL_loss: 0.0
+Epoch: 20
+Batch 0, Loss: 0.5756255984306335, CL_loss: 0.0
+Batch 10, Loss: 0.5877202749252319, CL_loss: 0.0
+Batch 20, Loss: 0.5712630152702332, CL_loss: 0.0
+Batch 30, Loss: 0.565390944480896, CL_loss: 0.0
+Batch 40, Loss: 0.5600306987762451, CL_loss: 0.0
+Evaluate
+epoch:20, time: 63.881139(s), valid (HT@10: 0.7902, NDCG@10: 0.5346), test (HT@10: 0.7932, NDCG@10: 0.5344)
+Epoch: 21
+Batch 0, Loss: 0.5768707990646362, CL_loss: 0.0
+Batch 10, Loss: 0.5495208501815796, CL_loss: 0.0
+Batch 20, Loss: 0.5776392221450806, CL_loss: 0.0
+Batch 30, Loss: 0.54177325963974, CL_loss: 0.0
+Batch 40, Loss: 0.5434654951095581, CL_loss: 0.0
+Epoch: 22
+Batch 0, Loss: 0.5795692205429077, CL_loss: 0.0
+Batch 10, Loss: 0.5461698174476624, CL_loss: 0.0
+Batch 20, Loss: 0.5636147856712341, CL_loss: 0.0
+Batch 30, Loss: 0.5484062433242798, CL_loss: 0.0
+Batch 40, Loss: 0.5501537322998047, CL_loss: 0.0
+Epoch: 23
+Batch 0, Loss: 0.5480537414550781, CL_loss: 0.0
+Batch 10, Loss: 0.538629412651062, CL_loss: 0.0
+Batch 20, Loss: 0.5536783933639526, CL_loss: 0.0
+Batch 30, Loss: 0.5536400079727173, CL_loss: 0.0
+Batch 40, Loss: 0.5096805095672607, CL_loss: 0.0017337941098958254
+Epoch: 24
+Batch 0, Loss: 0.5149714946746826, CL_loss: 0.0
+Batch 10, Loss: 0.5571920871734619, CL_loss: 0.0
+Batch 20, Loss: 0.5778976678848267, CL_loss: 0.0
+Batch 30, Loss: 0.5623248815536499, CL_loss: 0.0
+Batch 40, Loss: 0.5435802936553955, CL_loss: 0.0
+Epoch: 25
+Batch 0, Loss: 0.5616761445999146, CL_loss: 0.0
+Batch 10, Loss: 0.5213301181793213, CL_loss: 0.0
+Batch 20, Loss: 0.566448450088501, CL_loss: 0.0
+Batch 30, Loss: 0.5418761968612671, CL_loss: 0.0
+Batch 40, Loss: 0.532533586025238, CL_loss: 0.0
+Epoch: 26
+Batch 0, Loss: 0.5420641899108887, CL_loss: 0.0
+Batch 10, Loss: 0.49693652987480164, CL_loss: 0.0
+Batch 20, Loss: 0.5384685397148132, CL_loss: 0.0
+Batch 30, Loss: 0.5202029943466187, CL_loss: 0.0
+Batch 40, Loss: 0.5375814437866211, CL_loss: 0.0
+Epoch: 27
+Batch 0, Loss: 0.5374680161476135, CL_loss: 0.0
+Batch 10, Loss: 0.5228648781776428, CL_loss: 0.0
+Batch 20, Loss: 0.5232388973236084, CL_loss: 0.0
+Batch 30, Loss: 0.5433908700942993, CL_loss: 0.0
+Batch 40, Loss: 0.5238351821899414, CL_loss: 0.0
+Epoch: 28
+Batch 0, Loss: 0.5328562259674072, CL_loss: 0.0
+Batch 10, Loss: 0.5281407833099365, CL_loss: 0.0
+Batch 20, Loss: 0.5418818593025208, CL_loss: 0.0
+Batch 30, Loss: 0.5418280363082886, CL_loss: 0.0
+Batch 40, Loss: 0.5157735347747803, CL_loss: 0.0
+Epoch: 29
+Batch 0, Loss: 0.49770236015319824, CL_loss: 0.0
+Batch 10, Loss: 0.4998709559440613, CL_loss: 0.0
+Batch 20, Loss: 0.5301550626754761, CL_loss: 0.0
+Batch 30, Loss: 0.4997033476829529, CL_loss: 0.0
+Batch 40, Loss: 0.5465056896209717, CL_loss: 0.0
+Epoch: 30
+Batch 0, Loss: 0.5140158534049988, CL_loss: 0.0
+Batch 10, Loss: 0.5038959383964539, CL_loss: 0.0
+Batch 20, Loss: 0.5217754244804382, CL_loss: 0.0
+Batch 30, Loss: 0.5108811259269714, CL_loss: 0.0
+Batch 40, Loss: 0.5139769911766052, CL_loss: 0.0
+Evaluate
+epoch:30, time: 63.233318(s), valid (HT@10: 0.8161, NDCG@10: 0.5574), test (HT@10: 0.8151, NDCG@10: 0.5627)
+Epoch: 31
+Batch 0, Loss: 0.5128484964370728, CL_loss: 0.0
+Batch 10, Loss: 0.5263280272483826, CL_loss: 0.0
+Batch 20, Loss: 0.5462244749069214, CL_loss: 0.0
+Batch 30, Loss: 0.5192553997039795, CL_loss: 0.0
+Batch 40, Loss: 0.49528223276138306, CL_loss: 0.0
+Epoch: 32
+Batch 0, Loss: 0.5050747394561768, CL_loss: 0.0
+Batch 10, Loss: 0.5291625261306763, CL_loss: 0.0
+Batch 20, Loss: 0.5217217206954956, CL_loss: 0.0
+Batch 30, Loss: 0.517183244228363, CL_loss: 0.0
+Batch 40, Loss: 0.5413669347763062, CL_loss: 0.0
+Epoch: 33
+Batch 0, Loss: 0.47284433245658875, CL_loss: 0.0
+Batch 10, Loss: 0.5109654664993286, CL_loss: 0.0
+Batch 20, Loss: 0.49700114130973816, CL_loss: 0.0
+Batch 30, Loss: 0.5051515698432922, CL_loss: 0.0
+Batch 40, Loss: 0.5213301777839661, CL_loss: 0.0
+Epoch: 34
+Batch 0, Loss: 0.49462831020355225, CL_loss: 0.0
+Batch 10, Loss: 0.5460445880889893, CL_loss: 0.0
+Batch 20, Loss: 0.5196307897567749, CL_loss: 0.0
+Batch 30, Loss: 0.5153474807739258, CL_loss: 0.0
+Batch 40, Loss: 0.4840300679206848, CL_loss: 0.0
+Epoch: 35
+Batch 0, Loss: 0.5128148794174194, CL_loss: 0.0
+Batch 10, Loss: 0.5458380579948425, CL_loss: 0.0
+Batch 20, Loss: 0.5148277282714844, CL_loss: 0.0
+Batch 30, Loss: 0.4991924464702606, CL_loss: 0.0
+Batch 40, Loss: 0.5141953825950623, CL_loss: 0.0
+Epoch: 36
+Batch 0, Loss: 0.5184732675552368, CL_loss: 0.0
+Batch 10, Loss: 0.5086814761161804, CL_loss: 0.0
+Batch 20, Loss: 0.5211254954338074, CL_loss: 0.0
+Batch 30, Loss: 0.46880388259887695, CL_loss: 0.0
+Batch 40, Loss: 0.5036466121673584, CL_loss: 0.0
+Epoch: 37
+Batch 0, Loss: 0.47813791036605835, CL_loss: 0.0
+Batch 10, Loss: 0.4663400650024414, CL_loss: 0.0
+Batch 20, Loss: 0.5210655927658081, CL_loss: 0.0
+Batch 30, Loss: 0.47891712188720703, CL_loss: 0.0
+Batch 40, Loss: 0.485027551651001, CL_loss: 0.0
+Epoch: 38
+Batch 0, Loss: 0.468781977891922, CL_loss: 0.0
+Batch 10, Loss: 0.5473963618278503, CL_loss: 0.0
+Batch 20, Loss: 0.5217409133911133, CL_loss: 0.0
+Batch 30, Loss: 0.4890565872192383, CL_loss: 0.0
+Batch 40, Loss: 0.5095720291137695, CL_loss: 0.0
+Epoch: 39
+Batch 0, Loss: 0.48092737793922424, CL_loss: 1.024454188147672e-09
+Batch 10, Loss: 0.5260318517684937, CL_loss: 0.0
+Batch 20, Loss: 0.4907599687576294, CL_loss: 0.0
+Batch 30, Loss: 0.4858219623565674, CL_loss: 0.0
+Batch 40, Loss: 0.49098438024520874, CL_loss: 0.0
+Epoch: 40
+Batch 0, Loss: 0.48362502455711365, CL_loss: 0.0
+Batch 10, Loss: 0.49240005016326904, CL_loss: 0.0
+Batch 20, Loss: 0.5056752562522888, CL_loss: 0.0
+Batch 30, Loss: 0.5071361064910889, CL_loss: 0.0
+Batch 40, Loss: 0.4628264904022217, CL_loss: 0.0
+Evaluate
+epoch:40, time: 63.150552(s), valid (HT@10: 0.8228, NDCG@10: 0.5749), test (HT@10: 0.8258, NDCG@10: 0.5769)
+Epoch: 41
+Batch 0, Loss: 0.48391932249069214, CL_loss: 0.0
+Batch 10, Loss: 0.4697220027446747, CL_loss: 0.0
+Batch 20, Loss: 0.49275630712509155, CL_loss: 0.0
+Batch 30, Loss: 0.4835999011993408, CL_loss: 0.0
+Batch 40, Loss: 0.49837803840637207, CL_loss: 0.0
+Epoch: 42
+Batch 0, Loss: 0.49315568804740906, CL_loss: 0.0
+Batch 10, Loss: 0.534570574760437, CL_loss: 0.0
+Batch 20, Loss: 0.522749125957489, CL_loss: 0.0
+Batch 30, Loss: 0.477634072303772, CL_loss: 0.0
+Batch 40, Loss: 0.48532426357269287, CL_loss: 0.0
+Epoch: 43
+Batch 0, Loss: 0.46636471152305603, CL_loss: 0.0
+Batch 10, Loss: 0.4712141454219818, CL_loss: 0.0
+Batch 20, Loss: 0.4793817400932312, CL_loss: 0.0
+Batch 30, Loss: 0.46075063943862915, CL_loss: 0.0
+Batch 40, Loss: 0.47808557748794556, CL_loss: 0.0
+Epoch: 44
+Batch 0, Loss: 0.49428367614746094, CL_loss: 0.0
+Batch 10, Loss: 0.4862915277481079, CL_loss: 0.0
+Batch 20, Loss: 0.4876708388328552, CL_loss: 0.0
+Batch 30, Loss: 0.47972115874290466, CL_loss: 0.0
+Batch 40, Loss: 0.4650486707687378, CL_loss: 0.0
+Epoch: 45
+Batch 0, Loss: 0.48515647649765015, CL_loss: 0.0
+Batch 10, Loss: 0.47827544808387756, CL_loss: 0.0
+Batch 20, Loss: 0.48833560943603516, CL_loss: 0.0
+Batch 30, Loss: 0.48807352781295776, CL_loss: 0.0
+Batch 40, Loss: 0.4757355749607086, CL_loss: 0.0
+Epoch: 46
+Batch 0, Loss: 0.5014990568161011, CL_loss: 0.0
+Batch 10, Loss: 0.5062221884727478, CL_loss: 0.0
+Batch 20, Loss: 0.46463543176651, CL_loss: 0.0
+Batch 30, Loss: 0.47920212149620056, CL_loss: 0.0
+Batch 40, Loss: 0.4911031126976013, CL_loss: 0.0
+Epoch: 47
+Batch 0, Loss: 0.4874612092971802, CL_loss: 0.0
+Batch 10, Loss: 0.4835086464881897, CL_loss: 0.0
+Batch 20, Loss: 0.45039743185043335, CL_loss: 0.0
+Batch 30, Loss: 0.5002562999725342, CL_loss: 0.0
+Batch 40, Loss: 0.4965769350528717, CL_loss: 0.0
+Epoch: 48
+Batch 0, Loss: 0.5099183917045593, CL_loss: 0.0
+Batch 10, Loss: 0.49765580892562866, CL_loss: 0.0
+Batch 20, Loss: 0.46835196018218994, CL_loss: 0.0
+Batch 30, Loss: 0.47535210847854614, CL_loss: 0.0
+Batch 40, Loss: 0.45695143938064575, CL_loss: 0.0
+Epoch: 49
+Batch 0, Loss: 0.5229488611221313, CL_loss: 0.0
+Batch 10, Loss: 0.4836254119873047, CL_loss: 0.0
+Batch 20, Loss: 0.484112411737442, CL_loss: 0.0
+Batch 30, Loss: 0.5168482661247253, CL_loss: 0.0
+Batch 40, Loss: 0.4515177607536316, CL_loss: 0.0
+Epoch: 50
+Batch 0, Loss: 0.4974648058414459, CL_loss: 0.0
+Batch 10, Loss: 0.47135549783706665, CL_loss: 0.0
+Batch 20, Loss: 0.4728800058364868, CL_loss: 0.0
+Batch 30, Loss: 0.48508793115615845, CL_loss: 0.0
+Batch 40, Loss: 0.4740050435066223, CL_loss: 0.0
+Evaluate
+epoch:50, time: 63.530939(s), valid (HT@10: 0.8291, NDCG@10: 0.5902), test (HT@10: 0.8298, NDCG@10: 0.5857)
+Epoch: 51
+Batch 0, Loss: 0.49096518754959106, CL_loss: 0.0
+Batch 10, Loss: 0.4976615011692047, CL_loss: 0.0
+Batch 20, Loss: 0.4564334750175476, CL_loss: 0.0
+Batch 30, Loss: 0.4835439622402191, CL_loss: 9.313220750151174e-10
+Batch 40, Loss: 0.45291978120803833, CL_loss: 0.0
+Epoch: 52
+Batch 0, Loss: 0.4802817702293396, CL_loss: 0.0
+Batch 10, Loss: 0.47599607706069946, CL_loss: 0.0
+Batch 20, Loss: 0.46722328662872314, CL_loss: 0.0
+Batch 30, Loss: 0.502872109413147, CL_loss: 0.0
+Batch 40, Loss: 0.4652833342552185, CL_loss: 0.0
+Epoch: 53
+Batch 0, Loss: 0.48250675201416016, CL_loss: 0.0
+Batch 10, Loss: 0.4586346745491028, CL_loss: 0.0
+Batch 20, Loss: 0.5145978927612305, CL_loss: 0.0
+Batch 30, Loss: 0.4879666566848755, CL_loss: 0.0
+Batch 40, Loss: 0.4934653639793396, CL_loss: 0.0
+Epoch: 54
+Batch 0, Loss: 0.5052788257598877, CL_loss: 0.0
+Batch 10, Loss: 0.45618122816085815, CL_loss: 0.0
+Batch 20, Loss: 0.47701770067214966, CL_loss: 0.0
+Batch 30, Loss: 0.46998876333236694, CL_loss: 0.0
+Batch 40, Loss: 0.47343379259109497, CL_loss: 0.0
+Epoch: 55
+Batch 0, Loss: 0.49821436405181885, CL_loss: 0.0
+Batch 10, Loss: 0.4688238501548767, CL_loss: 0.0
+Batch 20, Loss: 0.4556550979614258, CL_loss: 0.0
+Batch 30, Loss: 0.4834069013595581, CL_loss: 0.0
+Batch 40, Loss: 0.490678608417511, CL_loss: 0.0
+Epoch: 56
+Batch 0, Loss: 0.4686936140060425, CL_loss: 0.0
+Batch 10, Loss: 0.4769551753997803, CL_loss: 0.0
+Batch 20, Loss: 0.506894052028656, CL_loss: 0.0
+Batch 30, Loss: 0.4627838730812073, CL_loss: 0.0
+Batch 40, Loss: 0.4953594207763672, CL_loss: 0.0
+Epoch: 57
+Batch 0, Loss: 0.4699423015117645, CL_loss: 0.0
+Batch 10, Loss: 0.4683983325958252, CL_loss: 0.0
+Batch 20, Loss: 0.4996591806411743, CL_loss: 0.0
+Batch 30, Loss: 0.4428047835826874, CL_loss: 0.0
+Batch 40, Loss: 0.4566580653190613, CL_loss: 0.0
+Epoch: 58
+Batch 0, Loss: 0.47862428426742554, CL_loss: 0.0
+Batch 10, Loss: 0.4880008399486542, CL_loss: 0.0
+Batch 20, Loss: 0.4514400362968445, CL_loss: 0.0
+Batch 30, Loss: 0.46760186553001404, CL_loss: 0.0
+Batch 40, Loss: 0.4710547924041748, CL_loss: 0.0
+Epoch: 59
+Batch 0, Loss: 0.4882807433605194, CL_loss: 0.0
+Batch 10, Loss: 0.45563703775405884, CL_loss: 0.0
+Batch 20, Loss: 0.4837859869003296, CL_loss: 0.0
+Batch 30, Loss: 0.4680791199207306, CL_loss: 0.0
+Batch 40, Loss: 0.49051523208618164, CL_loss: 0.0
+Epoch: 60
+Batch 0, Loss: 0.47614148259162903, CL_loss: 0.0
+Batch 10, Loss: 0.44624775648117065, CL_loss: 0.0
+Batch 20, Loss: 0.47467726469039917, CL_loss: 0.0
+Batch 30, Loss: 0.44914066791534424, CL_loss: 0.0
+Batch 40, Loss: 0.4910123944282532, CL_loss: 0.0
+Evaluate
+epoch:60, time: 60.888309(s), valid (HT@10: 0.8318, NDCG@10: 0.5936), test (HT@10: 0.8366, NDCG@10: 0.5976)
+Epoch: 61
+Batch 0, Loss: 0.47031283378601074, CL_loss: 0.0
+Batch 10, Loss: 0.44327735900878906, CL_loss: 0.004316394682973623
+Batch 20, Loss: 0.45050758123397827, CL_loss: 0.0
+Batch 30, Loss: 0.44924861192703247, CL_loss: 0.0
+Batch 40, Loss: 0.49191048741340637, CL_loss: 0.0
+Epoch: 62
+Batch 0, Loss: 0.4737379848957062, CL_loss: 0.0
+Batch 10, Loss: 0.4628440737724304, CL_loss: 0.0
+Batch 20, Loss: 0.46292006969451904, CL_loss: 0.0
+Batch 30, Loss: 0.4576025605201721, CL_loss: 0.0
+Batch 40, Loss: 0.46260398626327515, CL_loss: 0.0
+Epoch: 63
+Batch 0, Loss: 0.4603448510169983, CL_loss: 0.0
+Batch 10, Loss: 0.462003231048584, CL_loss: 0.0
+Batch 20, Loss: 0.48814985156059265, CL_loss: 0.012395171448588371
+Batch 30, Loss: 0.4755752384662628, CL_loss: 0.0
+Batch 40, Loss: 0.455059289932251, CL_loss: 0.008340404368937016
+Epoch: 64
+Batch 0, Loss: 0.49313223361968994, CL_loss: 0.0
+Batch 10, Loss: 0.479994535446167, CL_loss: 0.0
+Batch 20, Loss: 0.4753705859184265, CL_loss: 0.0
+Batch 30, Loss: 0.4549676477909088, CL_loss: 0.0
+Batch 40, Loss: 0.47469571232795715, CL_loss: 0.0
+Epoch: 65
+Batch 0, Loss: 0.451183944940567, CL_loss: 0.0
+Batch 10, Loss: 0.47523289918899536, CL_loss: 0.0
+Batch 20, Loss: 0.4607459306716919, CL_loss: 0.0
+Batch 30, Loss: 0.46949589252471924, CL_loss: 0.0
+Batch 40, Loss: 0.4512498378753662, CL_loss: 0.0
+Epoch: 66
+Batch 0, Loss: 0.47101205587387085, CL_loss: 0.0
+Batch 10, Loss: 0.43946224451065063, CL_loss: 0.0
+Batch 20, Loss: 0.5088917016983032, CL_loss: 0.0
+Batch 30, Loss: 0.4427241384983063, CL_loss: 0.0
+Batch 40, Loss: 0.47393137216567993, CL_loss: 0.0
+Epoch: 67
+Batch 0, Loss: 0.4505080282688141, CL_loss: 0.0
+Batch 10, Loss: 0.4652004837989807, CL_loss: 0.0
+Batch 20, Loss: 0.43802571296691895, CL_loss: 0.0
+Batch 30, Loss: 0.47843655943870544, CL_loss: 0.0
+Batch 40, Loss: 0.4750676155090332, CL_loss: 0.0
+Epoch: 68
+Batch 0, Loss: 0.452503502368927, CL_loss: 0.0
+Batch 10, Loss: 0.4635930061340332, CL_loss: 0.0
+Batch 20, Loss: 0.4815082550048828, CL_loss: 0.0
+Batch 30, Loss: 0.43613559007644653, CL_loss: 0.0
+Batch 40, Loss: 0.47747141122817993, CL_loss: 0.026498127728700638
+Epoch: 69
+Batch 0, Loss: 0.44347283244132996, CL_loss: 0.0
+Batch 10, Loss: 0.4881269335746765, CL_loss: 0.0
+Batch 20, Loss: 0.4537290036678314, CL_loss: 0.0
+Batch 30, Loss: 0.4611949920654297, CL_loss: 0.0
+Batch 40, Loss: 0.44125229120254517, CL_loss: 0.0
+Epoch: 70
+Batch 0, Loss: 0.46433377265930176, CL_loss: 0.0
+Batch 10, Loss: 0.44810885190963745, CL_loss: 0.0
+Batch 20, Loss: 0.4697256088256836, CL_loss: 0.0
+Batch 30, Loss: 0.47639429569244385, CL_loss: 0.0
+Batch 40, Loss: 0.4626132845878601, CL_loss: 0.0
+Evaluate
+epoch:70, time: 60.735645(s), valid (HT@10: 0.8361, NDCG@10: 0.5994), test (HT@10: 0.8334, NDCG@10: 0.5996)
+Epoch: 71
+Batch 0, Loss: 0.48502057790756226, CL_loss: 0.0
+Batch 10, Loss: 0.4795503616333008, CL_loss: 0.0
+Batch 20, Loss: 0.4500635266304016, CL_loss: 0.0
+Batch 30, Loss: 0.4644957184791565, CL_loss: 0.0
+Batch 40, Loss: 0.5065571069717407, CL_loss: 0.0
+Epoch: 72
+Batch 0, Loss: 0.4277247488498688, CL_loss: 0.0
+Batch 10, Loss: 0.4455498456954956, CL_loss: 0.0
+Batch 20, Loss: 0.4487493634223938, CL_loss: 0.0
+Batch 30, Loss: 0.43618154525756836, CL_loss: 0.0
+Batch 40, Loss: 0.461214542388916, CL_loss: 0.0
+Epoch: 73
+Batch 0, Loss: 0.4447404742240906, CL_loss: 0.0
+Batch 10, Loss: 0.464647114276886, CL_loss: 0.0
+Batch 20, Loss: 0.44473668932914734, CL_loss: 0.0
+Batch 30, Loss: 0.47870582342147827, CL_loss: 0.0
+Batch 40, Loss: 0.4582415819168091, CL_loss: 0.0
+Epoch: 74
+Batch 0, Loss: 0.4449884295463562, CL_loss: 0.0
+Batch 10, Loss: 0.46631354093551636, CL_loss: 0.0
+Batch 20, Loss: 0.4521828293800354, CL_loss: 0.0
+Batch 30, Loss: 0.4707304835319519, CL_loss: 0.0
+Batch 40, Loss: 0.44052648544311523, CL_loss: 0.0
+Epoch: 75
+Batch 0, Loss: 0.4777143597602844, CL_loss: 0.0
+Batch 10, Loss: 0.45862439274787903, CL_loss: 0.0
+Batch 20, Loss: 0.435395210981369, CL_loss: 0.0
+Batch 30, Loss: 0.497874915599823, CL_loss: 0.0
+Batch 40, Loss: 0.4657144546508789, CL_loss: 0.0
+Epoch: 76
+Batch 0, Loss: 0.4336796998977661, CL_loss: 0.0
+Batch 10, Loss: 0.4618726372718811, CL_loss: 0.0
+Batch 20, Loss: 0.47113025188446045, CL_loss: 0.0
+Batch 30, Loss: 0.4469929337501526, CL_loss: 0.0
+Batch 40, Loss: 0.43661633133888245, CL_loss: 0.0
+Epoch: 77
+Batch 0, Loss: 0.4774632155895233, CL_loss: 0.0
+Batch 10, Loss: 0.4707270860671997, CL_loss: 0.0
+Batch 20, Loss: 0.47518348693847656, CL_loss: 0.0
+Batch 30, Loss: 0.48024046421051025, CL_loss: 0.0
+Batch 40, Loss: 0.47365665435791016, CL_loss: 0.0
+Epoch: 78
+Batch 0, Loss: 0.44560977816581726, CL_loss: 0.0
+Batch 10, Loss: 0.47645124793052673, CL_loss: 0.0
+Batch 20, Loss: 0.4617513418197632, CL_loss: 0.0
+Batch 30, Loss: 0.45897966623306274, CL_loss: 0.0
+Batch 40, Loss: 0.45028406381607056, CL_loss: 0.0
+Epoch: 79
+Batch 0, Loss: 0.43774479627609253, CL_loss: 0.0
+Batch 10, Loss: 0.4655373990535736, CL_loss: 0.0
+Batch 20, Loss: 0.4235241711139679, CL_loss: 0.0
+Batch 30, Loss: 0.4808427691459656, CL_loss: 0.0
+Batch 40, Loss: 0.45111268758773804, CL_loss: 0.0
+Epoch: 80
+Batch 0, Loss: 0.44598591327667236, CL_loss: 0.0
+Batch 10, Loss: 0.44545698165893555, CL_loss: 0.0
+Batch 20, Loss: 0.4756428003311157, CL_loss: 0.0
+Batch 30, Loss: 0.4317936301231384, CL_loss: 0.0
+Batch 40, Loss: 0.4278259873390198, CL_loss: 0.0
+Evaluate
+epoch:80, time: 60.156529(s), valid (HT@10: 0.8406, NDCG@10: 0.6059), test (HT@10: 0.8374, NDCG@10: 0.6017)
+Epoch: 81
+Batch 0, Loss: 0.4535335302352905, CL_loss: 0.0
+Batch 10, Loss: 0.46398526430130005, CL_loss: 0.0
+Batch 20, Loss: 0.45218461751937866, CL_loss: 0.0
+Batch 30, Loss: 0.47261860966682434, CL_loss: 0.0
+Batch 40, Loss: 0.42635518312454224, CL_loss: 0.0
+Epoch: 82
+Batch 0, Loss: 0.47361433506011963, CL_loss: 0.0
+Batch 10, Loss: 0.47587525844573975, CL_loss: 0.0
+Batch 20, Loss: 0.4599466323852539, CL_loss: 0.0
+Batch 30, Loss: 0.4456525444984436, CL_loss: 0.0
+Batch 40, Loss: 0.47851884365081787, CL_loss: 0.0
+Epoch: 83
+Batch 0, Loss: 0.4340648055076599, CL_loss: 0.0
+Batch 10, Loss: 0.4434886574745178, CL_loss: 0.0
+Batch 20, Loss: 0.4612792432308197, CL_loss: 0.0
+Batch 30, Loss: 0.4282694458961487, CL_loss: 0.0
+Batch 40, Loss: 0.43335968255996704, CL_loss: 0.0
+Epoch: 84
+Batch 0, Loss: 0.45853036642074585, CL_loss: 0.0
+Batch 10, Loss: 0.42751872539520264, CL_loss: 0.0
+Batch 20, Loss: 0.443415105342865, CL_loss: 0.0
+Batch 30, Loss: 0.44830048084259033, CL_loss: 0.0
+Batch 40, Loss: 0.4578944444656372, CL_loss: 0.0
+Epoch: 85
+Batch 0, Loss: 0.4449346363544464, CL_loss: 0.0
+Batch 10, Loss: 0.45746946334838867, CL_loss: 0.0
+Batch 20, Loss: 0.4470102787017822, CL_loss: 0.0
+Batch 30, Loss: 0.4379345774650574, CL_loss: 0.0
+Batch 40, Loss: 0.45810872316360474, CL_loss: 0.0
+Epoch: 86
+Batch 0, Loss: 0.4693070650100708, CL_loss: 0.0
+Batch 10, Loss: 0.4360761046409607, CL_loss: 0.0
+Batch 20, Loss: 0.47408050298690796, CL_loss: 0.0
+Batch 30, Loss: 0.42633914947509766, CL_loss: 0.0
+Batch 40, Loss: 0.45607471466064453, CL_loss: 0.0
+Epoch: 87
+Batch 0, Loss: 0.44423240423202515, CL_loss: 0.0
+Batch 10, Loss: 0.4592474102973938, CL_loss: 0.0
+Batch 20, Loss: 0.4382197856903076, CL_loss: 0.0
+Batch 30, Loss: 0.4265628457069397, CL_loss: 0.0
+Batch 40, Loss: 0.4429208040237427, CL_loss: 0.0
+Epoch: 88
+Batch 0, Loss: 0.4480968117713928, CL_loss: 0.0
+Batch 10, Loss: 0.430804044008255, CL_loss: 0.0
+Batch 20, Loss: 0.44748982787132263, CL_loss: 0.0
+Batch 30, Loss: 0.4398435652256012, CL_loss: 0.0
+Batch 40, Loss: 0.4922179877758026, CL_loss: 0.023891925811767578
+Epoch: 89
+Batch 0, Loss: 0.4381486177444458, CL_loss: 0.0
+Batch 10, Loss: 0.4689938426017761, CL_loss: 0.0
+Batch 20, Loss: 0.43017029762268066, CL_loss: 0.0
+Batch 30, Loss: 0.4475250840187073, CL_loss: 0.0
+Batch 40, Loss: 0.46623659133911133, CL_loss: 0.0
+Epoch: 90
+Batch 0, Loss: 0.5008947253227234, CL_loss: 0.0
+Batch 10, Loss: 0.4274209141731262, CL_loss: 0.0
+Batch 20, Loss: 0.46314340829849243, CL_loss: 0.0
+Batch 30, Loss: 0.42090529203414917, CL_loss: 0.0
+Batch 40, Loss: 0.4137885570526123, CL_loss: 0.0
+Evaluate
+epoch:90, time: 60.141583(s), valid (HT@10: 0.8439, NDCG@10: 0.6078), test (HT@10: 0.8377, NDCG@10: 0.6028)
+Epoch: 91
+Batch 0, Loss: 0.4322928786277771, CL_loss: 0.0
+Batch 10, Loss: 0.4754207730293274, CL_loss: 0.0
+Batch 20, Loss: 0.47799038887023926, CL_loss: 0.01901097595691681
+Batch 30, Loss: 0.4348211884498596, CL_loss: 0.0
+Batch 40, Loss: 0.4583437144756317, CL_loss: 0.0
+Epoch: 92
+Batch 0, Loss: 0.4519944190979004, CL_loss: 0.0
+Batch 10, Loss: 0.4341973066329956, CL_loss: 0.0
+Batch 20, Loss: 0.4353063106536865, CL_loss: 0.0
+Batch 30, Loss: 0.4740866720676422, CL_loss: 0.0
+Batch 40, Loss: 0.4569981098175049, CL_loss: 0.0
+Epoch: 93
+Batch 0, Loss: 0.4383006989955902, CL_loss: 0.0
+Batch 10, Loss: 0.4392344653606415, CL_loss: 0.0
+Batch 20, Loss: 0.4353254735469818, CL_loss: 0.0
+Batch 30, Loss: 0.43887925148010254, CL_loss: 0.0
+Batch 40, Loss: 0.4758038818836212, CL_loss: 0.0
+Epoch: 94
+Batch 0, Loss: 0.45130759477615356, CL_loss: 0.0
+Batch 10, Loss: 0.4528830051422119, CL_loss: 0.0
+Batch 20, Loss: 0.42606109380722046, CL_loss: 0.0
+Batch 30, Loss: 0.42920929193496704, CL_loss: 0.0
+Batch 40, Loss: 0.473807692527771, CL_loss: 0.03872561454772949
+Epoch: 95
+Batch 0, Loss: 0.4364672303199768, CL_loss: 0.0
+Batch 10, Loss: 0.46002233028411865, CL_loss: 0.0
+Batch 20, Loss: 0.4908292293548584, CL_loss: 0.0
+Batch 30, Loss: 0.4175381660461426, CL_loss: 0.0
+Batch 40, Loss: 0.4388465881347656, CL_loss: 0.0
+Epoch: 96
+Batch 0, Loss: 0.45015496015548706, CL_loss: 0.0
+Batch 10, Loss: 0.4451541304588318, CL_loss: 0.0
+Batch 20, Loss: 0.45533740520477295, CL_loss: 0.0
+Batch 30, Loss: 0.4489966034889221, CL_loss: 0.0
+Batch 40, Loss: 0.43344348669052124, CL_loss: 0.0
+Epoch: 97
+Batch 0, Loss: 0.4238089919090271, CL_loss: 0.0
+Batch 10, Loss: 0.47063928842544556, CL_loss: 0.0
+Batch 20, Loss: 0.43573126196861267, CL_loss: 0.0
+Batch 30, Loss: 0.42769283056259155, CL_loss: 0.0
+Batch 40, Loss: 0.4722397029399872, CL_loss: 0.0
+Epoch: 98
+Batch 0, Loss: 0.4411771297454834, CL_loss: 0.0
+Batch 10, Loss: 0.46748846769332886, CL_loss: 0.0
+Batch 20, Loss: 0.4149940013885498, CL_loss: 0.0
+Batch 30, Loss: 0.4246700406074524, CL_loss: 0.0
+Batch 40, Loss: 0.407995343208313, CL_loss: 0.0
+Epoch: 99
+Batch 0, Loss: 0.42750847339630127, CL_loss: 0.0
+Batch 10, Loss: 0.4731169044971466, CL_loss: 0.0
+Batch 20, Loss: 0.4561663866043091, CL_loss: 0.0
+Batch 30, Loss: 0.46298831701278687, CL_loss: 0.0
+Batch 40, Loss: 0.446785569190979, CL_loss: 0.0
+Epoch: 100
+Batch 0, Loss: 0.4448903203010559, CL_loss: 0.0
+Batch 10, Loss: 0.43101999163627625, CL_loss: 0.0
+Batch 20, Loss: 0.4317134618759155, CL_loss: 0.0
+Batch 30, Loss: 0.45785409212112427, CL_loss: 0.0
+Batch 40, Loss: 0.44853490591049194, CL_loss: 0.0
+Evaluate
+epoch:100, time: 60.063651(s), valid (HT@10: 0.8454, NDCG@10: 0.6058), test (HT@10: 0.8439, NDCG@10: 0.6101)
+Epoch: 101
+Batch 0, Loss: 0.4534495174884796, CL_loss: 0.0
+Batch 10, Loss: 0.4569038152694702, CL_loss: 0.0
+Batch 20, Loss: 0.45077773928642273, CL_loss: 0.0
+Batch 30, Loss: 0.4437636733055115, CL_loss: 0.0
+Batch 40, Loss: 0.45291292667388916, CL_loss: 0.0
+Epoch: 102
+Batch 0, Loss: 0.4746895432472229, CL_loss: 0.0
+Batch 10, Loss: 0.4347100853919983, CL_loss: 0.0
+Batch 20, Loss: 0.42671847343444824, CL_loss: 0.0
+Batch 30, Loss: 0.4481757879257202, CL_loss: 0.0
+Batch 40, Loss: 0.4259428083896637, CL_loss: 0.0
+Epoch: 103
+Batch 0, Loss: 0.4164997339248657, CL_loss: 0.0
+Batch 10, Loss: 0.46208345890045166, CL_loss: 0.0
+Batch 20, Loss: 0.44358035922050476, CL_loss: 0.0
+Batch 30, Loss: 0.44079285860061646, CL_loss: 0.0
+Batch 40, Loss: 0.4479058086872101, CL_loss: 0.0
+Epoch: 104
+Batch 0, Loss: 0.4531126320362091, CL_loss: 0.0
+Batch 10, Loss: 0.4212118685245514, CL_loss: 0.0
+Batch 20, Loss: 0.41555362939834595, CL_loss: 0.0
+Batch 30, Loss: 0.44234973192214966, CL_loss: 0.0
+Batch 40, Loss: 0.43272626399993896, CL_loss: 0.0
+Epoch: 105
+Batch 0, Loss: 0.44772660732269287, CL_loss: 0.0
+Batch 10, Loss: 0.4597681164741516, CL_loss: 0.0
+Batch 20, Loss: 0.4366421699523926, CL_loss: 0.0
+Batch 30, Loss: 0.43246981501579285, CL_loss: 0.0
+Batch 40, Loss: 0.4412521421909332, CL_loss: 0.0
+Epoch: 106
+Batch 0, Loss: 0.4576268792152405, CL_loss: 0.0
+Batch 10, Loss: 0.43264156579971313, CL_loss: 0.0
+Batch 20, Loss: 0.4693746566772461, CL_loss: 0.0
+Batch 30, Loss: 0.449362576007843, CL_loss: 0.0
+Batch 40, Loss: 0.40217912197113037, CL_loss: 0.0
+Epoch: 107
+Batch 0, Loss: 0.43950632214546204, CL_loss: 0.0
+Batch 10, Loss: 0.43904000520706177, CL_loss: 0.0
+Batch 20, Loss: 0.42552441358566284, CL_loss: 0.0
+Batch 30, Loss: 0.4254035949707031, CL_loss: 0.0
+Batch 40, Loss: 0.4400158226490021, CL_loss: 0.0
+Epoch: 108
+Batch 0, Loss: 0.44090574979782104, CL_loss: 0.0
+Batch 10, Loss: 0.4359629154205322, CL_loss: 0.0
+Batch 20, Loss: 0.451137512922287, CL_loss: 0.0
+Batch 30, Loss: 0.42605364322662354, CL_loss: 0.0
+Batch 40, Loss: 0.4309835433959961, CL_loss: 0.0
+Epoch: 109
+Batch 0, Loss: 0.45338982343673706, CL_loss: 0.0
+Batch 10, Loss: 0.417033851146698, CL_loss: 0.0
+Batch 20, Loss: 0.4239840507507324, CL_loss: 0.0
+Batch 30, Loss: 0.459004670381546, CL_loss: 0.0
+Batch 40, Loss: 0.44415295124053955, CL_loss: 0.0
+Epoch: 110
+Batch 0, Loss: 0.46151071786880493, CL_loss: 0.0
+Batch 10, Loss: 0.4331386685371399, CL_loss: 0.0
+Batch 20, Loss: 0.4488368630409241, CL_loss: 0.0
+Batch 30, Loss: 0.4511442184448242, CL_loss: 0.0
+Batch 40, Loss: 0.43075665831565857, CL_loss: 0.0
+Evaluate
+epoch:110, time: 60.942846(s), valid (HT@10: 0.8435, NDCG@10: 0.6122), test (HT@10: 0.8409, NDCG@10: 0.6101)
+Epoch: 111
+Batch 0, Loss: 0.4347970187664032, CL_loss: 0.0
+Batch 10, Loss: 0.42524224519729614, CL_loss: 0.0
+Batch 20, Loss: 0.43680089712142944, CL_loss: 0.0
+Batch 30, Loss: 0.4344114065170288, CL_loss: 0.0
+Batch 40, Loss: 0.4558228850364685, CL_loss: 0.0
+Epoch: 112
+Batch 0, Loss: 0.4387713074684143, CL_loss: 0.0
+Batch 10, Loss: 0.42427462339401245, CL_loss: 0.0
+Batch 20, Loss: 0.4499610662460327, CL_loss: 0.0
+Batch 30, Loss: 0.4560175836086273, CL_loss: 0.0
+Batch 40, Loss: 0.4644143879413605, CL_loss: 0.0
+Epoch: 113
+Batch 0, Loss: 0.41201257705688477, CL_loss: 0.0
+Batch 10, Loss: 0.4567468762397766, CL_loss: 0.0
+Batch 20, Loss: 0.4409881830215454, CL_loss: 0.0
+Batch 30, Loss: 0.45261797308921814, CL_loss: 0.0
+Batch 40, Loss: 0.4467122554779053, CL_loss: 0.0
+Epoch: 114
+Batch 0, Loss: 0.4589322805404663, CL_loss: 0.0
+Batch 10, Loss: 0.4172205328941345, CL_loss: 0.0
+Batch 20, Loss: 0.40580737590789795, CL_loss: 0.0
+Batch 30, Loss: 0.43788382411003113, CL_loss: 0.0
+Batch 40, Loss: 0.41306373476982117, CL_loss: 0.0
+Epoch: 115
+Batch 0, Loss: 0.43394917249679565, CL_loss: 0.0
+Batch 10, Loss: 0.4287312626838684, CL_loss: 0.0
+Batch 20, Loss: 0.4453377425670624, CL_loss: 0.0
+Batch 30, Loss: 0.4436458945274353, CL_loss: 0.0
+Batch 40, Loss: 0.4409790635108948, CL_loss: 0.0
+Epoch: 116
+Batch 0, Loss: 0.440792441368103, CL_loss: 0.0
+Batch 10, Loss: 0.4680909514427185, CL_loss: 0.0
+Batch 20, Loss: 0.4508424401283264, CL_loss: 0.0
+Batch 30, Loss: 0.4439156651496887, CL_loss: 0.0
+Batch 40, Loss: 0.44970792531967163, CL_loss: 0.0
+Epoch: 117
+Batch 0, Loss: 0.44014912843704224, CL_loss: 0.0
+Batch 10, Loss: 0.42099320888519287, CL_loss: 0.0
+Batch 20, Loss: 0.4496389627456665, CL_loss: 0.0
+Batch 30, Loss: 0.44793078303337097, CL_loss: 0.0
+Batch 40, Loss: 0.4427867531776428, CL_loss: 0.0
+Epoch: 118
+Batch 0, Loss: 0.43467462062835693, CL_loss: 0.0
+Batch 10, Loss: 0.4262557625770569, CL_loss: 0.0
+Batch 20, Loss: 0.42792636156082153, CL_loss: 0.0
+Batch 30, Loss: 0.42350149154663086, CL_loss: 0.0
+Batch 40, Loss: 0.44226449728012085, CL_loss: 0.0
+Epoch: 119
+Batch 0, Loss: 0.4806051254272461, CL_loss: 0.0
+Batch 10, Loss: 0.4008510708808899, CL_loss: 0.0
+Batch 20, Loss: 0.4307830333709717, CL_loss: 0.0
+Batch 30, Loss: 0.3939700722694397, CL_loss: 0.0
+Batch 40, Loss: 0.43349689245224, CL_loss: 0.0
+Epoch: 120
+Batch 0, Loss: 0.43543386459350586, CL_loss: 0.0
+Batch 10, Loss: 0.4555184841156006, CL_loss: 0.0
+Batch 20, Loss: 0.4290943145751953, CL_loss: 0.0
+Batch 30, Loss: 0.4390838146209717, CL_loss: 0.0
+Batch 40, Loss: 0.41776204109191895, CL_loss: 0.0
+Evaluate
+epoch:120, time: 60.692430(s), valid (HT@10: 0.8465, NDCG@10: 0.6103), test (HT@10: 0.8450, NDCG@10: 0.6130)
+Epoch: 121
+Batch 0, Loss: 0.42387378215789795, CL_loss: 0.0
+Batch 10, Loss: 0.4230976700782776, CL_loss: 0.0
+Batch 20, Loss: 0.4575197100639343, CL_loss: 0.0
+Batch 30, Loss: 0.4261784553527832, CL_loss: 0.0
+Batch 40, Loss: 0.4588978886604309, CL_loss: 0.0
+Epoch: 122
+Batch 0, Loss: 0.40604662895202637, CL_loss: 0.0
+Batch 10, Loss: 0.42939019203186035, CL_loss: 0.0
+Batch 20, Loss: 0.42931875586509705, CL_loss: 0.0
+Batch 30, Loss: 0.4673367738723755, CL_loss: 0.0
+Batch 40, Loss: 0.4329221844673157, CL_loss: 0.0
+Epoch: 123
+Batch 0, Loss: 0.46791204810142517, CL_loss: 0.0
+Batch 10, Loss: 0.44231706857681274, CL_loss: 0.0
+Batch 20, Loss: 0.44854065775871277, CL_loss: 0.0
+Batch 30, Loss: 0.40357741713523865, CL_loss: 0.0
+Batch 40, Loss: 0.4476315975189209, CL_loss: 0.0
+Epoch: 124
+Batch 0, Loss: 0.41738301515579224, CL_loss: 0.0
+Batch 10, Loss: 0.4620291292667389, CL_loss: 0.0
+Batch 20, Loss: 0.4205101430416107, CL_loss: 0.0
+Batch 30, Loss: 0.4450265169143677, CL_loss: 0.0
+Batch 40, Loss: 0.44108933210372925, CL_loss: 0.0
+Epoch: 125
+Batch 0, Loss: 0.4443304240703583, CL_loss: 0.0
+Batch 10, Loss: 0.4251662492752075, CL_loss: 0.0
+Batch 20, Loss: 0.45406872034072876, CL_loss: 0.0
+Batch 30, Loss: 0.4208763837814331, CL_loss: 0.0
+Batch 40, Loss: 0.4382471442222595, CL_loss: 0.0
+Epoch: 126
+Batch 0, Loss: 0.4295459985733032, CL_loss: 0.0
+Batch 10, Loss: 0.43775904178619385, CL_loss: 0.0
+Batch 20, Loss: 0.425689160823822, CL_loss: 0.0
+Batch 30, Loss: 0.45634785294532776, CL_loss: 0.0
+Batch 40, Loss: 0.4532891511917114, CL_loss: 0.0
+Epoch: 127
+Batch 0, Loss: 0.45075178146362305, CL_loss: 0.0
+Batch 10, Loss: 0.41812121868133545, CL_loss: 0.0
+Batch 20, Loss: 0.4526434540748596, CL_loss: 0.0
+Batch 30, Loss: 0.43764302134513855, CL_loss: 0.0
+Batch 40, Loss: 0.4531548321247101, CL_loss: 0.0
+Epoch: 128
+Batch 0, Loss: 0.4173111319541931, CL_loss: 0.0
+Batch 10, Loss: 0.43652957677841187, CL_loss: 0.0
+Batch 20, Loss: 0.43755385279655457, CL_loss: 0.0
+Batch 30, Loss: 0.424282044172287, CL_loss: 0.0
+Batch 40, Loss: 0.45095640420913696, CL_loss: 0.0
+Epoch: 129
+Batch 0, Loss: 0.45435193181037903, CL_loss: 0.0
+Batch 10, Loss: 0.4411737322807312, CL_loss: 0.0
+Batch 20, Loss: 0.459674596786499, CL_loss: 0.0
+Batch 30, Loss: 0.4429335594177246, CL_loss: 0.0
+Batch 40, Loss: 0.410693883895874, CL_loss: 0.0
+Epoch: 130
+Batch 0, Loss: 0.4097293019294739, CL_loss: 0.0
+Batch 10, Loss: 0.4044610261917114, CL_loss: 0.0
+Batch 20, Loss: 0.4484311044216156, CL_loss: 0.0
+Batch 30, Loss: 0.4723619818687439, CL_loss: 0.0
+Batch 40, Loss: 0.4518597722053528, CL_loss: 0.0
+Evaluate
+epoch:130, time: 59.757187(s), valid (HT@10: 0.8444, NDCG@10: 0.6155), test (HT@10: 0.8450, NDCG@10: 0.6146)
+Epoch: 131
+Batch 0, Loss: 0.45105695724487305, CL_loss: 0.0
+Batch 10, Loss: 0.419785737991333, CL_loss: 0.0
+Batch 20, Loss: 0.4199674427509308, CL_loss: 0.0
+Batch 30, Loss: 0.4085507392883301, CL_loss: 0.0
+Batch 40, Loss: 0.43810391426086426, CL_loss: 0.0
+Epoch: 132
+Batch 0, Loss: 0.4242144227027893, CL_loss: 0.0
+Batch 10, Loss: 0.4530189335346222, CL_loss: 0.0
+Batch 20, Loss: 0.4583720266819, CL_loss: 0.0
+Batch 30, Loss: 0.430782288312912, CL_loss: 0.0
+Batch 40, Loss: 0.42337027192115784, CL_loss: 0.0
+Epoch: 133
+Batch 0, Loss: 0.46060895919799805, CL_loss: 0.0
+Batch 10, Loss: 0.44638317823410034, CL_loss: 0.0
+Batch 20, Loss: 0.4307844638824463, CL_loss: 0.0
+Batch 30, Loss: 0.4296097457408905, CL_loss: 0.0
+Batch 40, Loss: 0.42240631580352783, CL_loss: 0.0
+Epoch: 134
+Batch 0, Loss: 0.4212225079536438, CL_loss: 0.0
+Batch 10, Loss: 0.4244120419025421, CL_loss: 0.0
+Batch 20, Loss: 0.4165358543395996, CL_loss: 0.0
+Batch 30, Loss: 0.4528161883354187, CL_loss: 0.0
+Batch 40, Loss: 0.45082658529281616, CL_loss: 0.0
+Epoch: 135
+Batch 0, Loss: 0.4242189824581146, CL_loss: 0.0
+Batch 10, Loss: 0.4510773718357086, CL_loss: 0.0
+Batch 20, Loss: 0.4336596131324768, CL_loss: 0.0
+Batch 30, Loss: 0.4384237825870514, CL_loss: 0.0
+Batch 40, Loss: 0.42468148469924927, CL_loss: 0.0
+Epoch: 136
+Batch 0, Loss: 0.42479178309440613, CL_loss: 0.0
+Batch 10, Loss: 0.44587254524230957, CL_loss: 0.0
+Batch 20, Loss: 0.42369943857192993, CL_loss: 0.0
+Batch 30, Loss: 0.4207984507083893, CL_loss: 0.0
+Batch 40, Loss: 0.43977028131484985, CL_loss: 0.0
+Epoch: 137
+Batch 0, Loss: 0.4477527141571045, CL_loss: 0.0
+Batch 10, Loss: 0.4360893964767456, CL_loss: 0.0
+Batch 20, Loss: 0.43875792622566223, CL_loss: 0.0
+Batch 30, Loss: 0.4595034122467041, CL_loss: 0.0
+Batch 40, Loss: 0.4154032766819, CL_loss: 0.0
+Epoch: 138
+Batch 0, Loss: 0.40277791023254395, CL_loss: 0.0
+Batch 10, Loss: 0.42765456438064575, CL_loss: 0.0
+Batch 20, Loss: 0.41288650035858154, CL_loss: 0.0
+Batch 30, Loss: 0.4145188331604004, CL_loss: 0.0
+Batch 40, Loss: 0.43087685108184814, CL_loss: 0.0
+Epoch: 139
+Batch 0, Loss: 0.42280060052871704, CL_loss: 0.0
+Batch 10, Loss: 0.42159146070480347, CL_loss: 0.0
+Batch 20, Loss: 0.41695427894592285, CL_loss: 0.0
+Batch 30, Loss: 0.4338584542274475, CL_loss: 0.0
+Batch 40, Loss: 0.4212753474712372, CL_loss: 0.0
+Epoch: 140
+Batch 0, Loss: 0.444163054227829, CL_loss: 0.0
+Batch 10, Loss: 0.4207518696784973, CL_loss: 0.0
+Batch 20, Loss: 0.4323405623435974, CL_loss: 0.0
+Batch 30, Loss: 0.43713438510894775, CL_loss: 0.0
+Batch 40, Loss: 0.4715918004512787, CL_loss: 0.0
+Evaluate
+epoch:140, time: 59.890155(s), valid (HT@10: 0.8419, NDCG@10: 0.6144), test (HT@10: 0.8440, NDCG@10: 0.6114)
+Epoch: 141
+Batch 0, Loss: 0.4424411654472351, CL_loss: 0.0
+Batch 10, Loss: 0.4718102216720581, CL_loss: 0.0
+Batch 20, Loss: 0.4208565354347229, CL_loss: 0.0
+Batch 30, Loss: 0.4393741488456726, CL_loss: 0.0
+Batch 40, Loss: 0.42098259925842285, CL_loss: 0.0
+Epoch: 142
+Batch 0, Loss: 0.49160900712013245, CL_loss: 0.0
+Batch 10, Loss: 0.4134093225002289, CL_loss: 0.0
+Batch 20, Loss: 0.42865991592407227, CL_loss: 0.0
+Batch 30, Loss: 0.4375017285346985, CL_loss: 5.913674527846524e-08
+Batch 40, Loss: 0.4384663701057434, CL_loss: 0.0
+Epoch: 143
+Batch 0, Loss: 0.4329753518104553, CL_loss: 0.0
+Batch 10, Loss: 0.43522319197654724, CL_loss: 0.0
+Batch 20, Loss: 0.4077170491218567, CL_loss: 0.0
+Batch 30, Loss: 0.4345629811286926, CL_loss: 0.0
+Batch 40, Loss: 0.4140121340751648, CL_loss: 0.0
+Epoch: 144
+Batch 0, Loss: 0.4225733280181885, CL_loss: 0.0
+Batch 10, Loss: 0.42658451199531555, CL_loss: 0.0
+Batch 20, Loss: 0.43988773226737976, CL_loss: 0.0
+Batch 30, Loss: 0.426869660615921, CL_loss: 0.0
+Batch 40, Loss: 0.4489024877548218, CL_loss: 0.0
+Epoch: 145
+Batch 0, Loss: 0.44785070419311523, CL_loss: 0.0
+Batch 10, Loss: 0.4326730966567993, CL_loss: 0.0
+Batch 20, Loss: 0.3820483684539795, CL_loss: 0.0
+Batch 30, Loss: 0.3986685276031494, CL_loss: 0.0
+Batch 40, Loss: 0.4170442819595337, CL_loss: 0.0
+Epoch: 146
+Batch 0, Loss: 0.42271533608436584, CL_loss: 0.0
+Batch 10, Loss: 0.44444140791893005, CL_loss: 0.0
+Batch 20, Loss: 0.4168802797794342, CL_loss: 0.0
+Batch 30, Loss: 0.4124657213687897, CL_loss: 0.0
+Batch 40, Loss: 0.4229821562767029, CL_loss: 0.0
+Epoch: 147
+Batch 0, Loss: 0.4238821864128113, CL_loss: 0.0
+Batch 10, Loss: 0.4514228105545044, CL_loss: 0.0
+Batch 20, Loss: 0.43682974576950073, CL_loss: 0.0
+Batch 30, Loss: 0.4352237582206726, CL_loss: 0.0
+Batch 40, Loss: 0.41919946670532227, CL_loss: 0.0
+Epoch: 148
+Batch 0, Loss: 0.4331536293029785, CL_loss: 0.0
+Batch 10, Loss: 0.44523927569389343, CL_loss: 0.0
+Batch 20, Loss: 0.4337882101535797, CL_loss: 0.0
+Batch 30, Loss: 0.43112534284591675, CL_loss: 0.0
+Batch 40, Loss: 0.430396169424057, CL_loss: 0.006034147925674915
+Epoch: 149
+Batch 0, Loss: 0.4375860095024109, CL_loss: 0.0
+Batch 10, Loss: 0.43615618348121643, CL_loss: 0.0
+Batch 20, Loss: 0.4228096008300781, CL_loss: 0.0
+Batch 30, Loss: 0.4138357639312744, CL_loss: 0.0
+Batch 40, Loss: 0.454390287399292, CL_loss: 0.0
+Epoch: 150
+Batch 0, Loss: 0.42599552869796753, CL_loss: 0.0
+Batch 10, Loss: 0.4402931332588196, CL_loss: 0.0
+Batch 20, Loss: 0.4431373178958893, CL_loss: 0.0
+Batch 30, Loss: 0.4248383641242981, CL_loss: 0.0
+Batch 40, Loss: 0.44156262278556824, CL_loss: 0.0
+Evaluate
+epoch:150, time: 59.566662(s), valid (HT@10: 0.8477, NDCG@10: 0.6148), test (HT@10: 0.8459, NDCG@10: 0.6174)
+Epoch: 151
+Batch 0, Loss: 0.427272766828537, CL_loss: 0.0
+Batch 10, Loss: 0.45179736614227295, CL_loss: 0.0
+Batch 20, Loss: 0.4452498257160187, CL_loss: 0.0
+Batch 30, Loss: 0.42814886569976807, CL_loss: 0.0
+Batch 40, Loss: 0.42578965425491333, CL_loss: 0.0
+Epoch: 152
+Batch 0, Loss: 0.4230724573135376, CL_loss: 0.0
+Batch 10, Loss: 0.4309372305870056, CL_loss: 0.0
+Batch 20, Loss: 0.4476611614227295, CL_loss: 0.0
+Batch 30, Loss: 0.4089149832725525, CL_loss: 0.0
+Batch 40, Loss: 0.47602900862693787, CL_loss: 0.022600794211030006
+Epoch: 153
+Batch 0, Loss: 0.45358192920684814, CL_loss: 0.0
+Batch 10, Loss: 0.442887544631958, CL_loss: 0.0
+Batch 20, Loss: 0.398999959230423, CL_loss: 0.0
+Batch 30, Loss: 0.4375542402267456, CL_loss: 0.0
+Batch 40, Loss: 0.4557190537452698, CL_loss: 0.0
+Epoch: 154
+Batch 0, Loss: 0.43310490250587463, CL_loss: 0.0
+Batch 10, Loss: 0.457930326461792, CL_loss: 0.0
+Batch 20, Loss: 0.4547433853149414, CL_loss: 0.0
+Batch 30, Loss: 0.4283295273780823, CL_loss: 0.0
+Batch 40, Loss: 0.4306449890136719, CL_loss: 0.0
+Epoch: 155
+Batch 0, Loss: 0.43950724601745605, CL_loss: 0.0
+Batch 10, Loss: 0.3998878002166748, CL_loss: 0.0
+Batch 20, Loss: 0.436921626329422, CL_loss: 0.0
+Batch 30, Loss: 0.42204996943473816, CL_loss: 0.0
+Batch 40, Loss: 0.4083731174468994, CL_loss: 0.0
+Epoch: 156
+Batch 0, Loss: 0.4544268846511841, CL_loss: 0.0
+Batch 10, Loss: 0.4504307508468628, CL_loss: 0.0
+Batch 20, Loss: 0.4286700487136841, CL_loss: 0.0
+Batch 30, Loss: 0.4345281720161438, CL_loss: 0.0
+Batch 40, Loss: 0.4369102716445923, CL_loss: 0.0
+Epoch: 157
+Batch 0, Loss: 0.4332900941371918, CL_loss: 0.0
+Batch 10, Loss: 0.4263167083263397, CL_loss: 0.0
+Batch 20, Loss: 0.41298043727874756, CL_loss: 0.0
+Batch 30, Loss: 0.42036694288253784, CL_loss: 0.0
+Batch 40, Loss: 0.42118600010871887, CL_loss: 0.0
+Epoch: 158
+Batch 0, Loss: 0.4105624556541443, CL_loss: 0.0
+Batch 10, Loss: 0.4586096405982971, CL_loss: 0.0
+Batch 20, Loss: 0.4586067795753479, CL_loss: 0.0
+Batch 30, Loss: 0.4301159977912903, CL_loss: 0.0
+Batch 40, Loss: 0.4343050420284271, CL_loss: 0.0
+Epoch: 159
+Batch 0, Loss: 0.43017876148223877, CL_loss: 0.0
+Batch 10, Loss: 0.44256114959716797, CL_loss: 0.0
+Batch 20, Loss: 0.42351821064949036, CL_loss: 0.0
+Batch 30, Loss: 0.45887911319732666, CL_loss: 0.0
+Batch 40, Loss: 0.43263962864875793, CL_loss: 0.0
+Epoch: 160
+Batch 0, Loss: 0.42144256830215454, CL_loss: 0.0
+Batch 10, Loss: 0.421440988779068, CL_loss: 0.0
+Batch 20, Loss: 0.4176769554615021, CL_loss: 0.0
+Batch 30, Loss: 0.4194340705871582, CL_loss: 0.0
+Batch 40, Loss: 0.4452216625213623, CL_loss: 0.0
+Evaluate
+epoch:160, time: 60.008983(s), valid (HT@10: 0.8434, NDCG@10: 0.6142), test (HT@10: 0.8437, NDCG@10: 0.6175)
+Epoch: 161
+Batch 0, Loss: 0.4280548095703125, CL_loss: 0.0
+Batch 10, Loss: 0.44836950302124023, CL_loss: 0.0
+Batch 20, Loss: 0.4169257879257202, CL_loss: 0.0
+Batch 30, Loss: 0.3985617756843567, CL_loss: 0.0
+Batch 40, Loss: 0.4261740446090698, CL_loss: 0.0
+Epoch: 162
+Batch 0, Loss: 0.3977911174297333, CL_loss: 0.0
+Batch 10, Loss: 0.41980278491973877, CL_loss: 0.0
+Batch 20, Loss: 0.4343896508216858, CL_loss: 0.0
+Batch 30, Loss: 0.4015136957168579, CL_loss: 0.0
+Batch 40, Loss: 0.45016658306121826, CL_loss: 0.0
+Epoch: 163
+Batch 0, Loss: 0.4117990732192993, CL_loss: 0.0
+Batch 10, Loss: 0.42888888716697693, CL_loss: 0.0
+Batch 20, Loss: 0.4223189651966095, CL_loss: 0.0
+Batch 30, Loss: 0.41368675231933594, CL_loss: 0.0
+Batch 40, Loss: 0.4324582517147064, CL_loss: 0.0
+Epoch: 164
+Batch 0, Loss: 0.4403802156448364, CL_loss: 0.0
+Batch 10, Loss: 0.42873501777648926, CL_loss: 0.0
+Batch 20, Loss: 0.46457165479660034, CL_loss: 0.0
+Batch 30, Loss: 0.4423767924308777, CL_loss: 0.0
+Batch 40, Loss: 0.4792255759239197, CL_loss: 0.0
+Epoch: 165
+Batch 0, Loss: 0.4431396424770355, CL_loss: 0.0
+Batch 10, Loss: 0.43751096725463867, CL_loss: 0.0
+Batch 20, Loss: 0.4199405908584595, CL_loss: 0.0
+Batch 30, Loss: 0.40306270122528076, CL_loss: 0.0
+Batch 40, Loss: 0.41365525126457214, CL_loss: 0.0
+Epoch: 166
+Batch 0, Loss: 0.4358368515968323, CL_loss: 0.0
+Batch 10, Loss: 0.4281964898109436, CL_loss: 0.0
+Batch 20, Loss: 0.44449761509895325, CL_loss: 0.0
+Batch 30, Loss: 0.4258590638637543, CL_loss: 0.0
+Batch 40, Loss: 0.42608678340911865, CL_loss: 0.0
+Epoch: 167
+Batch 0, Loss: 0.4179624915122986, CL_loss: 0.0
+Batch 10, Loss: 0.43291282653808594, CL_loss: 0.0
+Batch 20, Loss: 0.4269316792488098, CL_loss: 0.0
+Batch 30, Loss: 0.4694572985172272, CL_loss: 0.0
+Batch 40, Loss: 0.42674440145492554, CL_loss: 0.0
+Epoch: 168
+Batch 0, Loss: 0.43107903003692627, CL_loss: 0.0
+Batch 10, Loss: 0.43262752890586853, CL_loss: 0.0
+Batch 20, Loss: 0.4431488513946533, CL_loss: 0.0
+Batch 30, Loss: 0.44346845149993896, CL_loss: 0.0
+Batch 40, Loss: 0.4325393736362457, CL_loss: 0.0
+Epoch: 169
+Batch 0, Loss: 0.3775450885295868, CL_loss: 0.0
+Batch 10, Loss: 0.4047262668609619, CL_loss: 0.0
+Batch 20, Loss: 0.4065040349960327, CL_loss: 0.0
+Batch 30, Loss: 0.4033243954181671, CL_loss: 0.0
+Batch 40, Loss: 0.3934958577156067, CL_loss: 0.0
+Epoch: 170
+Batch 0, Loss: 0.4068636894226074, CL_loss: 0.0
+Batch 10, Loss: 0.40419697761535645, CL_loss: 0.0
+Batch 20, Loss: 0.41360440850257874, CL_loss: 0.0
+Batch 30, Loss: 0.4478493630886078, CL_loss: 0.0
+Batch 40, Loss: 0.4199070334434509, CL_loss: 0.0
+Evaluate
+epoch:170, time: 58.438380(s), valid (HT@10: 0.8485, NDCG@10: 0.6157), test (HT@10: 0.8470, NDCG@10: 0.6162)
+Epoch: 171
+Batch 0, Loss: 0.44713646173477173, CL_loss: 0.0
+Batch 10, Loss: 0.4352112412452698, CL_loss: 0.0
+Batch 20, Loss: 0.416080117225647, CL_loss: 0.0
+Batch 30, Loss: 0.4062381386756897, CL_loss: 0.0
+Batch 40, Loss: 0.41693517565727234, CL_loss: 0.0
+Epoch: 172
+Batch 0, Loss: 0.42925187945365906, CL_loss: 0.0
+Batch 10, Loss: 0.4393565058708191, CL_loss: 0.0
+Batch 20, Loss: 0.4303056001663208, CL_loss: 0.0
+Batch 30, Loss: 0.4483949542045593, CL_loss: 0.0
+Batch 40, Loss: 0.43987470865249634, CL_loss: 0.0
+Epoch: 173
+Batch 0, Loss: 0.41806983947753906, CL_loss: 0.0
+Batch 10, Loss: 0.42395704984664917, CL_loss: 0.0
+Batch 20, Loss: 0.41791051626205444, CL_loss: 0.0
+Batch 30, Loss: 0.42016512155532837, CL_loss: 0.0
+Batch 40, Loss: 0.4200935661792755, CL_loss: 0.0
+Epoch: 174
+Batch 0, Loss: 0.43411117792129517, CL_loss: 0.0
+Batch 10, Loss: 0.41360294818878174, CL_loss: 0.0
+Batch 20, Loss: 0.4382591247558594, CL_loss: 0.0
+Batch 30, Loss: 0.4349181056022644, CL_loss: 0.0
+Batch 40, Loss: 0.41449832916259766, CL_loss: 0.0
+Epoch: 175
+Batch 0, Loss: 0.4354105293750763, CL_loss: 0.0
+Batch 10, Loss: 0.42563217878341675, CL_loss: 0.0
+Batch 20, Loss: 0.4220830202102661, CL_loss: 0.0
+Batch 30, Loss: 0.4285082221031189, CL_loss: 0.0
+Batch 40, Loss: 0.42792654037475586, CL_loss: 0.0
+Epoch: 176
+Batch 0, Loss: 0.4316614270210266, CL_loss: 0.0
+Batch 10, Loss: 0.4191743731498718, CL_loss: 0.0
+Batch 20, Loss: 0.4283815026283264, CL_loss: 0.0
+Batch 30, Loss: 0.43142586946487427, CL_loss: 0.0
+Batch 40, Loss: 0.401137113571167, CL_loss: 0.0
+Epoch: 177
+Batch 0, Loss: 0.404642790555954, CL_loss: 0.0
+Batch 10, Loss: 0.4118783473968506, CL_loss: 0.0
+Batch 20, Loss: 0.45803385972976685, CL_loss: 0.0
+Batch 30, Loss: 0.4104487895965576, CL_loss: 0.0
+Batch 40, Loss: 0.4048141539096832, CL_loss: 0.0
+Epoch: 178
+Batch 0, Loss: 0.43345555663108826, CL_loss: 0.0
+Batch 10, Loss: 0.41368892788887024, CL_loss: 0.0
+Batch 20, Loss: 0.41710880398750305, CL_loss: 0.0
+Batch 30, Loss: 0.4371125400066376, CL_loss: 0.0
+Batch 40, Loss: 0.43411576747894287, CL_loss: 0.0
+Epoch: 179
+Batch 0, Loss: 0.4370184540748596, CL_loss: 0.0
+Batch 10, Loss: 0.421601802110672, CL_loss: 0.0
+Batch 20, Loss: 0.3957101106643677, CL_loss: 0.0
+Batch 30, Loss: 0.4195995330810547, CL_loss: 0.0
+Batch 40, Loss: 0.43674302101135254, CL_loss: 0.0
+Epoch: 180
+Batch 0, Loss: 0.4244174659252167, CL_loss: 0.0
+Batch 10, Loss: 0.4303765296936035, CL_loss: 0.0
+Batch 20, Loss: 0.4197503924369812, CL_loss: 0.0
+Batch 30, Loss: 0.42757654190063477, CL_loss: 0.0
+Batch 40, Loss: 0.4031715393066406, CL_loss: 0.0
+Evaluate
+epoch:180, time: 58.036824(s), valid (HT@10: 0.8445, NDCG@10: 0.6139), test (HT@10: 0.8454, NDCG@10: 0.6179)
+Epoch: 181
+Batch 0, Loss: 0.401833713054657, CL_loss: 0.0
+Batch 10, Loss: 0.4270326495170593, CL_loss: 0.0
+Batch 20, Loss: 0.41897052526474, CL_loss: 0.0
+Batch 30, Loss: 0.4325292110443115, CL_loss: 0.0
+Batch 40, Loss: 0.4247296154499054, CL_loss: 0.0
+Epoch: 182
+Batch 0, Loss: 0.4603237509727478, CL_loss: 0.0
+Batch 10, Loss: 0.4142152965068817, CL_loss: 0.0
+Batch 20, Loss: 0.42755335569381714, CL_loss: 0.0
+Batch 30, Loss: 0.4762347340583801, CL_loss: 0.0
+Batch 40, Loss: 0.4364277124404907, CL_loss: 0.0
+Epoch: 183
+Batch 0, Loss: 0.4206143021583557, CL_loss: 0.0
+Batch 10, Loss: 0.42872145771980286, CL_loss: 0.0
+Batch 20, Loss: 0.43809691071510315, CL_loss: 0.0
+Batch 30, Loss: 0.4381873309612274, CL_loss: 0.0
+Batch 40, Loss: 0.4282107949256897, CL_loss: 0.0
+Epoch: 184
+Batch 0, Loss: 0.40896037220954895, CL_loss: 0.0
+Batch 10, Loss: 0.40952587127685547, CL_loss: 0.0
+Batch 20, Loss: 0.4223034679889679, CL_loss: 0.0
+Batch 30, Loss: 0.42432641983032227, CL_loss: 0.0
+Batch 40, Loss: 0.3928414285182953, CL_loss: 0.0
+Epoch: 185
+Batch 0, Loss: 0.4208129942417145, CL_loss: 0.0
+Batch 10, Loss: 0.4151538610458374, CL_loss: 0.0
+Batch 20, Loss: 0.43798068165779114, CL_loss: 0.0
+Batch 30, Loss: 0.4326973855495453, CL_loss: 0.0
+Batch 40, Loss: 0.42607539892196655, CL_loss: 0.0
+Epoch: 186
+Batch 0, Loss: 0.4437861442565918, CL_loss: 0.0
+Batch 10, Loss: 0.4155113697052002, CL_loss: 0.0
+Batch 20, Loss: 0.4460793733596802, CL_loss: 0.0
+Batch 30, Loss: 0.4288330078125, CL_loss: 0.0
+Batch 40, Loss: 0.47816914319992065, CL_loss: 0.03740960732102394
+Epoch: 187
+Batch 0, Loss: 0.39471524953842163, CL_loss: 0.0
+Batch 10, Loss: 0.4166300892829895, CL_loss: 0.0
+Batch 20, Loss: 0.4280965328216553, CL_loss: 0.0
+Batch 30, Loss: 0.43442198634147644, CL_loss: 0.0
+Batch 40, Loss: 0.4240744411945343, CL_loss: 0.0
+Epoch: 188
+Batch 0, Loss: 0.4495764970779419, CL_loss: 0.0
+Batch 10, Loss: 0.4466627240180969, CL_loss: 0.0
+Batch 20, Loss: 0.46931466460227966, CL_loss: 0.0
+Batch 30, Loss: 0.4241713285446167, CL_loss: 0.0
+Batch 40, Loss: 0.39977723360061646, CL_loss: 0.0
+Epoch: 189
+Batch 0, Loss: 0.41464006900787354, CL_loss: 0.0
+Batch 10, Loss: 0.4001349210739136, CL_loss: 0.0
+Batch 20, Loss: 0.4180070161819458, CL_loss: 0.0
+Batch 30, Loss: 0.4451247453689575, CL_loss: 0.0
+Batch 40, Loss: 0.45453566312789917, CL_loss: 0.0
+Epoch: 190
+Batch 0, Loss: 0.43578189611434937, CL_loss: 0.0
+Batch 10, Loss: 0.39938730001449585, CL_loss: 0.0
+Batch 20, Loss: 0.4289315938949585, CL_loss: 0.0
+Batch 30, Loss: 0.43996721506118774, CL_loss: 0.0
+Batch 40, Loss: 0.4148874878883362, CL_loss: 0.0
+Evaluate
+epoch:190, time: 57.648508(s), valid (HT@10: 0.8455, NDCG@10: 0.6168), test (HT@10: 0.8452, NDCG@10: 0.6192)
+Epoch: 191
+Batch 0, Loss: 0.43301206827163696, CL_loss: 0.0
+Batch 10, Loss: 0.42950910329818726, CL_loss: 0.0
+Batch 20, Loss: 0.43661314249038696, CL_loss: 0.0
+Batch 30, Loss: 0.403026819229126, CL_loss: 0.0
+Batch 40, Loss: 0.40903109312057495, CL_loss: 0.0
+Epoch: 192
+Batch 0, Loss: 0.422355592250824, CL_loss: 0.0
+Batch 10, Loss: 0.43496328592300415, CL_loss: 0.0
+Batch 20, Loss: 0.41806766390800476, CL_loss: 0.0
+Batch 30, Loss: 0.42140066623687744, CL_loss: 0.0
+Batch 40, Loss: 0.416949987411499, CL_loss: 0.0
+Epoch: 193
+Batch 0, Loss: 0.4151816964149475, CL_loss: 0.0
+Batch 10, Loss: 0.42062807083129883, CL_loss: 0.0
+Batch 20, Loss: 0.41705065965652466, CL_loss: 0.0
+Batch 30, Loss: 0.44485607743263245, CL_loss: 0.0
+Batch 40, Loss: 0.4239828586578369, CL_loss: 0.0
+Epoch: 194
+Batch 0, Loss: 0.42132294178009033, CL_loss: 0.0
+Batch 10, Loss: 0.39577698707580566, CL_loss: 0.0
+Batch 20, Loss: 0.42839187383651733, CL_loss: 0.0
+Batch 30, Loss: 0.42094123363494873, CL_loss: 0.0
+Batch 40, Loss: 0.40720853209495544, CL_loss: 0.0
+Epoch: 195
+Batch 0, Loss: 0.42101770639419556, CL_loss: 0.0
+Batch 10, Loss: 0.4083712100982666, CL_loss: 0.0
+Batch 20, Loss: 0.43381640315055847, CL_loss: 0.0
+Batch 30, Loss: 0.4158628582954407, CL_loss: 0.0
+Batch 40, Loss: 0.42615994811058044, CL_loss: 0.0
+Epoch: 196
+Batch 0, Loss: 0.4415438175201416, CL_loss: 0.0
+Batch 10, Loss: 0.42583560943603516, CL_loss: 0.0
+Batch 20, Loss: 0.4237191677093506, CL_loss: 0.0
+Batch 30, Loss: 0.4071590304374695, CL_loss: 0.0
+Batch 40, Loss: 0.4520253539085388, CL_loss: 0.0
+Epoch: 197
+Batch 0, Loss: 0.4380837082862854, CL_loss: 0.0
+Batch 10, Loss: 0.42194145917892456, CL_loss: 0.0
+Batch 20, Loss: 0.45168033242225647, CL_loss: 0.0
+Batch 30, Loss: 0.4358579218387604, CL_loss: 0.0
+Batch 40, Loss: 0.43490976095199585, CL_loss: 0.0
+Epoch: 198
+Batch 0, Loss: 0.41058433055877686, CL_loss: 0.0
+Batch 10, Loss: 0.3897092342376709, CL_loss: 0.0
+Batch 20, Loss: 0.4223661422729492, CL_loss: 0.0
+Batch 30, Loss: 0.4523739814758301, CL_loss: 0.0
+Batch 40, Loss: 0.4051685929298401, CL_loss: 0.0
+Epoch: 199
+Batch 0, Loss: 0.43124061822891235, CL_loss: 0.0
+Batch 10, Loss: 0.4371412396430969, CL_loss: 0.0
+Batch 20, Loss: 0.458937406539917, CL_loss: 0.0
+Batch 30, Loss: 0.4201206862926483, CL_loss: 0.0
+Batch 40, Loss: 0.41174083948135376, CL_loss: 0.0
+Epoch: 200
+Batch 0, Loss: 0.4166206121444702, CL_loss: 0.0
+Batch 10, Loss: 0.39908069372177124, CL_loss: 0.0
+Batch 20, Loss: 0.3977000117301941, CL_loss: 0.0
+Batch 30, Loss: 0.41500845551490784, CL_loss: 0.0
+Batch 40, Loss: 0.4317947030067444, CL_loss: 0.0
+Evaluate
+epoch:200, time: 58.384338(s), valid (HT@10: 0.8480, NDCG@10: 0.6172), test (HT@10: 0.8474, NDCG@10: 0.6204)
+Epoch: 201
+Batch 0, Loss: 0.4523594379425049, CL_loss: 0.0
+Batch 10, Loss: 0.4219474792480469, CL_loss: 0.0
+Batch 20, Loss: 0.41213929653167725, CL_loss: 0.0
+Batch 30, Loss: 0.4196314513683319, CL_loss: 0.0
+Batch 40, Loss: 0.4476882219314575, CL_loss: 0.0
+Epoch: 202
+Batch 0, Loss: 0.389896035194397, CL_loss: 0.0
+Batch 10, Loss: 0.4378013610839844, CL_loss: 0.0
+Batch 20, Loss: 0.4426409602165222, CL_loss: 0.0
+Batch 30, Loss: 0.420369416475296, CL_loss: 0.0
+Batch 40, Loss: 0.4225633144378662, CL_loss: 0.0
+Epoch: 203
+Batch 0, Loss: 0.418893039226532, CL_loss: 0.0
+Batch 10, Loss: 0.4231441617012024, CL_loss: 0.0
+Batch 20, Loss: 0.42811620235443115, CL_loss: 0.0
+Batch 30, Loss: 0.4518783688545227, CL_loss: 0.0
+Batch 40, Loss: 0.43659794330596924, CL_loss: 0.0
+Epoch: 204
+Batch 0, Loss: 0.40988248586654663, CL_loss: 0.0
+Batch 10, Loss: 0.4085370898246765, CL_loss: 0.0
+Batch 20, Loss: 0.4035051763057709, CL_loss: 0.0
+Batch 30, Loss: 0.40782836079597473, CL_loss: 0.0
+Batch 40, Loss: 0.42737868428230286, CL_loss: 0.0
+Epoch: 205
+Batch 0, Loss: 0.4501652121543884, CL_loss: 0.0
+Batch 10, Loss: 0.43153953552246094, CL_loss: 0.0
+Batch 20, Loss: 0.42057210206985474, CL_loss: 0.0
+Batch 30, Loss: 0.45868733525276184, CL_loss: 0.0
+Batch 40, Loss: 0.40961411595344543, CL_loss: 0.0
+Epoch: 206
+Batch 0, Loss: 0.3928201198577881, CL_loss: 0.0
+Batch 10, Loss: 0.42635825276374817, CL_loss: 0.0
+Batch 20, Loss: 0.4187583923339844, CL_loss: 0.0
+Batch 30, Loss: 0.43567603826522827, CL_loss: 0.0
+Batch 40, Loss: 0.41635608673095703, CL_loss: 0.0
+Epoch: 207
+Batch 0, Loss: 0.43172168731689453, CL_loss: 0.0
+Batch 10, Loss: 0.3933714032173157, CL_loss: 0.0
+Batch 20, Loss: 0.4105859398841858, CL_loss: 0.0
+Batch 30, Loss: 0.41142570972442627, CL_loss: 0.0
+Batch 40, Loss: 0.42428797483444214, CL_loss: 0.0
+Epoch: 208
+Batch 0, Loss: 0.43311870098114014, CL_loss: 0.0
+Batch 10, Loss: 0.4442882239818573, CL_loss: 0.0
+Batch 20, Loss: 0.43526601791381836, CL_loss: 0.0
+Batch 30, Loss: 0.44509297609329224, CL_loss: 0.0
+Batch 40, Loss: 0.4535425305366516, CL_loss: 0.0
+Epoch: 209
+Batch 0, Loss: 0.4243491291999817, CL_loss: 0.0
+Batch 10, Loss: 0.42118722200393677, CL_loss: 0.0
+Batch 20, Loss: 0.4286876320838928, CL_loss: 0.0
+Batch 30, Loss: 0.4291316866874695, CL_loss: 0.0
+Batch 40, Loss: 0.4059882164001465, CL_loss: 0.0
+Epoch: 210
+Batch 0, Loss: 0.4021040201187134, CL_loss: 0.0
+Batch 10, Loss: 0.4396163523197174, CL_loss: 0.0
+Batch 20, Loss: 0.4226061701774597, CL_loss: 0.0
+Batch 30, Loss: 0.4279489517211914, CL_loss: 0.0
+Batch 40, Loss: 0.4293730854988098, CL_loss: 0.0
+Evaluate
+epoch:210, time: 58.443424(s), valid (HT@10: 0.8439, NDCG@10: 0.6152), test (HT@10: 0.8445, NDCG@10: 0.6147)
+Epoch: 211
+Batch 0, Loss: 0.41842520236968994, CL_loss: 0.0
+Batch 10, Loss: 0.4121624231338501, CL_loss: 0.0
+Batch 20, Loss: 0.42948782444000244, CL_loss: 0.0
+Batch 30, Loss: 0.40694886445999146, CL_loss: 0.0
+Batch 40, Loss: 0.39863795042037964, CL_loss: 0.0
+Epoch: 212
+Batch 0, Loss: 0.4105028510093689, CL_loss: 0.0
+Batch 10, Loss: 0.4488615095615387, CL_loss: 0.0
+Batch 20, Loss: 0.45452001690864563, CL_loss: 0.0
+Batch 30, Loss: 0.43117183446884155, CL_loss: 0.0
+Batch 40, Loss: 0.4390197992324829, CL_loss: 0.0
+Epoch: 213
+Batch 0, Loss: 0.4009339213371277, CL_loss: 0.0
+Batch 10, Loss: 0.42433035373687744, CL_loss: 0.0
+Batch 20, Loss: 0.4509938061237335, CL_loss: 0.0
+Batch 30, Loss: 0.42889612913131714, CL_loss: 0.0
+Batch 40, Loss: 0.4056556820869446, CL_loss: 0.0
+Epoch: 214
+Batch 0, Loss: 0.43019771575927734, CL_loss: 0.0
+Batch 10, Loss: 0.4674970805644989, CL_loss: 0.0
+Batch 20, Loss: 0.4097038507461548, CL_loss: 0.0
+Batch 30, Loss: 0.40028104186058044, CL_loss: 0.0
+Batch 40, Loss: 0.4227641522884369, CL_loss: 0.0
+Epoch: 215
+Batch 0, Loss: 0.430061936378479, CL_loss: 0.0
+Batch 10, Loss: 0.40708786249160767, CL_loss: 0.0
+Batch 20, Loss: 0.3960363268852234, CL_loss: 0.0
+Batch 30, Loss: 0.43297338485717773, CL_loss: 9.313225191043273e-11
+Batch 40, Loss: 0.4407743513584137, CL_loss: 0.0
+Epoch: 216
+Batch 0, Loss: 0.410362184047699, CL_loss: 0.0
+Batch 10, Loss: 0.421222448348999, CL_loss: 0.0
+Batch 20, Loss: 0.41056933999061584, CL_loss: 0.0
+Batch 30, Loss: 0.41785773634910583, CL_loss: 0.0
+Batch 40, Loss: 0.42285066843032837, CL_loss: 0.0
+Epoch: 217
+Batch 0, Loss: 0.41350194811820984, CL_loss: 0.0
+Batch 10, Loss: 0.43258124589920044, CL_loss: 0.0
+Batch 20, Loss: 0.42656388878822327, CL_loss: 0.0
+Batch 30, Loss: 0.4301741123199463, CL_loss: 0.0
+Batch 40, Loss: 0.4006791114807129, CL_loss: 0.0
+Epoch: 218
+Batch 0, Loss: 0.4120926856994629, CL_loss: 0.0
+Batch 10, Loss: 0.4293181300163269, CL_loss: 0.0
+Batch 20, Loss: 0.3973720073699951, CL_loss: 0.0
+Batch 30, Loss: 0.4387732744216919, CL_loss: 0.0
+Batch 40, Loss: 0.40890392661094666, CL_loss: 0.0
+Epoch: 219
+Batch 0, Loss: 0.41378986835479736, CL_loss: 0.0
+Batch 10, Loss: 0.4161297678947449, CL_loss: 0.0
+Batch 20, Loss: 0.4107840061187744, CL_loss: 0.0
+Batch 30, Loss: 0.4093795418739319, CL_loss: 0.0
+Batch 40, Loss: 0.4414055347442627, CL_loss: 0.0
+Epoch: 220
+Batch 0, Loss: 0.42431169748306274, CL_loss: 0.0
+Batch 10, Loss: 0.41683220863342285, CL_loss: 0.0
+Batch 20, Loss: 0.4473048448562622, CL_loss: 0.0
+Batch 30, Loss: 0.4057563543319702, CL_loss: 0.0
+Batch 40, Loss: 0.41534027457237244, CL_loss: 0.0
+Evaluate
+epoch:220, time: 58.717994(s), valid (HT@10: 0.8469, NDCG@10: 0.6181), test (HT@10: 0.8434, NDCG@10: 0.6192)
+Epoch: 221
+Batch 0, Loss: 0.44142675399780273, CL_loss: 0.0
+Batch 10, Loss: 0.4364968538284302, CL_loss: 0.0
+Batch 20, Loss: 0.4309976398944855, CL_loss: 0.0
+Batch 30, Loss: 0.41817837953567505, CL_loss: 0.0
+Batch 40, Loss: 0.4210500419139862, CL_loss: 0.0
+Epoch: 222
+Batch 0, Loss: 0.41888898611068726, CL_loss: 0.0
+Batch 10, Loss: 0.4297563433647156, CL_loss: 0.0
+Batch 20, Loss: 0.3987186551094055, CL_loss: 0.0
+Batch 30, Loss: 0.43158888816833496, CL_loss: 0.0
+Batch 40, Loss: 0.4377152919769287, CL_loss: 0.0
+Epoch: 223
+Batch 0, Loss: 0.43682169914245605, CL_loss: 0.0
+Batch 10, Loss: 0.41334158182144165, CL_loss: 0.0
+Batch 20, Loss: 0.42359182238578796, CL_loss: 0.0
+Batch 30, Loss: 0.41847145557403564, CL_loss: 0.0
+Batch 40, Loss: 0.40357720851898193, CL_loss: 0.0
+Epoch: 224
+Batch 0, Loss: 0.40439796447753906, CL_loss: 0.0
+Batch 10, Loss: 0.39771029353141785, CL_loss: 0.0
+Batch 20, Loss: 0.44122040271759033, CL_loss: 0.0
+Batch 30, Loss: 0.4404377341270447, CL_loss: 0.0
+Batch 40, Loss: 0.3842475414276123, CL_loss: 0.0
+Epoch: 225
+Batch 0, Loss: 0.4167744517326355, CL_loss: 0.0
+Batch 10, Loss: 0.4159203767776489, CL_loss: 0.0
+Batch 20, Loss: 0.44253450632095337, CL_loss: 0.0
+Batch 30, Loss: 0.39409202337265015, CL_loss: 0.0
+Batch 40, Loss: 0.4136444926261902, CL_loss: 0.0
+Epoch: 226
+Batch 0, Loss: 0.441875159740448, CL_loss: 0.0
+Batch 10, Loss: 0.41706740856170654, CL_loss: 0.0
+Batch 20, Loss: 0.4264522194862366, CL_loss: 0.0
+Batch 30, Loss: 0.42590850591659546, CL_loss: 0.0
+Batch 40, Loss: 0.43366605043411255, CL_loss: 0.0
+Epoch: 227
+Batch 0, Loss: 0.4356909990310669, CL_loss: 0.0
+Batch 10, Loss: 0.43887943029403687, CL_loss: 0.0
+Batch 20, Loss: 0.43598759174346924, CL_loss: 0.0
+Batch 30, Loss: 0.4308911859989166, CL_loss: 0.0
+Batch 40, Loss: 0.43838033080101013, CL_loss: 0.0
+Epoch: 228
+Batch 0, Loss: 0.40954434871673584, CL_loss: 0.0
+Batch 10, Loss: 0.4153861999511719, CL_loss: 0.0
+Batch 20, Loss: 0.43280088901519775, CL_loss: 0.0056787217035889626
+Batch 30, Loss: 0.42088937759399414, CL_loss: 0.0
+Batch 40, Loss: 0.4220026731491089, CL_loss: 0.0
+Epoch: 229
+Batch 0, Loss: 0.4085102081298828, CL_loss: 0.0
+Batch 10, Loss: 0.44952452182769775, CL_loss: 0.0
+Batch 20, Loss: 0.4184568524360657, CL_loss: 0.0
+Batch 30, Loss: 0.37949660420417786, CL_loss: 0.0
+Batch 40, Loss: 0.43558549880981445, CL_loss: 0.0
+Epoch: 230
+Batch 0, Loss: 0.422989159822464, CL_loss: 0.0
+Batch 10, Loss: 0.4371097683906555, CL_loss: 0.0
+Batch 20, Loss: 0.41680383682250977, CL_loss: 0.0
+Batch 30, Loss: 0.4200744032859802, CL_loss: 0.0
+Batch 40, Loss: 0.4197096824645996, CL_loss: 0.0
+Evaluate
+epoch:230, time: 58.328968(s), valid (HT@10: 0.8474, NDCG@10: 0.6198), test (HT@10: 0.8429, NDCG@10: 0.6158)
+Epoch: 231
+Batch 0, Loss: 0.4121479094028473, CL_loss: 0.0
+Batch 10, Loss: 0.41446512937545776, CL_loss: 0.0
+Batch 20, Loss: 0.43542200326919556, CL_loss: 0.0
+Batch 30, Loss: 0.40484729409217834, CL_loss: 0.0
+Batch 40, Loss: 0.4253697693347931, CL_loss: 0.0
+Epoch: 232
+Batch 0, Loss: 0.412943959236145, CL_loss: 0.0
+Batch 10, Loss: 0.44358813762664795, CL_loss: 0.0
+Batch 20, Loss: 0.45262032747268677, CL_loss: 0.0
+Batch 30, Loss: 0.4238329827785492, CL_loss: 0.0
+Batch 40, Loss: 0.4475484788417816, CL_loss: 0.0
+Epoch: 233
+Batch 0, Loss: 0.44249793887138367, CL_loss: 0.0
+Batch 10, Loss: 0.4200713038444519, CL_loss: 0.0
+Batch 20, Loss: 0.39313316345214844, CL_loss: 0.0
+Batch 30, Loss: 0.40471088886260986, CL_loss: 0.0
+Batch 40, Loss: 0.4212273955345154, CL_loss: 0.0
+Epoch: 234
+Batch 0, Loss: 0.4238530397415161, CL_loss: 0.0
+Batch 10, Loss: 0.442266583442688, CL_loss: 0.0
+Batch 20, Loss: 0.4280879497528076, CL_loss: 0.0
+Batch 30, Loss: 0.44417524337768555, CL_loss: 0.0
+Batch 40, Loss: 0.44884878396987915, CL_loss: 0.0
+Epoch: 235
+Batch 0, Loss: 0.4234309792518616, CL_loss: 0.0
+Batch 10, Loss: 0.383810818195343, CL_loss: 0.0
+Batch 20, Loss: 0.3920164108276367, CL_loss: 0.0
+Batch 30, Loss: 0.410901814699173, CL_loss: 0.0
+Batch 40, Loss: 0.41791942715644836, CL_loss: 0.0
+Epoch: 236
+Batch 0, Loss: 0.46595340967178345, CL_loss: 0.0
+Batch 10, Loss: 0.43340685963630676, CL_loss: 0.0
+Batch 20, Loss: 0.43053877353668213, CL_loss: 0.0
+Batch 30, Loss: 0.4315762519836426, CL_loss: 0.0
+Batch 40, Loss: 0.4086863696575165, CL_loss: 0.0
+Epoch: 237
+Batch 0, Loss: 0.4359140396118164, CL_loss: 0.0
+Batch 10, Loss: 0.4289267957210541, CL_loss: 0.0
+Batch 20, Loss: 0.39703983068466187, CL_loss: 0.0
+Batch 30, Loss: 0.40461984276771545, CL_loss: 0.0
+Batch 40, Loss: 0.4239121079444885, CL_loss: 0.0
+Epoch: 238
+Batch 0, Loss: 0.42163512110710144, CL_loss: 0.0
+Batch 10, Loss: 0.41142886877059937, CL_loss: 0.0
+Batch 20, Loss: 0.41494375467300415, CL_loss: 0.0
+Batch 30, Loss: 0.4206821322441101, CL_loss: 0.0
+Batch 40, Loss: 0.4026343822479248, CL_loss: 0.0
+Epoch: 239
+Batch 0, Loss: 0.4125637412071228, CL_loss: 0.0
+Batch 10, Loss: 0.4234253764152527, CL_loss: 6.947357888975603e-08
+Batch 20, Loss: 0.42856672406196594, CL_loss: 0.0
+Batch 30, Loss: 0.4189017713069916, CL_loss: 0.0
+Batch 40, Loss: 0.40058574080467224, CL_loss: 0.0
+Epoch: 240
+Batch 0, Loss: 0.4065663814544678, CL_loss: 0.0
+Batch 10, Loss: 0.4084929823875427, CL_loss: 0.0
+Batch 20, Loss: 0.4299289584159851, CL_loss: 0.0
+Batch 30, Loss: 0.42819613218307495, CL_loss: 0.0
+Batch 40, Loss: 0.4275122582912445, CL_loss: 0.0
+Evaluate
+epoch:240, time: 57.944510(s), valid (HT@10: 0.8440, NDCG@10: 0.6160), test (HT@10: 0.8474, NDCG@10: 0.6159)
+Epoch: 241
+Batch 0, Loss: 0.43572938442230225, CL_loss: 0.0
+Batch 10, Loss: 0.42343926429748535, CL_loss: 0.0
+Batch 20, Loss: 0.412607878446579, CL_loss: 0.0
+Batch 30, Loss: 0.423511266708374, CL_loss: 0.0
+Batch 40, Loss: 0.4118940830230713, CL_loss: 0.0
+Epoch: 242
+Batch 0, Loss: 0.4071277976036072, CL_loss: 0.0
+Batch 10, Loss: 0.4455755352973938, CL_loss: 0.0
+Batch 20, Loss: 0.41595497727394104, CL_loss: 0.0
+Batch 30, Loss: 0.4008433222770691, CL_loss: 0.0
+Batch 40, Loss: 0.42736661434173584, CL_loss: 0.0
+Epoch: 243
+Batch 0, Loss: 0.4098427891731262, CL_loss: 0.0
+Batch 10, Loss: 0.4120432138442993, CL_loss: 0.0
+Batch 20, Loss: 0.4149550795555115, CL_loss: 0.0
+Batch 30, Loss: 0.4240460693836212, CL_loss: 0.0
+Batch 40, Loss: 0.45779216289520264, CL_loss: 0.0
+Epoch: 244
+Batch 0, Loss: 0.4286835193634033, CL_loss: 0.0
+Batch 10, Loss: 0.3990938067436218, CL_loss: 0.0
+Batch 20, Loss: 0.4150078296661377, CL_loss: 0.0
+Batch 30, Loss: 0.41199642419815063, CL_loss: 0.0
+Batch 40, Loss: 0.42411094903945923, CL_loss: 0.0
+Epoch: 245
+Batch 0, Loss: 0.4290679097175598, CL_loss: 0.0
+Batch 10, Loss: 0.4252122640609741, CL_loss: 0.0
+Batch 20, Loss: 0.4170486330986023, CL_loss: 0.0
+Batch 30, Loss: 0.43455833196640015, CL_loss: 0.0
+Batch 40, Loss: 0.41327452659606934, CL_loss: 0.0
+Epoch: 246
+Batch 0, Loss: 0.4093567430973053, CL_loss: 0.0
+Batch 10, Loss: 0.4163949191570282, CL_loss: 0.0
+Batch 20, Loss: 0.42601126432418823, CL_loss: 0.0
+Batch 30, Loss: 0.4119270443916321, CL_loss: 0.0
+Batch 40, Loss: 0.41160815954208374, CL_loss: 0.0
+Epoch: 247
+Batch 0, Loss: 0.41161251068115234, CL_loss: 0.0
+Batch 10, Loss: 0.4260002374649048, CL_loss: 0.0
+Batch 20, Loss: 0.4139563739299774, CL_loss: 0.0
+Batch 30, Loss: 0.43694746494293213, CL_loss: 0.0
+Batch 40, Loss: 0.42378562688827515, CL_loss: 0.0
+Epoch: 248
+Batch 0, Loss: 0.4537162184715271, CL_loss: 0.0
+Batch 10, Loss: 0.4346529245376587, CL_loss: 0.0
+Batch 20, Loss: 0.3858802318572998, CL_loss: 0.0
+Batch 30, Loss: 0.41282957792282104, CL_loss: 0.0
+Batch 40, Loss: 0.4416400194168091, CL_loss: 0.0
+Epoch: 249
+Batch 0, Loss: 0.4377063512802124, CL_loss: 0.0
+Batch 10, Loss: 0.3985971212387085, CL_loss: 0.0
+Batch 20, Loss: 0.40231671929359436, CL_loss: 0.0
+Batch 30, Loss: 0.4348295331001282, CL_loss: 0.0
+Batch 40, Loss: 0.4093213677406311, CL_loss: 0.0
+Epoch: 250
+Batch 0, Loss: 0.4416314363479614, CL_loss: 0.0
+Batch 10, Loss: 0.42985999584198, CL_loss: 0.0
+Batch 20, Loss: 0.44029831886291504, CL_loss: 0.0
+Batch 30, Loss: 0.40475746989250183, CL_loss: 0.0
+Batch 40, Loss: 0.4101432263851166, CL_loss: 0.0
+Evaluate
+epoch:250, time: 57.897965(s), valid (HT@10: 0.8465, NDCG@10: 0.6160), test (HT@10: 0.8472, NDCG@10: 0.6178)
+Epoch: 251
+Batch 0, Loss: 0.4305576682090759, CL_loss: 0.0
+Batch 10, Loss: 0.41805577278137207, CL_loss: 0.0
+Batch 20, Loss: 0.419497013092041, CL_loss: 0.0
+Batch 30, Loss: 0.4158184230327606, CL_loss: 0.0
+Batch 40, Loss: 0.4076489806175232, CL_loss: 0.0
+Epoch: 252
+Batch 0, Loss: 0.41373521089553833, CL_loss: 0.0
+Batch 10, Loss: 0.41099298000335693, CL_loss: 0.0
+Batch 20, Loss: 0.3956664800643921, CL_loss: 0.0
+Batch 30, Loss: 0.43617984652519226, CL_loss: 0.0
+Batch 40, Loss: 0.3948448896408081, CL_loss: 0.0
+Epoch: 253
+Batch 0, Loss: 0.4326401352882385, CL_loss: 0.0
+Batch 10, Loss: 0.46416211128234863, CL_loss: 0.0
+Batch 20, Loss: 0.41957521438598633, CL_loss: 0.0
+Batch 30, Loss: 0.41415876150131226, CL_loss: 0.0
+Batch 40, Loss: 0.40810489654541016, CL_loss: 0.0
+Epoch: 254
+Batch 0, Loss: 0.4490962028503418, CL_loss: 0.0
+Batch 10, Loss: 0.40454238653182983, CL_loss: 0.0
+Batch 20, Loss: 0.4283183217048645, CL_loss: 0.0
+Batch 30, Loss: 0.43032458424568176, CL_loss: 0.0
+Batch 40, Loss: 0.4151259660720825, CL_loss: 0.0
+Epoch: 255
+Batch 0, Loss: 0.43283846974372864, CL_loss: 0.0
+Batch 10, Loss: 0.43761754035949707, CL_loss: 0.0
+Batch 20, Loss: 0.39695972204208374, CL_loss: 0.0
+Batch 30, Loss: 0.4072916507720947, CL_loss: 0.0
+Batch 40, Loss: 0.4208458662033081, CL_loss: 0.0
+Epoch: 256
+Batch 0, Loss: 0.3790246248245239, CL_loss: 0.0
+Batch 10, Loss: 0.4204544425010681, CL_loss: 0.0
+Batch 20, Loss: 0.4181186556816101, CL_loss: 0.0
+Batch 30, Loss: 0.4225349426269531, CL_loss: 0.0
+Batch 40, Loss: 0.436432421207428, CL_loss: 0.0
+Epoch: 257
+Batch 0, Loss: 0.42538267374038696, CL_loss: 0.0
+Batch 10, Loss: 0.4292041063308716, CL_loss: 0.0
+Batch 20, Loss: 0.4297531843185425, CL_loss: 0.0
+Batch 30, Loss: 0.4040725827217102, CL_loss: 0.0
+Batch 40, Loss: 0.42732900381088257, CL_loss: 0.0
+Epoch: 258
+Batch 0, Loss: 0.4470393657684326, CL_loss: 0.0
+Batch 10, Loss: 0.41699591279029846, CL_loss: 0.0
+Batch 20, Loss: 0.3795710504055023, CL_loss: 0.0
+Batch 30, Loss: 0.4255177676677704, CL_loss: 0.0
+Batch 40, Loss: 0.4370763599872589, CL_loss: 0.0
+Epoch: 259
+Batch 0, Loss: 0.4280126690864563, CL_loss: 0.0
+Batch 10, Loss: 0.41022318601608276, CL_loss: 0.0
+Batch 20, Loss: 0.430441677570343, CL_loss: 0.0
+Batch 30, Loss: 0.4211932420730591, CL_loss: 0.0
+Batch 40, Loss: 0.4106179177761078, CL_loss: 0.0
+Epoch: 260
+Batch 0, Loss: 0.3986637592315674, CL_loss: 0.0
+Batch 10, Loss: 0.40648412704467773, CL_loss: 0.0
+Batch 20, Loss: 0.37141165137290955, CL_loss: 0.0
+Batch 30, Loss: 0.42520472407341003, CL_loss: 0.0
+Batch 40, Loss: 0.44839608669281006, CL_loss: 0.0
+Evaluate
+epoch:260, time: 57.228073(s), valid (HT@10: 0.8435, NDCG@10: 0.6163), test (HT@10: 0.8427, NDCG@10: 0.6161)
+Epoch: 261
+Batch 0, Loss: 0.415397047996521, CL_loss: 0.0
+Batch 10, Loss: 0.4143332839012146, CL_loss: 0.0
+Batch 20, Loss: 0.4345126450061798, CL_loss: 0.0
+Batch 30, Loss: 0.39913272857666016, CL_loss: 0.0
+Batch 40, Loss: 0.4583759903907776, CL_loss: 0.0
+Epoch: 262
+Batch 0, Loss: 0.3867829144001007, CL_loss: 0.0
+Batch 10, Loss: 0.42064201831817627, CL_loss: 0.0
+Batch 20, Loss: 0.3989710807800293, CL_loss: 0.0
+Batch 30, Loss: 0.4333440661430359, CL_loss: 0.0
+Batch 40, Loss: 0.4278017282485962, CL_loss: 0.0
+Epoch: 263
+Batch 0, Loss: 0.39918339252471924, CL_loss: 0.0
+Batch 10, Loss: 0.4420722723007202, CL_loss: 0.0
+Batch 20, Loss: 0.4223344326019287, CL_loss: 0.0
+Batch 30, Loss: 0.4199604392051697, CL_loss: 0.0
+Batch 40, Loss: 0.38796237111091614, CL_loss: 0.0
+Epoch: 264
+Batch 0, Loss: 0.42356306314468384, CL_loss: 0.0
+Batch 10, Loss: 0.41465064883232117, CL_loss: 0.0
+Batch 20, Loss: 0.4284440875053406, CL_loss: 0.0
+Batch 30, Loss: 0.39184701442718506, CL_loss: 0.0
+Batch 40, Loss: 0.4268879294395447, CL_loss: 0.0
+Epoch: 265
+Batch 0, Loss: 0.39395859837532043, CL_loss: 0.0
+Batch 10, Loss: 0.430167019367218, CL_loss: 0.0
+Batch 20, Loss: 0.4268971085548401, CL_loss: 0.0
+Batch 30, Loss: 0.45147812366485596, CL_loss: 0.0
+Batch 40, Loss: 0.43955790996551514, CL_loss: 0.0
+Epoch: 266
+Batch 0, Loss: 0.4328277111053467, CL_loss: 0.0
+Batch 10, Loss: 0.43066224455833435, CL_loss: 0.0
+Batch 20, Loss: 0.3885844945907593, CL_loss: 0.0
+Batch 30, Loss: 0.4246995151042938, CL_loss: 0.0
+Batch 40, Loss: 0.4179641902446747, CL_loss: 0.0
+Epoch: 267
+Batch 0, Loss: 0.4187890291213989, CL_loss: 0.0
+Batch 10, Loss: 0.4280095100402832, CL_loss: 0.0
+Batch 20, Loss: 0.4367944300174713, CL_loss: 0.0
+Batch 30, Loss: 0.4182485044002533, CL_loss: 0.0
+Batch 40, Loss: 0.3790960907936096, CL_loss: 0.0
+Epoch: 268
+Batch 0, Loss: 0.4065121114253998, CL_loss: 0.0
+Batch 10, Loss: 0.3915982246398926, CL_loss: 0.0
+Batch 20, Loss: 0.4447959363460541, CL_loss: 0.0
+Batch 30, Loss: 0.4148358106613159, CL_loss: 0.0
+Batch 40, Loss: 0.41675692796707153, CL_loss: 0.0
+Epoch: 269
+Batch 0, Loss: 0.39223620295524597, CL_loss: 0.0
+Batch 10, Loss: 0.3907632827758789, CL_loss: 0.0
+Batch 20, Loss: 0.44043684005737305, CL_loss: 0.0
+Batch 30, Loss: 0.42271649837493896, CL_loss: 0.0
+Batch 40, Loss: 0.45632970333099365, CL_loss: 0.0
+Epoch: 270
+Batch 0, Loss: 0.3923240303993225, CL_loss: 0.0
+Batch 10, Loss: 0.41556552052497864, CL_loss: 0.0
+Batch 20, Loss: 0.3880263864994049, CL_loss: 0.0
+Batch 30, Loss: 0.42798036336898804, CL_loss: 0.0
+Batch 40, Loss: 0.4162623882293701, CL_loss: 0.0
+Evaluate
+epoch:270, time: 57.787561(s), valid (HT@10: 0.8470, NDCG@10: 0.6197), test (HT@10: 0.8417, NDCG@10: 0.6163)
+Epoch: 271
+Batch 0, Loss: 0.418257474899292, CL_loss: 0.0
+Batch 10, Loss: 0.40325257182121277, CL_loss: 0.0
+Batch 20, Loss: 0.4366105794906616, CL_loss: 0.0
+Batch 30, Loss: 0.40495753288269043, CL_loss: 0.0
+Batch 40, Loss: 0.41418400406837463, CL_loss: 0.0
+Epoch: 272
+Batch 0, Loss: 0.4383275508880615, CL_loss: 0.0
+Batch 10, Loss: 0.395443856716156, CL_loss: 0.0
+Batch 20, Loss: 0.45113521814346313, CL_loss: 0.0
+Batch 30, Loss: 0.3940616250038147, CL_loss: 0.0
+Batch 40, Loss: 0.4044106602668762, CL_loss: 0.0
+Epoch: 273
+Batch 0, Loss: 0.423080712556839, CL_loss: 0.0
+Batch 10, Loss: 0.4117177724838257, CL_loss: 0.0
+Batch 20, Loss: 0.4300374388694763, CL_loss: 0.0
+Batch 30, Loss: 0.42208558320999146, CL_loss: 0.0
+Batch 40, Loss: 0.4033217430114746, CL_loss: 0.0
+Epoch: 274
+Batch 0, Loss: 0.41578447818756104, CL_loss: 0.0
+Batch 10, Loss: 0.4212576150894165, CL_loss: 0.0
+Batch 20, Loss: 0.45237040519714355, CL_loss: 0.0
+Batch 30, Loss: 0.4103439450263977, CL_loss: 0.0
+Batch 40, Loss: 0.4295177459716797, CL_loss: 0.0
+Epoch: 275
+Batch 0, Loss: 0.4194296896457672, CL_loss: 0.0
+Batch 10, Loss: 0.41977089643478394, CL_loss: 0.0
+Batch 20, Loss: 0.4082767963409424, CL_loss: 0.0
+Batch 30, Loss: 0.426054984331131, CL_loss: 0.0
+Batch 40, Loss: 0.4166111350059509, CL_loss: 0.0
+Epoch: 276
+Batch 0, Loss: 0.39670950174331665, CL_loss: 0.0
+Batch 10, Loss: 0.44813650846481323, CL_loss: 0.0
+Batch 20, Loss: 0.4162789583206177, CL_loss: 0.0
+Batch 30, Loss: 0.41827720403671265, CL_loss: 0.0
+Batch 40, Loss: 0.3750172257423401, CL_loss: 0.0
+Epoch: 277
+Batch 0, Loss: 0.4127318263053894, CL_loss: 0.0
+Batch 10, Loss: 0.40390849113464355, CL_loss: 0.0
+Batch 20, Loss: 0.4070223569869995, CL_loss: 0.0
+Batch 30, Loss: 0.42922037839889526, CL_loss: 0.0
+Batch 40, Loss: 0.4204972982406616, CL_loss: 0.0
+Epoch: 278
+Batch 0, Loss: 0.4245268702507019, CL_loss: 0.0
+Batch 10, Loss: 0.4321384131908417, CL_loss: 0.0
+Batch 20, Loss: 0.4335184395313263, CL_loss: 0.0
+Batch 30, Loss: 0.42388617992401123, CL_loss: 0.0
+Batch 40, Loss: 0.41009730100631714, CL_loss: 0.0
+Epoch: 279
+Batch 0, Loss: 0.40242213010787964, CL_loss: 0.0
+Batch 10, Loss: 0.40614053606987, CL_loss: 0.0
+Batch 20, Loss: 0.4156777262687683, CL_loss: 0.0
+Batch 30, Loss: 0.42839863896369934, CL_loss: 0.0
+Batch 40, Loss: 0.4169985055923462, CL_loss: 0.0
+Epoch: 280
+Batch 0, Loss: 0.4157412052154541, CL_loss: 0.0
+Batch 10, Loss: 0.4217325747013092, CL_loss: 0.0
+Batch 20, Loss: 0.43435290455818176, CL_loss: 0.0
+Batch 30, Loss: 0.4301234483718872, CL_loss: 0.0
+Batch 40, Loss: 0.4036143124103546, CL_loss: 0.0
+Evaluate
+epoch:280, time: 58.211330(s), valid (HT@10: 0.8474, NDCG@10: 0.6175), test (HT@10: 0.8455, NDCG@10: 0.6192)
+Epoch: 281
+Batch 0, Loss: 0.435302197933197, CL_loss: 0.0
+Batch 10, Loss: 0.40632498264312744, CL_loss: 0.0
+Batch 20, Loss: 0.41908472776412964, CL_loss: 0.0
+Batch 30, Loss: 0.417976438999176, CL_loss: 0.0
+Batch 40, Loss: 0.4014638662338257, CL_loss: 0.0
+Epoch: 282
+Batch 0, Loss: 0.3690566420555115, CL_loss: 0.0
+Batch 10, Loss: 0.4326871633529663, CL_loss: 0.0
+Batch 20, Loss: 0.43323689699172974, CL_loss: 0.0
+Batch 30, Loss: 0.4074804484844208, CL_loss: 0.0
+Batch 40, Loss: 0.4072532653808594, CL_loss: 0.0
+Epoch: 283
+Batch 0, Loss: 0.4186049699783325, CL_loss: 0.0
+Batch 10, Loss: 0.41145241260528564, CL_loss: 0.0
+Batch 20, Loss: 0.41200798749923706, CL_loss: 0.0
+Batch 30, Loss: 0.42191556096076965, CL_loss: 0.0
+Batch 40, Loss: 0.41733336448669434, CL_loss: 0.0
+Epoch: 284
+Batch 0, Loss: 0.37367409467697144, CL_loss: 0.0
+Batch 10, Loss: 0.44312942028045654, CL_loss: 0.0
+Batch 20, Loss: 0.42902684211730957, CL_loss: 0.0
+Batch 30, Loss: 0.44169819355010986, CL_loss: 0.0
+Batch 40, Loss: 0.4009416103363037, CL_loss: 0.0
+Epoch: 285
+Batch 0, Loss: 0.44689860939979553, CL_loss: 0.0
+Batch 10, Loss: 0.401208758354187, CL_loss: 0.0
+Batch 20, Loss: 0.43939635157585144, CL_loss: 0.0
+Batch 30, Loss: 0.39913544058799744, CL_loss: 0.0
+Batch 40, Loss: 0.4378390312194824, CL_loss: 0.0
+Epoch: 286
+Batch 0, Loss: 0.41356372833251953, CL_loss: 0.0
+Batch 10, Loss: 0.4390656352043152, CL_loss: 0.0
+Batch 20, Loss: 0.4203086197376251, CL_loss: 0.0
+Batch 30, Loss: 0.41535019874572754, CL_loss: 0.0
+Batch 40, Loss: 0.42345288395881653, CL_loss: 0.0
+Epoch: 287
+Batch 0, Loss: 0.4181690216064453, CL_loss: 0.0
+Batch 10, Loss: 0.4203234910964966, CL_loss: 0.0
+Batch 20, Loss: 0.39487820863723755, CL_loss: 0.0
+Batch 30, Loss: 0.4165581464767456, CL_loss: 0.0
+Batch 40, Loss: 0.4082072377204895, CL_loss: 0.0
+Epoch: 288
+Batch 0, Loss: 0.4143250584602356, CL_loss: 0.0
+Batch 10, Loss: 0.3855135440826416, CL_loss: 0.0
+Batch 20, Loss: 0.43103766441345215, CL_loss: 0.0
+Batch 30, Loss: 0.43980276584625244, CL_loss: 0.0
+Batch 40, Loss: 0.4145466089248657, CL_loss: 0.0
+Epoch: 289
+Batch 0, Loss: 0.4413703978061676, CL_loss: 0.0
+Batch 10, Loss: 0.4555954039096832, CL_loss: 0.0
+Batch 20, Loss: 0.44651955366134644, CL_loss: 0.0
+Batch 30, Loss: 0.414600133895874, CL_loss: 0.0
+Batch 40, Loss: 0.41216760873794556, CL_loss: 0.0
+Epoch: 290
+Batch 0, Loss: 0.386175274848938, CL_loss: 0.0
+Batch 10, Loss: 0.4269244074821472, CL_loss: 0.0
+Batch 20, Loss: 0.4315613806247711, CL_loss: 0.0
+Batch 30, Loss: 0.41386091709136963, CL_loss: 0.0
+Batch 40, Loss: 0.4296787977218628, CL_loss: 0.0
+Evaluate
+epoch:290, time: 58.561283(s), valid (HT@10: 0.8475, NDCG@10: 0.6198), test (HT@10: 0.8472, NDCG@10: 0.6181)
+Epoch: 291
+Batch 0, Loss: 0.44064879417419434, CL_loss: 0.0
+Batch 10, Loss: 0.43649303913116455, CL_loss: 0.0
+Batch 20, Loss: 0.38812607526779175, CL_loss: 0.0
+Batch 30, Loss: 0.420884370803833, CL_loss: 0.0
+Batch 40, Loss: 0.3908345699310303, CL_loss: 0.0
+Epoch: 292
+Batch 0, Loss: 0.43433767557144165, CL_loss: 0.0
+Batch 10, Loss: 0.4083731174468994, CL_loss: 0.0
+Batch 20, Loss: 0.406924843788147, CL_loss: 0.0
+Batch 30, Loss: 0.39767709374427795, CL_loss: 0.0
+Batch 40, Loss: 0.41676557064056396, CL_loss: 0.0
+Epoch: 293
+Batch 0, Loss: 0.42502832412719727, CL_loss: 0.0
+Batch 10, Loss: 0.43037545680999756, CL_loss: 0.0
+Batch 20, Loss: 0.44895440340042114, CL_loss: 0.0
+Batch 30, Loss: 0.4227954149246216, CL_loss: 0.0
+Batch 40, Loss: 0.3995300829410553, CL_loss: 0.0
+Epoch: 294
+Batch 0, Loss: 0.3964698910713196, CL_loss: 0.0
+Batch 10, Loss: 0.4235485792160034, CL_loss: 0.0
+Batch 20, Loss: 0.41820234060287476, CL_loss: 0.0
+Batch 30, Loss: 0.42196106910705566, CL_loss: 0.0
+Batch 40, Loss: 0.4267335534095764, CL_loss: 0.0
+Epoch: 295
+Batch 0, Loss: 0.44573500752449036, CL_loss: 0.0
+Batch 10, Loss: 0.41001760959625244, CL_loss: 0.0
+Batch 20, Loss: 0.4008246958255768, CL_loss: 0.0
+Batch 30, Loss: 0.4029078185558319, CL_loss: 0.0
+Batch 40, Loss: 0.3947254717350006, CL_loss: 0.0
+Epoch: 296
+Batch 0, Loss: 0.45864182710647583, CL_loss: 0.0
+Batch 10, Loss: 0.39979708194732666, CL_loss: 0.0
+Batch 20, Loss: 0.4049782156944275, CL_loss: 0.0
+Batch 30, Loss: 0.40779751539230347, CL_loss: 0.0
+Batch 40, Loss: 0.4362863302230835, CL_loss: 0.0
+Epoch: 297
+Batch 0, Loss: 0.446643590927124, CL_loss: 0.0
+Batch 10, Loss: 0.413455069065094, CL_loss: 0.0
+Batch 20, Loss: 0.40966561436653137, CL_loss: 0.0
+Batch 30, Loss: 0.4281572699546814, CL_loss: 0.0
+Batch 40, Loss: 0.3883318305015564, CL_loss: 0.0
+Epoch: 298
+Batch 0, Loss: 0.43677639961242676, CL_loss: 0.0
+Batch 10, Loss: 0.4043585956096649, CL_loss: 0.0
+Batch 20, Loss: 0.4165733754634857, CL_loss: 0.0
+Batch 30, Loss: 0.43748563528060913, CL_loss: 0.0
+Batch 40, Loss: 0.4070369303226471, CL_loss: 0.0
+Epoch: 299
+Batch 0, Loss: 0.41666993498802185, CL_loss: 0.0
+Batch 10, Loss: 0.42329996824264526, CL_loss: 0.0
+Batch 20, Loss: 0.4148039221763611, CL_loss: 0.0
+Batch 30, Loss: 0.41242367029190063, CL_loss: 0.0
+Batch 40, Loss: 0.4286266565322876, CL_loss: 0.0
+Epoch: 300
+Batch 0, Loss: 0.412814199924469, CL_loss: 0.0
+Batch 10, Loss: 0.4163971543312073, CL_loss: 0.0
+Batch 20, Loss: 0.40561777353286743, CL_loss: 0.0
+Batch 30, Loss: 0.43635261058807373, CL_loss: 0.0
+Batch 40, Loss: 0.44239717721939087, CL_loss: 0.0
+Evaluate
+epoch:300, time: 58.990523(s), valid (HT@10: 0.8444, NDCG@10: 0.6155), test (HT@10: 0.8454, NDCG@10: 0.6193)
+Epoch: 301
+Batch 0, Loss: 0.4039545953273773, CL_loss: 0.0
+Batch 10, Loss: 0.4115794599056244, CL_loss: 0.0
+Batch 20, Loss: 0.41474348306655884, CL_loss: 0.0
+Batch 30, Loss: 0.44420963525772095, CL_loss: 0.0
+Batch 40, Loss: 0.39659973978996277, CL_loss: 0.0
+Epoch: 302
+Batch 0, Loss: 0.426535427570343, CL_loss: 0.0
+Batch 10, Loss: 0.4022374749183655, CL_loss: 0.0
+Batch 20, Loss: 0.4223545491695404, CL_loss: 0.0
+Batch 30, Loss: 0.39537715911865234, CL_loss: 0.0
+Batch 40, Loss: 0.434625506401062, CL_loss: 0.0
+Epoch: 303
+Batch 0, Loss: 0.4075632393360138, CL_loss: 0.0
+Batch 10, Loss: 0.4298882484436035, CL_loss: 0.0
+Batch 20, Loss: 0.4083428382873535, CL_loss: 0.0
+Batch 30, Loss: 0.38804540038108826, CL_loss: 0.0
+Batch 40, Loss: 0.44835546612739563, CL_loss: 0.0
+Epoch: 304
+Batch 0, Loss: 0.423819363117218, CL_loss: 0.0
+Batch 10, Loss: 0.41232025623321533, CL_loss: 0.0
+Batch 20, Loss: 0.4123031795024872, CL_loss: 0.0
+Batch 30, Loss: 0.40934062004089355, CL_loss: 0.0
+Batch 40, Loss: 0.4538035988807678, CL_loss: 0.0
+Epoch: 305
+Batch 0, Loss: 0.42956292629241943, CL_loss: 0.0
+Batch 10, Loss: 0.42300212383270264, CL_loss: 0.0
+Batch 20, Loss: 0.4047088921070099, CL_loss: 0.0
+Batch 30, Loss: 0.4190249741077423, CL_loss: 0.0
+Batch 40, Loss: 0.40626460313796997, CL_loss: 0.0
+Epoch: 306
+Batch 0, Loss: 0.4198969006538391, CL_loss: 0.0
+Batch 10, Loss: 0.4002755880355835, CL_loss: 0.0
+Batch 20, Loss: 0.393995463848114, CL_loss: 0.0
+Batch 30, Loss: 0.40564483404159546, CL_loss: 0.0
+Batch 40, Loss: 0.41720861196517944, CL_loss: 0.0
+Epoch: 307
+Batch 0, Loss: 0.41245004534721375, CL_loss: 0.0
+Batch 10, Loss: 0.4068942070007324, CL_loss: 0.0
+Batch 20, Loss: 0.4052716791629791, CL_loss: 0.0
+Batch 30, Loss: 0.4110932946205139, CL_loss: 0.0
+Batch 40, Loss: 0.41038885712623596, CL_loss: 0.0
+Epoch: 308
+Batch 0, Loss: 0.4400395154953003, CL_loss: 0.0
+Batch 10, Loss: 0.43910539150238037, CL_loss: 0.0
+Batch 20, Loss: 0.40799596905708313, CL_loss: 0.0
+Batch 30, Loss: 0.4084988236427307, CL_loss: 0.0
+Batch 40, Loss: 0.4059629440307617, CL_loss: 0.0
+Epoch: 309
+Batch 0, Loss: 0.4180663228034973, CL_loss: 0.0
+Batch 10, Loss: 0.40307995676994324, CL_loss: 0.0
+Batch 20, Loss: 0.42650848627090454, CL_loss: 0.0
+Batch 30, Loss: 0.40601247549057007, CL_loss: 0.0
+Batch 40, Loss: 0.444264680147171, CL_loss: 0.0
+Epoch: 310
+Batch 0, Loss: 0.4390588104724884, CL_loss: 0.0
+Batch 10, Loss: 0.42176565527915955, CL_loss: 0.0
+Batch 20, Loss: 0.4168230891227722, CL_loss: 0.0
+Batch 30, Loss: 0.42219406366348267, CL_loss: 0.0
+Batch 40, Loss: 0.40796080231666565, CL_loss: 0.0
+Evaluate
+epoch:310, time: 59.409025(s), valid (HT@10: 0.8470, NDCG@10: 0.6206), test (HT@10: 0.8507, NDCG@10: 0.6181)
+Epoch: 311
+Batch 0, Loss: 0.39085015654563904, CL_loss: 0.0
+Batch 10, Loss: 0.4178391695022583, CL_loss: 0.0
+Batch 20, Loss: 0.4016767144203186, CL_loss: 0.0
+Batch 30, Loss: 0.4283592998981476, CL_loss: 0.0
+Batch 40, Loss: 0.40851467847824097, CL_loss: 0.0
+Epoch: 312
+Batch 0, Loss: 0.44100940227508545, CL_loss: 0.0
+Batch 10, Loss: 0.44639676809310913, CL_loss: 0.0
+Batch 20, Loss: 0.41966837644577026, CL_loss: 0.0
+Batch 30, Loss: 0.4147781431674957, CL_loss: 0.0
+Batch 40, Loss: 0.41478997468948364, CL_loss: 0.0
+Epoch: 313
+Batch 0, Loss: 0.42919641733169556, CL_loss: 0.0
+Batch 10, Loss: 0.4180435538291931, CL_loss: 0.0
+Batch 20, Loss: 0.41631829738616943, CL_loss: 0.0
+Batch 30, Loss: 0.4486674666404724, CL_loss: 0.0
+Batch 40, Loss: 0.4077635407447815, CL_loss: 0.0
+Epoch: 314
+Batch 0, Loss: 0.42585909366607666, CL_loss: 0.0
+Batch 10, Loss: 0.4306659996509552, CL_loss: 0.0
+Batch 20, Loss: 0.4126339554786682, CL_loss: 0.0
+Batch 30, Loss: 0.39887720346450806, CL_loss: 0.0
+Batch 40, Loss: 0.4113391935825348, CL_loss: 0.0
+Epoch: 315
+Batch 0, Loss: 0.3867667317390442, CL_loss: 0.0
+Batch 10, Loss: 0.40730080008506775, CL_loss: 0.0
+Batch 20, Loss: 0.4115378260612488, CL_loss: 0.0
+Batch 30, Loss: 0.41039103269577026, CL_loss: 0.0
+Batch 40, Loss: 0.4047493636608124, CL_loss: 0.0
+Epoch: 316
+Batch 0, Loss: 0.43248671293258667, CL_loss: 0.0
+Batch 10, Loss: 0.42725861072540283, CL_loss: 0.0
+Batch 20, Loss: 0.450040727853775, CL_loss: 0.0
+Batch 30, Loss: 0.4437822997570038, CL_loss: 0.0
+Batch 40, Loss: 0.4466959238052368, CL_loss: 0.0
+Epoch: 317
+Batch 0, Loss: 0.4267825186252594, CL_loss: 0.0
+Batch 10, Loss: 0.41352635622024536, CL_loss: 0.0
+Batch 20, Loss: 0.4120185375213623, CL_loss: 0.0
+Batch 30, Loss: 0.4136276841163635, CL_loss: 0.0
+Batch 40, Loss: 0.44437485933303833, CL_loss: 0.0
+Epoch: 318
+Batch 0, Loss: 0.40534424781799316, CL_loss: 0.0
+Batch 10, Loss: 0.4089726209640503, CL_loss: 0.0
+Batch 20, Loss: 0.40141189098358154, CL_loss: 0.0
+Batch 30, Loss: 0.4231552481651306, CL_loss: 0.0
+Batch 40, Loss: 0.39678800106048584, CL_loss: 0.0
+Epoch: 319
+Batch 0, Loss: 0.39821258187294006, CL_loss: 0.0
+Batch 10, Loss: 0.43794873356819153, CL_loss: 0.0
+Batch 20, Loss: 0.41271767020225525, CL_loss: 0.0
+Batch 30, Loss: 0.41877034306526184, CL_loss: 0.0
+Batch 40, Loss: 0.4086953103542328, CL_loss: 0.0
+Epoch: 320
+Batch 0, Loss: 0.41074126958847046, CL_loss: 0.0
+Batch 10, Loss: 0.43653604388237, CL_loss: 0.0
+Batch 20, Loss: 0.4264459013938904, CL_loss: 0.0
+Batch 30, Loss: 0.42138004302978516, CL_loss: 0.0
+Batch 40, Loss: 0.42105528712272644, CL_loss: 0.0
+Evaluate
+epoch:320, time: 61.196159(s), valid (HT@10: 0.8470, NDCG@10: 0.6180), test (HT@10: 0.8478, NDCG@10: 0.6167)
+Epoch: 321
+Batch 0, Loss: 0.4179442524909973, CL_loss: 0.0
+Batch 10, Loss: 0.416007936000824, CL_loss: 0.0
+Batch 20, Loss: 0.4050772786140442, CL_loss: 0.0
+Batch 30, Loss: 0.4191068410873413, CL_loss: 0.0
+Batch 40, Loss: 0.43893319368362427, CL_loss: 0.0
+Epoch: 322
+Batch 0, Loss: 0.4144379794597626, CL_loss: 0.0
+Batch 10, Loss: 0.41003096103668213, CL_loss: 0.0
+Batch 20, Loss: 0.40879765152931213, CL_loss: 0.0
+Batch 30, Loss: 0.4092337489128113, CL_loss: 0.0
+Batch 40, Loss: 0.40199053287506104, CL_loss: 0.0
+Epoch: 323
+Batch 0, Loss: 0.4371912479400635, CL_loss: 0.0
+Batch 10, Loss: 0.41863206028938293, CL_loss: 0.0
+Batch 20, Loss: 0.4195151925086975, CL_loss: 0.0
+Batch 30, Loss: 0.4448753595352173, CL_loss: 0.0
+Batch 40, Loss: 0.39364945888519287, CL_loss: 0.0
+Epoch: 324
+Batch 0, Loss: 0.4429287910461426, CL_loss: 0.0
+Batch 10, Loss: 0.4125962257385254, CL_loss: 0.0
+Batch 20, Loss: 0.43038642406463623, CL_loss: 0.0
+Batch 30, Loss: 0.39374974370002747, CL_loss: 0.0
+Batch 40, Loss: 0.44011610746383667, CL_loss: 0.0
+Epoch: 325
+Batch 0, Loss: 0.4040735960006714, CL_loss: 0.0
+Batch 10, Loss: 0.4286736845970154, CL_loss: 0.0
+Batch 20, Loss: 0.39821624755859375, CL_loss: 0.0
+Batch 30, Loss: 0.40669673681259155, CL_loss: 0.0
+Batch 40, Loss: 0.42147859930992126, CL_loss: 0.0
+Epoch: 326
+Batch 0, Loss: 0.40272268652915955, CL_loss: 0.0
+Batch 10, Loss: 0.41948848962783813, CL_loss: 0.0
+Batch 20, Loss: 0.40827620029449463, CL_loss: 0.0
+Batch 30, Loss: 0.4050188362598419, CL_loss: 0.0
+Batch 40, Loss: 0.4013735055923462, CL_loss: 0.0
+Epoch: 327
+Batch 0, Loss: 0.45743075013160706, CL_loss: 0.0
+Batch 10, Loss: 0.4077097177505493, CL_loss: 0.0
+Batch 20, Loss: 0.41005194187164307, CL_loss: 0.0
+Batch 30, Loss: 0.3873080015182495, CL_loss: 0.0
+Batch 40, Loss: 0.4157688319683075, CL_loss: 0.0
+Epoch: 328
+Batch 0, Loss: 0.40855714678764343, CL_loss: 0.0
+Batch 10, Loss: 0.44364410638809204, CL_loss: 0.0
+Batch 20, Loss: 0.4204397201538086, CL_loss: 0.0
+Batch 30, Loss: 0.4313938021659851, CL_loss: 0.0
+Batch 40, Loss: 0.39552998542785645, CL_loss: 0.0
+Epoch: 329
+Batch 0, Loss: 0.4172174036502838, CL_loss: 0.0
+Batch 10, Loss: 0.4450248181819916, CL_loss: 0.0
+Batch 20, Loss: 0.41209203004837036, CL_loss: 0.0
+Batch 30, Loss: 0.3910160958766937, CL_loss: 0.0
+Batch 40, Loss: 0.4034122824668884, CL_loss: 0.0
+Epoch: 330
+Batch 0, Loss: 0.41456061601638794, CL_loss: 0.0
+Batch 10, Loss: 0.3905070126056671, CL_loss: 0.0
+Batch 20, Loss: 0.40708616375923157, CL_loss: 0.0
+Batch 30, Loss: 0.40959522128105164, CL_loss: 0.0
+Batch 40, Loss: 0.4161049723625183, CL_loss: 0.0
+Evaluate
+epoch:330, time: 60.601687(s), valid (HT@10: 0.8500, NDCG@10: 0.6182), test (HT@10: 0.8495, NDCG@10: 0.6217)
+Epoch: 331
+Batch 0, Loss: 0.4022701680660248, CL_loss: 0.0
+Batch 10, Loss: 0.408954918384552, CL_loss: 0.0
+Batch 20, Loss: 0.40995776653289795, CL_loss: 0.0
+Batch 30, Loss: 0.38882318139076233, CL_loss: 0.0
+Batch 40, Loss: 0.42669200897216797, CL_loss: 0.0
+Epoch: 332
+Batch 0, Loss: 0.40099191665649414, CL_loss: 0.0
+Batch 10, Loss: 0.42141029238700867, CL_loss: 0.0
+Batch 20, Loss: 0.4005523920059204, CL_loss: 0.0
+Batch 30, Loss: 0.42532843351364136, CL_loss: 0.0
+Batch 40, Loss: 0.40404564142227173, CL_loss: 0.0
+Epoch: 333
+Batch 0, Loss: 0.42889735102653503, CL_loss: 0.0
+Batch 10, Loss: 0.4089481234550476, CL_loss: 0.0
+Batch 20, Loss: 0.40120428800582886, CL_loss: 0.0
+Batch 30, Loss: 0.41249048709869385, CL_loss: 0.0
+Batch 40, Loss: 0.39451444149017334, CL_loss: 0.0
+Epoch: 334
+Batch 0, Loss: 0.41801249980926514, CL_loss: 0.0
+Batch 10, Loss: 0.42241302132606506, CL_loss: 0.0
+Batch 20, Loss: 0.43798261880874634, CL_loss: 0.0
+Batch 30, Loss: 0.4007062315940857, CL_loss: 0.0
+Batch 40, Loss: 0.43882298469543457, CL_loss: 0.0
+Epoch: 335
+Batch 0, Loss: 0.4280332922935486, CL_loss: 0.0
+Batch 10, Loss: 0.4063397943973541, CL_loss: 0.0
+Batch 20, Loss: 0.3925420045852661, CL_loss: 0.0
+Batch 30, Loss: 0.4184972643852234, CL_loss: 0.0
+Batch 40, Loss: 0.42495059967041016, CL_loss: 0.0
+Epoch: 336
+Batch 0, Loss: 0.42648816108703613, CL_loss: 0.0
+Batch 10, Loss: 0.405794620513916, CL_loss: 0.0
+Batch 20, Loss: 0.38270241022109985, CL_loss: 0.0
+Batch 30, Loss: 0.4037209153175354, CL_loss: 0.0
+Batch 40, Loss: 0.3969823718070984, CL_loss: 0.0
+Epoch: 337
+Batch 0, Loss: 0.43159088492393494, CL_loss: 0.0
+Batch 10, Loss: 0.3921250104904175, CL_loss: 0.0
+Batch 20, Loss: 0.43921947479248047, CL_loss: 0.0
+Batch 30, Loss: 0.4219980835914612, CL_loss: 0.0
+Batch 40, Loss: 0.4010796546936035, CL_loss: 0.0
+Epoch: 338
+Batch 0, Loss: 0.4096325635910034, CL_loss: 0.0
+Batch 10, Loss: 0.4521138072013855, CL_loss: 0.0
+Batch 20, Loss: 0.43078213930130005, CL_loss: 0.0
+Batch 30, Loss: 0.421433687210083, CL_loss: 0.0
+Batch 40, Loss: 0.40164849162101746, CL_loss: 0.0
+Epoch: 339
+Batch 0, Loss: 0.434734582901001, CL_loss: 0.0
+Batch 10, Loss: 0.40372031927108765, CL_loss: 0.0
+Batch 20, Loss: 0.41222041845321655, CL_loss: 0.0
+Batch 30, Loss: 0.42710578441619873, CL_loss: 0.0
+Batch 40, Loss: 0.38097965717315674, CL_loss: 0.0
+Epoch: 340
+Batch 0, Loss: 0.45044636726379395, CL_loss: 0.0
+Batch 10, Loss: 0.43936681747436523, CL_loss: 0.0
+Batch 20, Loss: 0.4236399829387665, CL_loss: 0.0
+Batch 30, Loss: 0.37409138679504395, CL_loss: 0.0
+Batch 40, Loss: 0.4241389334201813, CL_loss: 0.0
+Evaluate
+epoch:340, time: 60.960862(s), valid (HT@10: 0.8460, NDCG@10: 0.6221), test (HT@10: 0.8480, NDCG@10: 0.6181)
+Epoch: 341
+Batch 0, Loss: 0.4182143807411194, CL_loss: 0.0
+Batch 10, Loss: 0.39718902111053467, CL_loss: 0.0
+Batch 20, Loss: 0.44407719373703003, CL_loss: 0.0
+Batch 30, Loss: 0.3813568353652954, CL_loss: 0.0
+Batch 40, Loss: 0.40866363048553467, CL_loss: 0.0
+Epoch: 342
+Batch 0, Loss: 0.39748871326446533, CL_loss: 0.0
+Batch 10, Loss: 0.4906310737133026, CL_loss: 0.060506321489810944
+Batch 20, Loss: 0.4030474126338959, CL_loss: 0.0
+Batch 30, Loss: 0.40279650688171387, CL_loss: 0.0
+Batch 40, Loss: 0.42264246940612793, CL_loss: 0.0
+Epoch: 343
+Batch 0, Loss: 0.4205891489982605, CL_loss: 0.0
+Batch 10, Loss: 0.4155498147010803, CL_loss: 0.0
+Batch 20, Loss: 0.4194954037666321, CL_loss: 0.0
+Batch 30, Loss: 0.43550801277160645, CL_loss: 0.0
+Batch 40, Loss: 0.4034540057182312, CL_loss: 0.0
+Epoch: 344
+Batch 0, Loss: 0.4495498836040497, CL_loss: 0.0
+Batch 10, Loss: 0.4218839406967163, CL_loss: 0.0
+Batch 20, Loss: 0.42045819759368896, CL_loss: 0.0
+Batch 30, Loss: 0.4208580255508423, CL_loss: 0.0
+Batch 40, Loss: 0.4105168581008911, CL_loss: 0.0
+Epoch: 345
+Batch 0, Loss: 0.4134314954280853, CL_loss: 0.0
+Batch 10, Loss: 0.4172629714012146, CL_loss: 0.0
+Batch 20, Loss: 0.4422294795513153, CL_loss: 0.0
+Batch 30, Loss: 0.42950761318206787, CL_loss: 0.0
+Batch 40, Loss: 0.41432052850723267, CL_loss: 0.0
+Epoch: 346
+Batch 0, Loss: 0.3990355432033539, CL_loss: 0.0
+Batch 10, Loss: 0.42376670241355896, CL_loss: 0.0
+Batch 20, Loss: 0.39171504974365234, CL_loss: 0.0
+Batch 30, Loss: 0.41620391607284546, CL_loss: 0.0
+Batch 40, Loss: 0.4213096499443054, CL_loss: 0.0
+Epoch: 347
+Batch 0, Loss: 0.43171852827072144, CL_loss: 0.0
+Batch 10, Loss: 0.4579772353172302, CL_loss: 0.0
+Batch 20, Loss: 0.39067643880844116, CL_loss: 0.0
+Batch 30, Loss: 0.44227492809295654, CL_loss: 0.0
+Batch 40, Loss: 0.42714446783065796, CL_loss: 0.0
+Epoch: 348
+Batch 0, Loss: 0.42202818393707275, CL_loss: 0.0
+Batch 10, Loss: 0.39991939067840576, CL_loss: 0.0
+Batch 20, Loss: 0.4416845440864563, CL_loss: 0.0
+Batch 30, Loss: 0.40608805418014526, CL_loss: 0.0
+Batch 40, Loss: 0.4346311092376709, CL_loss: 0.0
+Epoch: 349
+Batch 0, Loss: 0.41450178623199463, CL_loss: 0.0
+Batch 10, Loss: 0.4183845520019531, CL_loss: 0.0
+Batch 20, Loss: 0.42654120922088623, CL_loss: 0.0
+Batch 30, Loss: 0.388110488653183, CL_loss: 0.0
+Batch 40, Loss: 0.3918886184692383, CL_loss: 0.0
+Epoch: 350
+Batch 0, Loss: 0.3919110894203186, CL_loss: 0.0
+Batch 10, Loss: 0.39372920989990234, CL_loss: 0.0
+Batch 20, Loss: 0.38827747106552124, CL_loss: 0.0
+Batch 30, Loss: 0.414095014333725, CL_loss: 0.0
+Batch 40, Loss: 0.41355136036872864, CL_loss: 0.0
+Evaluate
+epoch:350, time: 61.310414(s), valid (HT@10: 0.8459, NDCG@10: 0.6143), test (HT@10: 0.8487, NDCG@10: 0.6207)
+Epoch: 351
+Batch 0, Loss: 0.42038971185684204, CL_loss: 0.0
+Batch 10, Loss: 0.41192400455474854, CL_loss: 0.0
+Batch 20, Loss: 0.42068591713905334, CL_loss: 0.0
+Batch 30, Loss: 0.43760380148887634, CL_loss: 0.0
+Batch 40, Loss: 0.43822020292282104, CL_loss: 0.0
+Epoch: 352
+Batch 0, Loss: 0.40881145000457764, CL_loss: 0.0
+Batch 10, Loss: 0.43678903579711914, CL_loss: 0.0
+Batch 20, Loss: 0.4214875400066376, CL_loss: 0.0
+Batch 30, Loss: 0.4078863859176636, CL_loss: 0.0
+Batch 40, Loss: 0.40243107080459595, CL_loss: 0.0
+Epoch: 353
+Batch 0, Loss: 0.4009067416191101, CL_loss: 0.0
+Batch 10, Loss: 0.38525116443634033, CL_loss: 0.0
+Batch 20, Loss: 0.4143925905227661, CL_loss: 0.0
+Batch 30, Loss: 0.40520793199539185, CL_loss: 0.0
+Batch 40, Loss: 0.4056546986103058, CL_loss: 0.0
+Epoch: 354
+Batch 0, Loss: 0.4069654941558838, CL_loss: 0.0
+Batch 10, Loss: 0.4049553871154785, CL_loss: 0.0
+Batch 20, Loss: 0.4014391005039215, CL_loss: 0.0
+Batch 30, Loss: 0.4261123239994049, CL_loss: 0.0
+Batch 40, Loss: 0.3969321846961975, CL_loss: 0.0
+Epoch: 355
+Batch 0, Loss: 0.41240936517715454, CL_loss: 0.0
+Batch 10, Loss: 0.37664592266082764, CL_loss: 0.0
+Batch 20, Loss: 0.4101940989494324, CL_loss: 0.0
+Batch 30, Loss: 0.4172382950782776, CL_loss: 0.0
+Batch 40, Loss: 0.4153180718421936, CL_loss: 0.0
+Epoch: 356
+Batch 0, Loss: 0.41258734464645386, CL_loss: 0.0
+Batch 10, Loss: 0.4285326302051544, CL_loss: 0.0
+Batch 20, Loss: 0.42052480578422546, CL_loss: 0.0
+Batch 30, Loss: 0.40574151277542114, CL_loss: 0.0
+Batch 40, Loss: 0.42029237747192383, CL_loss: 0.0
+Epoch: 357
+Batch 0, Loss: 0.3993454575538635, CL_loss: 0.0
+Batch 10, Loss: 0.395061194896698, CL_loss: 0.0
+Batch 20, Loss: 0.40769684314727783, CL_loss: 0.0
+Batch 30, Loss: 0.42578572034835815, CL_loss: 0.0
+Batch 40, Loss: 0.39787477254867554, CL_loss: 0.0
+Epoch: 358
+Batch 0, Loss: 0.43431800603866577, CL_loss: 0.0
+Batch 10, Loss: 0.3919610381126404, CL_loss: 0.0
+Batch 20, Loss: 0.4520462155342102, CL_loss: 0.0
+Batch 30, Loss: 0.4048815369606018, CL_loss: 0.0
+Batch 40, Loss: 0.4252662658691406, CL_loss: 0.0
+Epoch: 359
+Batch 0, Loss: 0.40385597944259644, CL_loss: 0.0
+Batch 10, Loss: 0.4074435830116272, CL_loss: 0.0
+Batch 20, Loss: 0.4311974346637726, CL_loss: 0.0
+Batch 30, Loss: 0.43760302662849426, CL_loss: 0.0
+Batch 40, Loss: 0.4194123446941376, CL_loss: 0.0
+Epoch: 360
+Batch 0, Loss: 0.39183080196380615, CL_loss: 0.0
+Batch 10, Loss: 0.4317367672920227, CL_loss: 0.0
+Batch 20, Loss: 0.396959513425827, CL_loss: 0.0
+Batch 30, Loss: 0.43556588888168335, CL_loss: 0.0
+Batch 40, Loss: 0.4129624366760254, CL_loss: 0.0
+Evaluate
+epoch:360, time: 61.573630(s), valid (HT@10: 0.8450, NDCG@10: 0.6184), test (HT@10: 0.8474, NDCG@10: 0.6188)
+Epoch: 361
+Batch 0, Loss: 0.4405113160610199, CL_loss: 0.0
+Batch 10, Loss: 0.42815855145454407, CL_loss: 0.0
+Batch 20, Loss: 0.3948012888431549, CL_loss: 0.0
+Batch 30, Loss: 0.41049981117248535, CL_loss: 0.0
+Batch 40, Loss: 0.39421316981315613, CL_loss: 0.0
+Epoch: 362
+Batch 0, Loss: 0.434385746717453, CL_loss: 0.0
+Batch 10, Loss: 0.41856324672698975, CL_loss: 0.0
+Batch 20, Loss: 0.4237018823623657, CL_loss: 0.0
+Batch 30, Loss: 0.4350995421409607, CL_loss: 0.0
+Batch 40, Loss: 0.39707404375076294, CL_loss: 0.0
+Epoch: 363
+Batch 0, Loss: 0.406804621219635, CL_loss: 0.0
+Batch 10, Loss: 0.42523467540740967, CL_loss: 0.0
+Batch 20, Loss: 0.37743648886680603, CL_loss: 0.0
+Batch 30, Loss: 0.42888760566711426, CL_loss: 0.0
+Batch 40, Loss: 0.41543060541152954, CL_loss: 0.0
+Epoch: 364
+Batch 0, Loss: 0.42852646112442017, CL_loss: 0.0
+Batch 10, Loss: 0.38388878107070923, CL_loss: 0.0
+Batch 20, Loss: 0.43368732929229736, CL_loss: 0.0
+Batch 30, Loss: 0.43256425857543945, CL_loss: 0.0
+Batch 40, Loss: 0.3982027769088745, CL_loss: 0.0
+Epoch: 365
+Batch 0, Loss: 0.4342500865459442, CL_loss: 0.0
+Batch 10, Loss: 0.39079105854034424, CL_loss: 0.0
+Batch 20, Loss: 0.4038302004337311, CL_loss: 0.0
+Batch 30, Loss: 0.39794921875, CL_loss: 0.0
+Batch 40, Loss: 0.42392849922180176, CL_loss: 0.0
+Epoch: 366
+Batch 0, Loss: 0.41329526901245117, CL_loss: 0.0
+Batch 10, Loss: 0.38648056983947754, CL_loss: 0.0
+Batch 20, Loss: 0.42253321409225464, CL_loss: 0.0
+Batch 30, Loss: 0.40835505723953247, CL_loss: 0.0
+Batch 40, Loss: 0.44114911556243896, CL_loss: 0.04008645936846733
+Epoch: 367
+Batch 0, Loss: 0.43371209502220154, CL_loss: 0.0
+Batch 10, Loss: 0.4177895486354828, CL_loss: 0.0
+Batch 20, Loss: 0.40798819065093994, CL_loss: 0.0
+Batch 30, Loss: 0.4202977120876312, CL_loss: 0.0
+Batch 40, Loss: 0.395778089761734, CL_loss: 0.0
+Epoch: 368
+Batch 0, Loss: 0.4142683744430542, CL_loss: 0.0
+Batch 10, Loss: 0.4257255494594574, CL_loss: 0.0
+Batch 20, Loss: 0.4121223986148834, CL_loss: 0.0
+Batch 30, Loss: 0.40692782402038574, CL_loss: 0.0
+Batch 40, Loss: 0.4131595492362976, CL_loss: 0.0
+Epoch: 369
+Batch 0, Loss: 0.4362853169441223, CL_loss: 0.0
+Batch 10, Loss: 0.4243447184562683, CL_loss: 0.0
+Batch 20, Loss: 0.41386714577674866, CL_loss: 0.0
+Batch 30, Loss: 0.42772024869918823, CL_loss: 0.0
+Batch 40, Loss: 0.44014862179756165, CL_loss: 0.0
+Epoch: 370
+Batch 0, Loss: 0.3915663957595825, CL_loss: 0.0
+Batch 10, Loss: 0.41168636083602905, CL_loss: 0.0
+Batch 20, Loss: 0.44022291898727417, CL_loss: 0.0
+Batch 30, Loss: 0.3994637727737427, CL_loss: 0.0
+Batch 40, Loss: 0.4018986225128174, CL_loss: 0.0
+Evaluate
+epoch:370, time: 61.661054(s), valid (HT@10: 0.8520, NDCG@10: 0.6232), test (HT@10: 0.8485, NDCG@10: 0.6238)
+Epoch: 371
+Batch 0, Loss: 0.3942774534225464, CL_loss: 0.0
+Batch 10, Loss: 0.4291478991508484, CL_loss: 0.0
+Batch 20, Loss: 0.4352591037750244, CL_loss: 0.0
+Batch 30, Loss: 0.42402780055999756, CL_loss: 0.0
+Batch 40, Loss: 0.40112951397895813, CL_loss: 0.0
+Epoch: 372
+Batch 0, Loss: 0.4340806305408478, CL_loss: 0.0
+Batch 10, Loss: 0.40122711658477783, CL_loss: 0.0
+Batch 20, Loss: 0.42645126581192017, CL_loss: 0.0
+Batch 30, Loss: 0.38889172673225403, CL_loss: 0.0
+Batch 40, Loss: 0.4544920325279236, CL_loss: 0.0
+Epoch: 373
+Batch 0, Loss: 0.43869584798812866, CL_loss: 0.0
+Batch 10, Loss: 0.3890865743160248, CL_loss: 0.0
+Batch 20, Loss: 0.3871643841266632, CL_loss: 0.0
+Batch 30, Loss: 0.46006008982658386, CL_loss: 0.0
+Batch 40, Loss: 0.4149171710014343, CL_loss: 0.0
+Epoch: 374
+Batch 0, Loss: 0.3745591342449188, CL_loss: 0.0
+Batch 10, Loss: 0.41482627391815186, CL_loss: 0.0
+Batch 20, Loss: 0.4058551788330078, CL_loss: 0.0
+Batch 30, Loss: 0.4145980477333069, CL_loss: 0.0
+Batch 40, Loss: 0.4048038721084595, CL_loss: 0.0
+Epoch: 375
+Batch 0, Loss: 0.42258960008621216, CL_loss: 0.0
+Batch 10, Loss: 0.4311234951019287, CL_loss: 0.0
+Batch 20, Loss: 0.45467615127563477, CL_loss: 0.0
+Batch 30, Loss: 0.4403764307498932, CL_loss: 0.0
+Batch 40, Loss: 0.43293049931526184, CL_loss: 0.0
+Epoch: 376
+Batch 0, Loss: 0.42508697509765625, CL_loss: 0.0
+Batch 10, Loss: 0.41644614934921265, CL_loss: 0.0
+Batch 20, Loss: 0.39985787868499756, CL_loss: 0.0
+Batch 30, Loss: 0.4161044657230377, CL_loss: 0.0
+Batch 40, Loss: 0.4332936108112335, CL_loss: 0.0
+Epoch: 377
+Batch 0, Loss: 0.41047343611717224, CL_loss: 0.0
+Batch 10, Loss: 0.41259488463401794, CL_loss: 0.0
+Batch 20, Loss: 0.40552544593811035, CL_loss: 0.0
+Batch 30, Loss: 0.41715678572654724, CL_loss: 0.0
+Batch 40, Loss: 0.42245450615882874, CL_loss: 0.0
+Epoch: 378
+Batch 0, Loss: 0.3899915814399719, CL_loss: 0.0
+Batch 10, Loss: 0.4366452693939209, CL_loss: 0.0
+Batch 20, Loss: 0.4259699285030365, CL_loss: 0.0
+Batch 30, Loss: 0.39802414178848267, CL_loss: 0.0
+Batch 40, Loss: 0.3973435163497925, CL_loss: 0.0
+Epoch: 379
+Batch 0, Loss: 0.41430601477622986, CL_loss: 0.0
+Batch 10, Loss: 0.44389843940734863, CL_loss: 0.0
+Batch 20, Loss: 0.4362912178039551, CL_loss: 0.0
+Batch 30, Loss: 0.4089040756225586, CL_loss: 0.0
+Batch 40, Loss: 0.4189779758453369, CL_loss: 0.0
+Epoch: 380
+Batch 0, Loss: 0.39504116773605347, CL_loss: 0.0
+Batch 10, Loss: 0.4288896918296814, CL_loss: 0.0
+Batch 20, Loss: 0.4249516427516937, CL_loss: 0.0
+Batch 30, Loss: 0.40113499760627747, CL_loss: 0.0
+Batch 40, Loss: 0.41809967160224915, CL_loss: 0.0
+Evaluate
+epoch:380, time: 63.459389(s), valid (HT@10: 0.8452, NDCG@10: 0.6201), test (HT@10: 0.8452, NDCG@10: 0.6182)
+Epoch: 381
+Batch 0, Loss: 0.41186749935150146, CL_loss: 0.0
+Batch 10, Loss: 0.40077418088912964, CL_loss: 0.0
+Batch 20, Loss: 0.41082900762557983, CL_loss: 0.0
+Batch 30, Loss: 0.4220272898674011, CL_loss: 0.0
+Batch 40, Loss: 0.4024317264556885, CL_loss: 0.0
+Epoch: 382
+Batch 0, Loss: 0.4104081988334656, CL_loss: 0.0
+Batch 10, Loss: 0.4144763946533203, CL_loss: 0.0
+Batch 20, Loss: 0.4343264102935791, CL_loss: 0.0
+Batch 30, Loss: 0.41355782747268677, CL_loss: 0.0
+Batch 40, Loss: 0.424018919467926, CL_loss: 0.0
+Epoch: 383
+Batch 0, Loss: 0.41633981466293335, CL_loss: 0.0
+Batch 10, Loss: 0.43254315853118896, CL_loss: 0.0
+Batch 20, Loss: 0.4175211489200592, CL_loss: 0.0
+Batch 30, Loss: 0.4178946614265442, CL_loss: 0.0
+Batch 40, Loss: 0.4231078624725342, CL_loss: 0.0
+Epoch: 384
+Batch 0, Loss: 0.4202921986579895, CL_loss: 0.0
+Batch 10, Loss: 0.40676653385162354, CL_loss: 0.0
+Batch 20, Loss: 0.43564996123313904, CL_loss: 0.0
+Batch 30, Loss: 0.4129442572593689, CL_loss: 0.0
+Batch 40, Loss: 0.4048875570297241, CL_loss: 0.0
+Epoch: 385
+Batch 0, Loss: 0.41651907563209534, CL_loss: 0.0
+Batch 10, Loss: 0.41780343651771545, CL_loss: 0.0
+Batch 20, Loss: 0.4082851707935333, CL_loss: 0.0
+Batch 30, Loss: 0.4079771637916565, CL_loss: 0.0
+Batch 40, Loss: 0.3936886191368103, CL_loss: 0.0
+Epoch: 386
+Batch 0, Loss: 0.3970569968223572, CL_loss: 0.0
+Batch 10, Loss: 0.44512468576431274, CL_loss: 0.0
+Batch 20, Loss: 0.41466599702835083, CL_loss: 0.0
+Batch 30, Loss: 0.44540709257125854, CL_loss: 0.0
+Batch 40, Loss: 0.4121531844139099, CL_loss: 0.0
+Epoch: 387
+Batch 0, Loss: 0.44392427802085876, CL_loss: 0.0
+Batch 10, Loss: 0.40142345428466797, CL_loss: 0.0
+Batch 20, Loss: 0.4110721945762634, CL_loss: 0.0
+Batch 30, Loss: 0.41250425577163696, CL_loss: 0.0
+Batch 40, Loss: 0.3895076513290405, CL_loss: 0.0
+Epoch: 388
+Batch 0, Loss: 0.43435966968536377, CL_loss: 0.0
+Batch 10, Loss: 0.4463464915752411, CL_loss: 0.0
+Batch 20, Loss: 0.40259942412376404, CL_loss: 0.0
+Batch 30, Loss: 0.42497530579566956, CL_loss: 0.0
+Batch 40, Loss: 0.42568475008010864, CL_loss: 0.0
+Epoch: 389
+Batch 0, Loss: 0.4191972613334656, CL_loss: 0.0
+Batch 10, Loss: 0.40862175822257996, CL_loss: 0.0
+Batch 20, Loss: 0.42289018630981445, CL_loss: 0.0
+Batch 30, Loss: 0.4137437045574188, CL_loss: 0.0
+Batch 40, Loss: 0.4223521947860718, CL_loss: 0.0
+Epoch: 390
+Batch 0, Loss: 0.3901284337043762, CL_loss: 0.0
+Batch 10, Loss: 0.40838366746902466, CL_loss: 0.0
+Batch 20, Loss: 0.396758496761322, CL_loss: 0.0
+Batch 30, Loss: 0.399653822183609, CL_loss: 0.0
+Batch 40, Loss: 0.3899446427822113, CL_loss: 0.0
+Evaluate
+epoch:390, time: 64.410018(s), valid (HT@10: 0.8482, NDCG@10: 0.6189), test (HT@10: 0.8493, NDCG@10: 0.6184)
+Epoch: 391
+Batch 0, Loss: 0.3976208567619324, CL_loss: 0.0
+Batch 10, Loss: 0.42242181301116943, CL_loss: 0.0
+Batch 20, Loss: 0.40293562412261963, CL_loss: 0.0
+Batch 30, Loss: 0.38607141375541687, CL_loss: 0.0
+Batch 40, Loss: 0.388470858335495, CL_loss: 0.0
+Epoch: 392
+Batch 0, Loss: 0.41315045952796936, CL_loss: 0.0
+Batch 10, Loss: 0.4195583462715149, CL_loss: 0.0
+Batch 20, Loss: 0.4304918050765991, CL_loss: 5.89118769767083e-07
+Batch 30, Loss: 0.40842393040657043, CL_loss: 0.0
+Batch 40, Loss: 0.41608622670173645, CL_loss: 0.0
+Epoch: 393
+Batch 0, Loss: 0.4022122621536255, CL_loss: 0.0
+Batch 10, Loss: 0.4075498580932617, CL_loss: 0.0
+Batch 20, Loss: 0.4201120436191559, CL_loss: 0.0
+Batch 30, Loss: 0.41996675729751587, CL_loss: 0.0
+Batch 40, Loss: 0.40560927987098694, CL_loss: 0.0
+Epoch: 394
+Batch 0, Loss: 0.39134183526039124, CL_loss: 0.0
+Batch 10, Loss: 0.41260334849357605, CL_loss: 0.0
+Batch 20, Loss: 0.4067080020904541, CL_loss: 0.0
+Batch 30, Loss: 0.4396682381629944, CL_loss: 0.0
+Batch 40, Loss: 0.43877285718917847, CL_loss: 0.0
+Epoch: 395
+Batch 0, Loss: 0.4182739853858948, CL_loss: 0.0
+Batch 10, Loss: 0.4172431230545044, CL_loss: 0.0
+Batch 20, Loss: 0.4138842225074768, CL_loss: 0.0
+Batch 30, Loss: 0.38371676206588745, CL_loss: 0.0
+Batch 40, Loss: 0.44680219888687134, CL_loss: 0.0
+Epoch: 396
+Batch 0, Loss: 0.40639835596084595, CL_loss: 0.0
+Batch 10, Loss: 0.4103522300720215, CL_loss: 0.0
+Batch 20, Loss: 0.38749024271965027, CL_loss: 0.0
+Batch 30, Loss: 0.3840206265449524, CL_loss: 0.0
+Batch 40, Loss: 0.418371319770813, CL_loss: 0.0
+Epoch: 397
+Batch 0, Loss: 0.40767472982406616, CL_loss: 0.0
+Batch 10, Loss: 0.40161189436912537, CL_loss: 0.0
+Batch 20, Loss: 0.406885027885437, CL_loss: 0.0
+Batch 30, Loss: 0.4287390112876892, CL_loss: 0.0
+Batch 40, Loss: 0.41103968024253845, CL_loss: 0.0
+Epoch: 398
+Batch 0, Loss: 0.40535491704940796, CL_loss: 0.0
+Batch 10, Loss: 0.39875662326812744, CL_loss: 0.0
+Batch 20, Loss: 0.4066370725631714, CL_loss: 0.0
+Batch 30, Loss: 0.4259265661239624, CL_loss: 0.0
+Batch 40, Loss: 0.41792991757392883, CL_loss: 0.0
+Epoch: 399
+Batch 0, Loss: 0.4122636616230011, CL_loss: 0.0
+Batch 10, Loss: 0.40139806270599365, CL_loss: 0.0
+Batch 20, Loss: 0.40732473134994507, CL_loss: 0.0
+Batch 30, Loss: 0.4044758677482605, CL_loss: 0.0
+Batch 40, Loss: 0.42016690969467163, CL_loss: 0.0
+Epoch: 400
+Batch 0, Loss: 0.40869855880737305, CL_loss: 0.0
+Batch 10, Loss: 0.4112004041671753, CL_loss: 0.0
+Batch 20, Loss: 0.4066624641418457, CL_loss: 0.0
+Batch 30, Loss: 0.4248758554458618, CL_loss: 0.0
+Batch 40, Loss: 0.4078710675239563, CL_loss: 0.0
+Evaluate
+epoch:400, time: 65.349545(s), valid (HT@10: 0.8472, NDCG@10: 0.6174), test (HT@10: 0.8482, NDCG@10: 0.6164)
+Epoch: 401
+Batch 0, Loss: 0.4191179871559143, CL_loss: 0.0
+Batch 10, Loss: 0.4212290048599243, CL_loss: 0.0
+Batch 20, Loss: 0.38502347469329834, CL_loss: 0.0
+Batch 30, Loss: 0.4049578905105591, CL_loss: 0.0
+Batch 40, Loss: 0.37874457240104675, CL_loss: 0.0
+Epoch: 402
+Batch 0, Loss: 0.425798237323761, CL_loss: 0.0
+Batch 10, Loss: 0.4076741933822632, CL_loss: 0.0
+Batch 20, Loss: 0.4028746485710144, CL_loss: 0.0
+Batch 30, Loss: 0.43286848068237305, CL_loss: 0.02134489081799984
+Batch 40, Loss: 0.42866241931915283, CL_loss: 0.0
+Epoch: 403
+Batch 0, Loss: 0.41265326738357544, CL_loss: 0.0
+Batch 10, Loss: 0.40971481800079346, CL_loss: 0.0
+Batch 20, Loss: 0.41575485467910767, CL_loss: 0.0
+Batch 30, Loss: 0.401635080575943, CL_loss: 0.0
+Batch 40, Loss: 0.40215855836868286, CL_loss: 0.0
+Epoch: 404
+Batch 0, Loss: 0.4136551022529602, CL_loss: 0.0
+Batch 10, Loss: 0.387243390083313, CL_loss: 0.0
+Batch 20, Loss: 0.42076432704925537, CL_loss: 0.0
+Batch 30, Loss: 0.39317914843559265, CL_loss: 0.0
+Batch 40, Loss: 0.3936944007873535, CL_loss: 0.0
+Epoch: 405
+Batch 0, Loss: 0.4178481698036194, CL_loss: 0.0
+Batch 10, Loss: 0.4179242253303528, CL_loss: 0.0
+Batch 20, Loss: 0.4131084084510803, CL_loss: 0.0
+Batch 30, Loss: 0.419672429561615, CL_loss: 0.0
+Batch 40, Loss: 0.3902670741081238, CL_loss: 0.0
+Epoch: 406
+Batch 0, Loss: 0.40719401836395264, CL_loss: 0.0
+Batch 10, Loss: 0.4057970643043518, CL_loss: 0.0
+Batch 20, Loss: 0.4229303002357483, CL_loss: 0.0
+Batch 30, Loss: 0.41364699602127075, CL_loss: 0.0
+Batch 40, Loss: 0.3994242548942566, CL_loss: 0.0
+Epoch: 407
+Batch 0, Loss: 0.41107553243637085, CL_loss: 0.0
+Batch 10, Loss: 0.42629629373550415, CL_loss: 0.0
+Batch 20, Loss: 0.43786269426345825, CL_loss: 0.0
+Batch 30, Loss: 0.3853767514228821, CL_loss: 0.0
+Batch 40, Loss: 0.41684603691101074, CL_loss: 0.0
+Epoch: 408
+Batch 0, Loss: 0.42533165216445923, CL_loss: 0.0
+Batch 10, Loss: 0.40549206733703613, CL_loss: 0.0
+Batch 20, Loss: 0.42745423316955566, CL_loss: 0.0
+Batch 30, Loss: 0.4180988073348999, CL_loss: 0.0
+Batch 40, Loss: 0.4339609742164612, CL_loss: 0.0
+Epoch: 409
+Batch 0, Loss: 0.4061087965965271, CL_loss: 0.0
+Batch 10, Loss: 0.4164796471595764, CL_loss: 0.0
+Batch 20, Loss: 0.3968333601951599, CL_loss: 0.0
+Batch 30, Loss: 0.38296055793762207, CL_loss: 0.0
+Batch 40, Loss: 0.4054121971130371, CL_loss: 0.0
+Epoch: 410
+Batch 0, Loss: 0.4206439256668091, CL_loss: 0.0
+Batch 10, Loss: 0.4377654194831848, CL_loss: 0.0
+Batch 20, Loss: 0.42632532119750977, CL_loss: 0.0
+Batch 30, Loss: 0.4209107756614685, CL_loss: 0.0
+Batch 40, Loss: 0.41948163509368896, CL_loss: 0.0
+Evaluate
+epoch:410, time: 66.628203(s), valid (HT@10: 0.8483, NDCG@10: 0.6195), test (HT@10: 0.8450, NDCG@10: 0.6166)
+Epoch: 411
+Batch 0, Loss: 0.4054250121116638, CL_loss: 0.0
+Batch 10, Loss: 0.4165056347846985, CL_loss: 0.0
+Batch 20, Loss: 0.41225337982177734, CL_loss: 0.0
+Batch 30, Loss: 0.4175647497177124, CL_loss: 0.0
+Batch 40, Loss: 0.412018358707428, CL_loss: 0.0
+Epoch: 412
+Batch 0, Loss: 0.4111964702606201, CL_loss: 0.0
+Batch 10, Loss: 0.42119693756103516, CL_loss: 0.0
+Batch 20, Loss: 0.403952956199646, CL_loss: 0.0
+Batch 30, Loss: 0.40874505043029785, CL_loss: 0.0
+Batch 40, Loss: 0.4121618866920471, CL_loss: 0.0
+Epoch: 413
+Batch 0, Loss: 0.4107040762901306, CL_loss: 0.0
+Batch 10, Loss: 0.4045346975326538, CL_loss: 0.0
+Batch 20, Loss: 0.41880398988723755, CL_loss: 0.003242597682401538
+Batch 30, Loss: 0.4082745909690857, CL_loss: 0.0
+Batch 40, Loss: 0.3978371024131775, CL_loss: 0.0
+Epoch: 414
+Batch 0, Loss: 0.39319542050361633, CL_loss: 0.0
+Batch 10, Loss: 0.41460031270980835, CL_loss: 0.0
+Batch 20, Loss: 0.4133331775665283, CL_loss: 0.0
+Batch 30, Loss: 0.43996256589889526, CL_loss: 0.0
+Batch 40, Loss: 0.41220197081565857, CL_loss: 0.0
+Epoch: 415
+Batch 0, Loss: 0.4038023352622986, CL_loss: 0.0
+Batch 10, Loss: 0.39886099100112915, CL_loss: 0.0
+Batch 20, Loss: 0.39246389269828796, CL_loss: 0.0
+Batch 30, Loss: 0.4272979497909546, CL_loss: 0.0
+Batch 40, Loss: 0.4215652048587799, CL_loss: 0.0
+Epoch: 416
+Batch 0, Loss: 0.4034467339515686, CL_loss: 0.0
+Batch 10, Loss: 0.4036670923233032, CL_loss: 0.0
+Batch 20, Loss: 0.4147603511810303, CL_loss: 0.0
+Batch 30, Loss: 0.4148613214492798, CL_loss: 0.0
+Batch 40, Loss: 0.4168142080307007, CL_loss: 0.0
+Epoch: 417
+Batch 0, Loss: 0.41604453325271606, CL_loss: 0.0
+Batch 10, Loss: 0.42058634757995605, CL_loss: 0.0
+Batch 20, Loss: 0.40270841121673584, CL_loss: 0.0
+Batch 30, Loss: 0.4172854423522949, CL_loss: 0.0
+Batch 40, Loss: 0.4312620759010315, CL_loss: 0.0
+Epoch: 418
+Batch 0, Loss: 0.4100920259952545, CL_loss: 0.0
+Batch 10, Loss: 0.4508325457572937, CL_loss: 0.0
+Batch 20, Loss: 0.4242035448551178, CL_loss: 0.0
+Batch 30, Loss: 0.4270556569099426, CL_loss: 0.0
+Batch 40, Loss: 0.41383323073387146, CL_loss: 0.0
+Epoch: 419
+Batch 0, Loss: 0.4011930823326111, CL_loss: 0.0
+Batch 10, Loss: 0.3751537501811981, CL_loss: 0.0
+Batch 20, Loss: 0.42371031641960144, CL_loss: 0.0
+Batch 30, Loss: 0.43799617886543274, CL_loss: 0.0
+Batch 40, Loss: 0.4193802773952484, CL_loss: 0.0
+Epoch: 420
+Batch 0, Loss: 0.38759666681289673, CL_loss: 0.0
+Batch 10, Loss: 0.36518052220344543, CL_loss: 0.0
+Batch 20, Loss: 0.41628193855285645, CL_loss: 0.0
+Batch 30, Loss: 0.3891031742095947, CL_loss: 0.0
+Batch 40, Loss: 0.41943830251693726, CL_loss: 0.0
+Evaluate
+epoch:420, time: 67.722430(s), valid (HT@10: 0.8450, NDCG@10: 0.6176), test (HT@10: 0.8507, NDCG@10: 0.6231)
+Epoch: 421
+Batch 0, Loss: 0.40999099612236023, CL_loss: 0.0
+Batch 10, Loss: 0.4372784495353699, CL_loss: 0.0
+Batch 20, Loss: 0.4107869267463684, CL_loss: 0.0
+Batch 30, Loss: 0.4230767488479614, CL_loss: 0.0
+Batch 40, Loss: 0.42579495906829834, CL_loss: 0.0
+Epoch: 422
+Batch 0, Loss: 0.41123729944229126, CL_loss: 0.0
+Batch 10, Loss: 0.42379868030548096, CL_loss: 0.0
+Batch 20, Loss: 0.4372251033782959, CL_loss: 0.0
+Batch 30, Loss: 0.42492908239364624, CL_loss: 0.0
+Batch 40, Loss: 0.40442484617233276, CL_loss: 0.0
+Epoch: 423
+Batch 0, Loss: 0.41124528646469116, CL_loss: 0.0
+Batch 10, Loss: 0.38976648449897766, CL_loss: 0.0
+Batch 20, Loss: 0.4328975975513458, CL_loss: 0.0
+Batch 30, Loss: 0.4291195869445801, CL_loss: 0.0
+Batch 40, Loss: 0.4333483874797821, CL_loss: 0.0
+Epoch: 424
+Batch 0, Loss: 0.41118544340133667, CL_loss: 0.0
+Batch 10, Loss: 0.4080107808113098, CL_loss: 0.0
+Batch 20, Loss: 0.4165712296962738, CL_loss: 0.0
+Batch 30, Loss: 0.40719813108444214, CL_loss: 0.0
+Batch 40, Loss: 0.39976781606674194, CL_loss: 0.0
+Epoch: 425
+Batch 0, Loss: 0.3929111361503601, CL_loss: 0.0
+Batch 10, Loss: 0.41138845682144165, CL_loss: 0.0
+Batch 20, Loss: 0.38086140155792236, CL_loss: 0.0
+Batch 30, Loss: 0.39916858077049255, CL_loss: 0.0
+Batch 40, Loss: 0.4157063364982605, CL_loss: 0.0
+Epoch: 426
+Batch 0, Loss: 0.42068296670913696, CL_loss: 0.0
+Batch 10, Loss: 0.41365480422973633, CL_loss: 0.0
+Batch 20, Loss: 0.41104626655578613, CL_loss: 0.0
+Batch 30, Loss: 0.39914292097091675, CL_loss: 0.0
+Batch 40, Loss: 0.3907656669616699, CL_loss: 0.0
+Epoch: 427
+Batch 0, Loss: 0.4178038239479065, CL_loss: 0.0
+Batch 10, Loss: 0.40342414379119873, CL_loss: 0.0
+Batch 20, Loss: 0.42656081914901733, CL_loss: 0.0
+Batch 30, Loss: 0.4050091505050659, CL_loss: 0.0
+Batch 40, Loss: 0.42116719484329224, CL_loss: 0.0
+Epoch: 428
+Batch 0, Loss: 0.42133045196533203, CL_loss: 0.0
+Batch 10, Loss: 0.4087284207344055, CL_loss: 0.0
+Batch 20, Loss: 0.389829158782959, CL_loss: 0.0
+Batch 30, Loss: 0.41634151339530945, CL_loss: 0.0
+Batch 40, Loss: 0.40479910373687744, CL_loss: 0.0
+Epoch: 429
+Batch 0, Loss: 0.4049971103668213, CL_loss: 0.0
+Batch 10, Loss: 0.4233638644218445, CL_loss: 0.0
+Batch 20, Loss: 0.40651315450668335, CL_loss: 8.542988325643819e-06
+Batch 30, Loss: 0.40036740899086, CL_loss: 0.0
+Batch 40, Loss: 0.409875750541687, CL_loss: 0.0
+Epoch: 430
+Batch 0, Loss: 0.4345254898071289, CL_loss: 0.0
+Batch 10, Loss: 0.4159887135028839, CL_loss: 0.0
+Batch 20, Loss: 0.4083637595176697, CL_loss: 0.0
+Batch 30, Loss: 0.41457220911979675, CL_loss: 0.0
+Batch 40, Loss: 0.419402152299881, CL_loss: 0.0
+Evaluate
+epoch:430, time: 68.393750(s), valid (HT@10: 0.8474, NDCG@10: 0.6207), test (HT@10: 0.8469, NDCG@10: 0.6206)
+Epoch: 431
+Batch 0, Loss: 0.4341639280319214, CL_loss: 0.0
+Batch 10, Loss: 0.4169725179672241, CL_loss: 0.0
+Batch 20, Loss: 0.42039141058921814, CL_loss: 0.0
+Batch 30, Loss: 0.40377527475357056, CL_loss: 0.0
+Batch 40, Loss: 0.3667585253715515, CL_loss: 0.0
+Epoch: 432
+Batch 0, Loss: 0.4207517206668854, CL_loss: 0.0
+Batch 10, Loss: 0.4013887643814087, CL_loss: 0.0
+Batch 20, Loss: 0.4131739139556885, CL_loss: 0.0
+Batch 30, Loss: 0.4104996919631958, CL_loss: 0.0
+Batch 40, Loss: 0.3917042016983032, CL_loss: 0.0
+Epoch: 433
+Batch 0, Loss: 0.40560948848724365, CL_loss: 0.0
+Batch 10, Loss: 0.3985866606235504, CL_loss: 0.0
+Batch 20, Loss: 0.4128890633583069, CL_loss: 0.0
+Batch 30, Loss: 0.40089869499206543, CL_loss: 0.0
+Batch 40, Loss: 0.41056734323501587, CL_loss: 0.0
+Epoch: 434
+Batch 0, Loss: 0.4212426245212555, CL_loss: 0.0
+Batch 10, Loss: 0.4217267334461212, CL_loss: 0.0
+Batch 20, Loss: 0.4158708453178406, CL_loss: 0.0
+Batch 30, Loss: 0.4176490306854248, CL_loss: 0.0
+Batch 40, Loss: 0.42274534702301025, CL_loss: 0.0
+Epoch: 435
+Batch 0, Loss: 0.4291612505912781, CL_loss: 0.0
+Batch 10, Loss: 0.3979730010032654, CL_loss: 0.0
+Batch 20, Loss: 0.40691959857940674, CL_loss: 0.0
+Batch 30, Loss: 0.40846335887908936, CL_loss: 0.0
+Batch 40, Loss: 0.42675021290779114, CL_loss: 0.0
+Epoch: 436
+Batch 0, Loss: 0.44660988450050354, CL_loss: 0.015670204535126686
+Batch 10, Loss: 0.4123130142688751, CL_loss: 0.0
+Batch 20, Loss: 0.3979600667953491, CL_loss: 0.0
+Batch 30, Loss: 0.43332475423812866, CL_loss: 0.0
+Batch 40, Loss: 0.39120393991470337, CL_loss: 0.0
+Epoch: 437
+Batch 0, Loss: 0.4075894355773926, CL_loss: 0.0
+Batch 10, Loss: 0.4132571220397949, CL_loss: 0.0
+Batch 20, Loss: 0.41245633363723755, CL_loss: 0.0
+Batch 30, Loss: 0.4289640486240387, CL_loss: 0.0
+Batch 40, Loss: 0.4232269823551178, CL_loss: 0.0
+Epoch: 438
+Batch 0, Loss: 0.4306163787841797, CL_loss: 0.0
+Batch 10, Loss: 0.42980295419692993, CL_loss: 0.0
+Batch 20, Loss: 0.4112553000450134, CL_loss: 0.0
+Batch 30, Loss: 0.4083475172519684, CL_loss: 0.0
+Batch 40, Loss: 0.43179988861083984, CL_loss: 0.0
+Epoch: 439
+Batch 0, Loss: 0.3860636055469513, CL_loss: 0.0
+Batch 10, Loss: 0.43438538908958435, CL_loss: 0.0
+Batch 20, Loss: 0.41653043031692505, CL_loss: 0.0
+Batch 30, Loss: 0.4016883969306946, CL_loss: 0.0
+Batch 40, Loss: 0.3974234461784363, CL_loss: 0.0
+Epoch: 440
+Batch 0, Loss: 0.406902015209198, CL_loss: 0.0
+Batch 10, Loss: 0.4080789089202881, CL_loss: 0.0
+Batch 20, Loss: 0.4030911326408386, CL_loss: 0.0
+Batch 30, Loss: 0.4082765281200409, CL_loss: 0.0
+Batch 40, Loss: 0.4021872282028198, CL_loss: 0.0
+Evaluate
+epoch:440, time: 69.541931(s), valid (HT@10: 0.8503, NDCG@10: 0.6221), test (HT@10: 0.8492, NDCG@10: 0.6220)
+Epoch: 441
+Batch 0, Loss: 0.415320485830307, CL_loss: 0.0
+Batch 10, Loss: 0.41742774844169617, CL_loss: 0.0
+Batch 20, Loss: 0.42141592502593994, CL_loss: 0.0
+Batch 30, Loss: 0.422751247882843, CL_loss: 0.0
+Batch 40, Loss: 0.41285496950149536, CL_loss: 0.0
+Epoch: 442
+Batch 0, Loss: 0.4134787321090698, CL_loss: 0.0
+Batch 10, Loss: 0.4055119454860687, CL_loss: 0.0
+Batch 20, Loss: 0.39419251680374146, CL_loss: 0.0
+Batch 30, Loss: 0.40466123819351196, CL_loss: 0.0
+Batch 40, Loss: 0.40410226583480835, CL_loss: 0.0
+Epoch: 443
+Batch 0, Loss: 0.4816209375858307, CL_loss: 0.0
+Batch 10, Loss: 0.43370914459228516, CL_loss: 0.0
+Batch 20, Loss: 0.3902246952056885, CL_loss: 0.0
+Batch 30, Loss: 0.4240379333496094, CL_loss: 0.0
+Batch 40, Loss: 0.40803366899490356, CL_loss: 0.0
+Epoch: 444
+Batch 0, Loss: 0.4156854748725891, CL_loss: 0.0
+Batch 10, Loss: 0.38953137397766113, CL_loss: 0.0
+Batch 20, Loss: 0.39445552229881287, CL_loss: 0.0
+Batch 30, Loss: 0.4241674244403839, CL_loss: 0.0
+Batch 40, Loss: 0.4241854250431061, CL_loss: 0.0
+Epoch: 445
+Batch 0, Loss: 0.4209660291671753, CL_loss: 0.0
+Batch 10, Loss: 0.4233105182647705, CL_loss: 0.0
+Batch 20, Loss: 0.42441701889038086, CL_loss: 0.0
+Batch 30, Loss: 0.42786905169487, CL_loss: 0.0
+Batch 40, Loss: 0.3957151472568512, CL_loss: 0.0
+Epoch: 446
+Batch 0, Loss: 0.40825319290161133, CL_loss: 0.0
+Batch 10, Loss: 0.44127461314201355, CL_loss: 0.0
+Batch 20, Loss: 0.4013291597366333, CL_loss: 0.0
+Batch 30, Loss: 0.42148876190185547, CL_loss: 0.0
+Batch 40, Loss: 0.4027601480484009, CL_loss: 0.0
+Epoch: 447
+Batch 0, Loss: 0.396854430437088, CL_loss: 0.0
+Batch 10, Loss: 0.4344165027141571, CL_loss: 0.0
+Batch 20, Loss: 0.3944973945617676, CL_loss: 0.0
+Batch 30, Loss: 0.40480729937553406, CL_loss: 0.0
+Batch 40, Loss: 0.4305819272994995, CL_loss: 0.0
+Epoch: 448
+Batch 0, Loss: 0.3991864323616028, CL_loss: 0.0
+Batch 10, Loss: 0.4107106328010559, CL_loss: 0.0
+Batch 20, Loss: 0.437569260597229, CL_loss: 0.0
+Batch 30, Loss: 0.3931974172592163, CL_loss: 0.0
+Batch 40, Loss: 0.39087069034576416, CL_loss: 0.0
+Epoch: 449
+Batch 0, Loss: 0.4113103747367859, CL_loss: 0.0
+Batch 10, Loss: 0.42929577827453613, CL_loss: 0.0
+Batch 20, Loss: 0.3966183066368103, CL_loss: 0.0
+Batch 30, Loss: 0.42141959071159363, CL_loss: 0.0
+Batch 40, Loss: 0.4245477318763733, CL_loss: 0.0
+Epoch: 450
+Batch 0, Loss: 0.41066601872444153, CL_loss: 0.0
+Batch 10, Loss: 0.40657615661621094, CL_loss: 0.0
+Batch 20, Loss: 0.42718377709388733, CL_loss: 0.0
+Batch 30, Loss: 0.4023652672767639, CL_loss: 0.0
+Batch 40, Loss: 0.41443145275115967, CL_loss: 0.0
+Evaluate
+epoch:450, time: 69.682892(s), valid (HT@10: 0.8493, NDCG@10: 0.6205), test (HT@10: 0.8474, NDCG@10: 0.6239)
+Epoch: 451
+Batch 0, Loss: 0.4248785972595215, CL_loss: 0.0
+Batch 10, Loss: 0.42676621675491333, CL_loss: 0.0
+Batch 20, Loss: 0.42892777919769287, CL_loss: 0.0
+Batch 30, Loss: 0.420815110206604, CL_loss: 0.0
+Batch 40, Loss: 0.44759905338287354, CL_loss: 0.0
+Epoch: 452
+Batch 0, Loss: 0.43955230712890625, CL_loss: 0.0
+Batch 10, Loss: 0.4214169383049011, CL_loss: 0.0
+Batch 20, Loss: 0.4305199980735779, CL_loss: 0.0
+Batch 30, Loss: 0.38401609659194946, CL_loss: 0.0
+Batch 40, Loss: 0.41234463453292847, CL_loss: 0.0
+Epoch: 453
+Batch 0, Loss: 0.4319104552268982, CL_loss: 0.0
+Batch 10, Loss: 0.39447349309921265, CL_loss: 0.0
+Batch 20, Loss: 0.42607808113098145, CL_loss: 0.0
+Batch 30, Loss: 0.3976190686225891, CL_loss: 0.0
+Batch 40, Loss: 0.3980771005153656, CL_loss: 0.0
+Epoch: 454
+Batch 0, Loss: 0.37954121828079224, CL_loss: 0.0
+Batch 10, Loss: 0.41193288564682007, CL_loss: 0.0
+Batch 20, Loss: 0.4098414480686188, CL_loss: 0.0
+Batch 30, Loss: 0.4180772304534912, CL_loss: 0.0
+Batch 40, Loss: 0.46141743659973145, CL_loss: 0.0
+Epoch: 455
+Batch 0, Loss: 0.40691423416137695, CL_loss: 0.0
+Batch 10, Loss: 0.40502262115478516, CL_loss: 0.0
+Batch 20, Loss: 0.402168333530426, CL_loss: 0.0
+Batch 30, Loss: 0.393865704536438, CL_loss: 0.0
+Batch 40, Loss: 0.4091646671295166, CL_loss: 0.0
+Epoch: 456
+Batch 0, Loss: 0.3857128918170929, CL_loss: 0.0
+Batch 10, Loss: 0.3991773724555969, CL_loss: 0.0
+Batch 20, Loss: 0.45170727372169495, CL_loss: 0.0
+Batch 30, Loss: 0.4192383289337158, CL_loss: 0.0
+Batch 40, Loss: 0.40057456493377686, CL_loss: 0.0
+Epoch: 457
+Batch 0, Loss: 0.4050300717353821, CL_loss: 0.0
+Batch 10, Loss: 0.4230235815048218, CL_loss: 0.0
+Batch 20, Loss: 0.39538830518722534, CL_loss: 0.0
+Batch 30, Loss: 0.4137348532676697, CL_loss: 0.0
+Batch 40, Loss: 0.42990899085998535, CL_loss: 0.0
+Epoch: 458
+Batch 0, Loss: 0.42701905965805054, CL_loss: 0.0
+Batch 10, Loss: 0.43159037828445435, CL_loss: 0.0
+Batch 20, Loss: 0.402814656496048, CL_loss: 0.0
+Batch 30, Loss: 0.42918455600738525, CL_loss: 0.0
+Batch 40, Loss: 0.4156697392463684, CL_loss: 0.0
+Epoch: 459
+Batch 0, Loss: 0.39545679092407227, CL_loss: 0.0
+Batch 10, Loss: 0.4175436496734619, CL_loss: 0.0
+Batch 20, Loss: 0.43064945936203003, CL_loss: 0.0
+Batch 30, Loss: 0.38844484090805054, CL_loss: 0.0
+Batch 40, Loss: 0.4352063536643982, CL_loss: 0.0
+Epoch: 460
+Batch 0, Loss: 0.3991031348705292, CL_loss: 0.0
+Batch 10, Loss: 0.39029747247695923, CL_loss: 0.0
+Batch 20, Loss: 0.4198997914791107, CL_loss: 0.0
+Batch 30, Loss: 0.41272473335266113, CL_loss: 0.0
+Batch 40, Loss: 0.43619218468666077, CL_loss: 0.0
+Evaluate
+epoch:460, time: 69.381969(s), valid (HT@10: 0.8477, NDCG@10: 0.6214), test (HT@10: 0.8474, NDCG@10: 0.6217)
+Epoch: 461
+Batch 0, Loss: 0.3977397382259369, CL_loss: 0.0
+Batch 10, Loss: 0.41641175746917725, CL_loss: 0.0
+Batch 20, Loss: 0.40326398611068726, CL_loss: 0.0
+Batch 30, Loss: 0.4056057035923004, CL_loss: 0.0
+Batch 40, Loss: 0.3979971706867218, CL_loss: 0.0
+Epoch: 462
+Batch 0, Loss: 0.39958828687667847, CL_loss: 0.0
+Batch 10, Loss: 0.43872809410095215, CL_loss: 0.0
+Batch 20, Loss: 0.42483043670654297, CL_loss: 0.0
+Batch 30, Loss: 0.38340967893600464, CL_loss: 0.0
+Batch 40, Loss: 0.42079460620880127, CL_loss: 0.0
+Epoch: 463
+Batch 0, Loss: 0.38731077313423157, CL_loss: 0.0
+Batch 10, Loss: 0.42357581853866577, CL_loss: 0.0
+Batch 20, Loss: 0.401823490858078, CL_loss: 0.0
+Batch 30, Loss: 0.4372340738773346, CL_loss: 0.0
+Batch 40, Loss: 0.42084020376205444, CL_loss: 0.0
+Epoch: 464
+Batch 0, Loss: 0.41444069147109985, CL_loss: 0.0
+Batch 10, Loss: 0.38414570689201355, CL_loss: 0.0
+Batch 20, Loss: 0.40997475385665894, CL_loss: 0.0
+Batch 30, Loss: 0.3995797038078308, CL_loss: 0.0
+Batch 40, Loss: 0.3987908959388733, CL_loss: 0.0
+Epoch: 465
+Batch 0, Loss: 0.40544167160987854, CL_loss: 0.0
+Batch 10, Loss: 0.422238290309906, CL_loss: 0.0
+Batch 20, Loss: 0.3975909650325775, CL_loss: 0.0
+Batch 30, Loss: 0.41765251755714417, CL_loss: 0.0
+Batch 40, Loss: 0.42707037925720215, CL_loss: 0.0
+Epoch: 466
+Batch 0, Loss: 0.4072169065475464, CL_loss: 0.0
+Batch 10, Loss: 0.4037482738494873, CL_loss: 0.0
+Batch 20, Loss: 0.4035462737083435, CL_loss: 0.0
+Batch 30, Loss: 0.3863134980201721, CL_loss: 0.0
+Batch 40, Loss: 0.41868680715560913, CL_loss: 0.0
+Epoch: 467
+Batch 0, Loss: 0.38465508818626404, CL_loss: 0.0
+Batch 10, Loss: 0.42797327041625977, CL_loss: 0.0
+Batch 20, Loss: 0.40937966108322144, CL_loss: 0.0
+Batch 30, Loss: 0.41530248522758484, CL_loss: 0.0
+Batch 40, Loss: 0.3783611059188843, CL_loss: 0.0
+Epoch: 468
+Batch 0, Loss: 0.40366917848587036, CL_loss: 0.0
+Batch 10, Loss: 0.4380221366882324, CL_loss: 0.0
+Batch 20, Loss: 0.4255504012107849, CL_loss: 0.0
+Batch 30, Loss: 0.40662050247192383, CL_loss: 0.0
+Batch 40, Loss: 0.40083715319633484, CL_loss: 0.0
+Epoch: 469
+Batch 0, Loss: 0.4087747037410736, CL_loss: 0.0
+Batch 10, Loss: 0.4271116256713867, CL_loss: 0.0
+Batch 20, Loss: 0.3976401686668396, CL_loss: 0.0
+Batch 30, Loss: 0.39672571420669556, CL_loss: 0.0
+Batch 40, Loss: 0.4063144326210022, CL_loss: 0.0
+Epoch: 470
+Batch 0, Loss: 0.398821085691452, CL_loss: 0.0
+Batch 10, Loss: 0.4320891499519348, CL_loss: 0.0
+Batch 20, Loss: 0.41348958015441895, CL_loss: 0.0
+Batch 30, Loss: 0.4132356643676758, CL_loss: 0.0
+Batch 40, Loss: 0.3936181962490082, CL_loss: 0.0
+Evaluate
+epoch:470, time: 70.767419(s), valid (HT@10: 0.8498, NDCG@10: 0.6236), test (HT@10: 0.8500, NDCG@10: 0.6207)
+Epoch: 471
+Batch 0, Loss: 0.38260865211486816, CL_loss: 0.0
+Batch 10, Loss: 0.41027671098709106, CL_loss: 0.0
+Batch 20, Loss: 0.42910337448120117, CL_loss: 0.0
+Batch 30, Loss: 0.43426623940467834, CL_loss: 0.0
+Batch 40, Loss: 0.40295106172561646, CL_loss: 0.0
+Epoch: 472
+Batch 0, Loss: 0.4290679693222046, CL_loss: 0.0
+Batch 10, Loss: 0.37384849786758423, CL_loss: 0.0
+Batch 20, Loss: 0.3992500305175781, CL_loss: 0.0
+Batch 30, Loss: 0.413504958152771, CL_loss: 0.0
+Batch 40, Loss: 0.39607250690460205, CL_loss: 0.0
+Epoch: 473
+Batch 0, Loss: 0.4148922562599182, CL_loss: 0.0
+Batch 10, Loss: 0.39617154002189636, CL_loss: 0.0
+Batch 20, Loss: 0.4218214452266693, CL_loss: 0.0
+Batch 30, Loss: 0.40124282240867615, CL_loss: 0.0
+Batch 40, Loss: 0.406946063041687, CL_loss: 0.0
+Epoch: 474
+Batch 0, Loss: 0.4168848395347595, CL_loss: 0.0
+Batch 10, Loss: 0.3980950713157654, CL_loss: 0.0
+Batch 20, Loss: 0.39862149953842163, CL_loss: 0.0
+Batch 30, Loss: 0.42554861307144165, CL_loss: 0.0
+Batch 40, Loss: 0.3932279944419861, CL_loss: 0.0
+Epoch: 475
+Batch 0, Loss: 0.42718738317489624, CL_loss: 0.0
+Batch 10, Loss: 0.4232112467288971, CL_loss: 0.0
+Batch 20, Loss: 0.4528207778930664, CL_loss: 0.0
+Batch 30, Loss: 0.4071396589279175, CL_loss: 0.0
+Batch 40, Loss: 0.4072774350643158, CL_loss: 0.0
+Epoch: 476
+Batch 0, Loss: 0.4397139251232147, CL_loss: 0.0
+Batch 10, Loss: 0.3743002414703369, CL_loss: 0.0
+Batch 20, Loss: 0.42835772037506104, CL_loss: 0.0
+Batch 30, Loss: 0.43379831314086914, CL_loss: 0.0
+Batch 40, Loss: 0.4351499080657959, CL_loss: 0.0
+Epoch: 477
+Batch 0, Loss: 0.4164387583732605, CL_loss: 0.0
+Batch 10, Loss: 0.4014054834842682, CL_loss: 0.0
+Batch 20, Loss: 0.3996589183807373, CL_loss: 0.0
+Batch 30, Loss: 0.40900367498397827, CL_loss: 0.0
+Batch 40, Loss: 0.39539533853530884, CL_loss: 0.0
+Epoch: 478
+Batch 0, Loss: 0.40596818923950195, CL_loss: 0.0
+Batch 10, Loss: 0.42365092039108276, CL_loss: 0.0
+Batch 20, Loss: 0.44424235820770264, CL_loss: 0.0
+Batch 30, Loss: 0.4356080889701843, CL_loss: 0.0
+Batch 40, Loss: 0.3969179391860962, CL_loss: 0.0
+Epoch: 479
+Batch 0, Loss: 0.3968878388404846, CL_loss: 0.0
+Batch 10, Loss: 0.40741202235221863, CL_loss: 0.0
+Batch 20, Loss: 0.3975566029548645, CL_loss: 0.0
+Batch 30, Loss: 0.38535410165786743, CL_loss: 0.0
+Batch 40, Loss: 0.38862746953964233, CL_loss: 0.0
+Epoch: 480
+Batch 0, Loss: 0.43624642491340637, CL_loss: 0.0
+Batch 10, Loss: 0.41286367177963257, CL_loss: 0.0
+Batch 20, Loss: 0.4056735932826996, CL_loss: 0.0
+Batch 30, Loss: 0.4295186400413513, CL_loss: 0.0
+Batch 40, Loss: 0.4136475920677185, CL_loss: 0.0
+Evaluate
+epoch:480, time: 73.566304(s), valid (HT@10: 0.8472, NDCG@10: 0.6230), test (HT@10: 0.8490, NDCG@10: 0.6218)
+Epoch: 481
+Batch 0, Loss: 0.40607917308807373, CL_loss: 0.0
+Batch 10, Loss: 0.4212329387664795, CL_loss: 0.0
+Batch 20, Loss: 0.41868019104003906, CL_loss: 0.0
+Batch 30, Loss: 0.4013502597808838, CL_loss: 0.0
+Batch 40, Loss: 0.4361429810523987, CL_loss: 0.0
+Epoch: 482
+Batch 0, Loss: 0.40025413036346436, CL_loss: 0.0
+Batch 10, Loss: 0.4052361249923706, CL_loss: 0.0
+Batch 20, Loss: 0.4018878638744354, CL_loss: 0.0
+Batch 30, Loss: 0.4485468864440918, CL_loss: 0.0
+Batch 40, Loss: 0.40239816904067993, CL_loss: 0.0
+Epoch: 483
+Batch 0, Loss: 0.42566728591918945, CL_loss: 0.0
+Batch 10, Loss: 0.38896143436431885, CL_loss: 0.0
+Batch 20, Loss: 0.4333656132221222, CL_loss: 0.0
+Batch 30, Loss: 0.4002556800842285, CL_loss: 0.0
+Batch 40, Loss: 0.44875413179397583, CL_loss: 0.0
+Epoch: 484
+Batch 0, Loss: 0.4165595769882202, CL_loss: 0.0
+Batch 10, Loss: 0.4120981693267822, CL_loss: 0.0
+Batch 20, Loss: 0.43552517890930176, CL_loss: 0.0
+Batch 30, Loss: 0.40525388717651367, CL_loss: 0.0
+Batch 40, Loss: 0.40630674362182617, CL_loss: 0.0
+Epoch: 485
+Batch 0, Loss: 0.41255325078964233, CL_loss: 0.0
+Batch 10, Loss: 0.393341600894928, CL_loss: 0.0
+Batch 20, Loss: 0.39103326201438904, CL_loss: 0.0
+Batch 30, Loss: 0.3827545642852783, CL_loss: 0.0
+Batch 40, Loss: 0.4222038984298706, CL_loss: 0.0
+Epoch: 486
+Batch 0, Loss: 0.417994886636734, CL_loss: 0.0
+Batch 10, Loss: 0.38534384965896606, CL_loss: 0.0
+Batch 20, Loss: 0.4250636696815491, CL_loss: 0.0
+Batch 30, Loss: 0.4046427309513092, CL_loss: 0.0
+Batch 40, Loss: 0.40505653619766235, CL_loss: 0.0
+Epoch: 487
+Batch 0, Loss: 0.4138079881668091, CL_loss: 0.0
+Batch 10, Loss: 0.4282453656196594, CL_loss: 0.0
+Batch 20, Loss: 0.4266325831413269, CL_loss: 0.0
+Batch 30, Loss: 0.41439974308013916, CL_loss: 0.0
+Batch 40, Loss: 0.43560123443603516, CL_loss: 0.0
+Epoch: 488
+Batch 0, Loss: 0.4193800091743469, CL_loss: 0.0
+Batch 10, Loss: 0.41726595163345337, CL_loss: 0.0
+Batch 20, Loss: 0.4097725450992584, CL_loss: 0.0
+Batch 30, Loss: 0.4095902442932129, CL_loss: 0.0
+Batch 40, Loss: 0.42363762855529785, CL_loss: 0.0
+Epoch: 489
+Batch 0, Loss: 0.40233689546585083, CL_loss: 0.0
+Batch 10, Loss: 0.4267013669013977, CL_loss: 0.0
+Batch 20, Loss: 0.41583266854286194, CL_loss: 0.0
+Batch 30, Loss: 0.41563794016838074, CL_loss: 0.0
+Batch 40, Loss: 0.3878509998321533, CL_loss: 0.0
+Epoch: 490
+Batch 0, Loss: 0.403729647397995, CL_loss: 0.0
+Batch 10, Loss: 0.3798167407512665, CL_loss: 0.0
+Batch 20, Loss: 0.41378867626190186, CL_loss: 0.0
+Batch 30, Loss: 0.41704708337783813, CL_loss: 0.0
+Batch 40, Loss: 0.40939033031463623, CL_loss: 0.0
+Evaluate
+epoch:490, time: 72.172174(s), valid (HT@10: 0.8462, NDCG@10: 0.6204), test (HT@10: 0.8485, NDCG@10: 0.6194)
+Epoch: 491
+Batch 0, Loss: 0.4025347828865051, CL_loss: 0.0
+Batch 10, Loss: 0.4242103397846222, CL_loss: 0.0
+Batch 20, Loss: 0.3937283754348755, CL_loss: 0.0
+Batch 30, Loss: 0.38564032316207886, CL_loss: 0.0
+Batch 40, Loss: 0.46117717027664185, CL_loss: 0.0
+Epoch: 492
+Batch 0, Loss: 0.41634148359298706, CL_loss: 0.0
+Batch 10, Loss: 0.42050084471702576, CL_loss: 0.0
+Batch 20, Loss: 0.3984425663948059, CL_loss: 0.0
+Batch 30, Loss: 0.4131890535354614, CL_loss: 0.0
+Batch 40, Loss: 0.4191718101501465, CL_loss: 0.0
+Epoch: 493
+Batch 0, Loss: 0.3926888108253479, CL_loss: 0.0
+Batch 10, Loss: 0.41423851251602173, CL_loss: 0.0
+Batch 20, Loss: 0.4196286201477051, CL_loss: 0.0
+Batch 30, Loss: 0.41694608330726624, CL_loss: 0.0
+Batch 40, Loss: 0.42188459634780884, CL_loss: 0.0
+Epoch: 494
+Batch 0, Loss: 0.42342519760131836, CL_loss: 0.0
+Batch 10, Loss: 0.40319129824638367, CL_loss: 0.0
+Batch 20, Loss: 0.4093990921974182, CL_loss: 0.0
+Batch 30, Loss: 0.39952826499938965, CL_loss: 0.0
+Batch 40, Loss: 0.4349067509174347, CL_loss: 0.0
+Epoch: 495
+Batch 0, Loss: 0.4141976237297058, CL_loss: 0.0
+Batch 10, Loss: 0.4298526644706726, CL_loss: 0.0
+Batch 20, Loss: 0.399353563785553, CL_loss: 0.0
+Batch 30, Loss: 0.3909405767917633, CL_loss: 0.0
+Batch 40, Loss: 0.40658992528915405, CL_loss: 0.0
+Epoch: 496
+Batch 0, Loss: 0.389639675617218, CL_loss: 0.0
+Batch 10, Loss: 0.4022388458251953, CL_loss: 0.0
+Batch 20, Loss: 0.38149794936180115, CL_loss: 0.0
+Batch 30, Loss: 0.41538429260253906, CL_loss: 0.0
+Batch 40, Loss: 0.3955615758895874, CL_loss: 0.0
+Epoch: 497
+Batch 0, Loss: 0.41831153631210327, CL_loss: 0.0
+Batch 10, Loss: 0.41598331928253174, CL_loss: 0.0
+Batch 20, Loss: 0.38680779933929443, CL_loss: 0.0
+Batch 30, Loss: 0.41026565432548523, CL_loss: 0.0
+Batch 40, Loss: 0.411207914352417, CL_loss: 0.0
+Epoch: 498
+Batch 0, Loss: 0.3902314305305481, CL_loss: 0.0
+Batch 10, Loss: 0.4241780638694763, CL_loss: 0.0
+Batch 20, Loss: 0.39900872111320496, CL_loss: 0.0
+Batch 30, Loss: 0.425349622964859, CL_loss: 0.0
+Batch 40, Loss: 0.41410672664642334, CL_loss: 0.0
+Epoch: 499
+Batch 0, Loss: 0.43516606092453003, CL_loss: 0.0
+Batch 10, Loss: 0.4162520468235016, CL_loss: 0.0
+Batch 20, Loss: 0.39215925335884094, CL_loss: 0.0
+Batch 30, Loss: 0.41762691736221313, CL_loss: 0.0
+Batch 40, Loss: 0.4160873591899872, CL_loss: 0.0
+Epoch: 500
+Batch 0, Loss: 0.4077523648738861, CL_loss: 0.0
+Batch 10, Loss: 0.4118732810020447, CL_loss: 0.0
+Batch 20, Loss: 0.4153066873550415, CL_loss: 0.0
+Batch 30, Loss: 0.40834182500839233, CL_loss: 0.0
+Batch 40, Loss: 0.4199562072753906, CL_loss: 0.0
+Evaluate
+epoch:500, time: 38.361672(s), valid (HT@10: 0.8508, NDCG@10: 0.6233), test (HT@10: 0.8449, NDCG@10: 0.6229)
+best valid (NDCG@10: 0.6236, HT@10: 0.8507)
+best test (NDCG@10: 0.6238, HT@10: 0.8507)
