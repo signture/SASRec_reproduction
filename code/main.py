@@ -6,11 +6,23 @@ from torch.utils.data import DataLoader
 import os
 import time
 import logging
+import argparse
 from data.dataset import SeqItemDataset, WarpSampler
 from model.SASRec import SASRec
 from utils.metric import evaluate
 from utils.utils import data_split, set_seed
 from utils.train import train_epoch, EarlyStopping
+
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--type', type=str, default='mask', choices=['mask', 'crop', 'replace', 'none'])
+    parser.add_argument('--prob', type=float, default=0.8)
+    parser.add_argument('--weight', type=float, default=0.1)
+    parser.add_argument('--temp', type=float, default=1.0)
+    parser.add_argument('--view_type', type=str, default='mean', choices=['flatten', 'mean'])
+    
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
@@ -19,17 +31,24 @@ if __name__ == "__main__":
     max_seq_len = 200
     batch_size = 128
     learning_rate = 0.001
-    epochs = 500
+    epochs = 1000
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     inference_only = False
     patience = 10
     num_workers = 4
     seed = 14531
-    contrastive_type = 'mask'
-    contrastive_prob = 0.8
-    contrastive_weight = 0.1
-    sim_temp = 1.0  # 0.1
     
+    # 可改动的超参数
+    args = get_args()
+    contrastive_type = args.type
+    contrastive_prob = args.prob
+    contrastive_weight = args.weight
+    sim_temp = args.temp
+    view_type = args.view_type
+    # contrastive_type = 'mask'
+    # contrastive_prob = 0.8
+    # contrastive_weight = 0.1
+    # sim_temp = 1.0  # 0.1
     
     # 模型超参数
     hidden_dim = 50
@@ -70,6 +89,7 @@ if __name__ == "__main__":
     setting.write('contrastive_type: {}\n'.format(contrastive_type))
     setting.write('contrastive_prob: {}\n'.format(contrastive_prob))
     setting.write('contrastive_weight: {}\n'.format(contrastive_weight))
+    setting.write('contrastive_view_type: {}\n'.format(view_type))
     setting.write('sim_temp: {}\n'.format(sim_temp))
     
     setting.close()
@@ -116,10 +136,11 @@ if __name__ == "__main__":
     best_test_ndcg, best_test_ht = 0.0, 0.0
     
     start_time = time.time()
+    counter = 0
     for epoch in range(1, epochs + 1):  # 训练
         print('Epoch: %d' % epoch)
         log.write('Epoch: %d\n' % epoch)
-        train_epoch(model, optimizer, criterion, num_batch, sampler, device, log, contrastive_w=contrastive_weight)  # 训练一个epoch
+        train_epoch(model, optimizer, criterion, num_batch, sampler, device, log, args)  # 训练一个epoch
         if epoch % patience == 0:
             t1 = time.time() - start_time
             print('Evaluate')
@@ -139,6 +160,14 @@ if __name__ == "__main__":
                 fname = 'SASRec_best_ndcg_{:.4f}_ht_{:.4f}_epoch_{}.pth'.format(best_test_ndcg, best_test_ht, epoch)  # 保存模型的文件名
                 print('save model to {}'.format(fname))
                 torch.save(model.state_dict(), os.path.join(ckpt_dir, fname))
+                counter = 0
+                
+            else:
+                counter += 1
+                if counter > 1:  # 如果连续20个epoch没有提升，则停止训练
+                    print('Early stopping')
+                    log.write('Early stopping\n')
+                    break
                 
             log.flush()
             start_time = time.time()

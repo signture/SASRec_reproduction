@@ -83,10 +83,12 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
 
 class WarpSampler(object):
     def __init__(self, User, usernum, itemnum, batch_size=64, maxlen=10, n_workers=1, augmentation=[None, 1]):
-        assert augmentation[0] in ['mask', 'crop', 'replace', None], 'Invalid augmentation type'
+        assert augmentation[0] in ['mask', 'crop', 'replace', 'none'], 'Invalid augmentation type'
         assert augmentation[1] >= 0 and augmentation[1] <= 1, 'Invalid augmentation probability'
-        if augmentation[0] is not None:
+        if augmentations[augmentation[0]] is not None:
             self.augmentation = augmentations[augmentation[0]](augmentation[1], itemnum) 
+        else:
+            self.augmentation = None
         self.result_queue = Queue(maxsize=n_workers * 10)
         self.processors = []
         for i in range(n_workers):

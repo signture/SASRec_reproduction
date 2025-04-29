@@ -1,10 +1,18 @@
-Although there is the pytorch version code implemented in github, I still want to write it in my own way.
-github url:https://github.com/pmixer/SASRec.pytorch/tree/main/python
+SASRec是属于序列推荐里面的经典模型，由于之前并没有怎么接触过推荐系统，所以就想要尝试复现论文并进行一些实验加深对序列推荐人物的理解。
+当前仓库主要借鉴以下仓库：
+1. https://github.com/pmixer/SASRec.pytorch/tree/main
+2. https://github.com/JamZheng/CL4SRec-pytorch/tree/main
+
+相关论文参考：
+1. https://doi.org/10.48550/arXiv.1808.09781
+2. https://doi.org/10.48550/arXiv.2010.14395
+ 
+
 
 ## TODO:
-- [ ] 测试自注意力块的三种实现的效果
-- [ ] 测试不同对比学习方式的效果
-- [ ] 结合content-aware recommendation的方法进行优化
+- [x] 添加对比学习
+- [x] 测试分析不同对比学习方式的效果
+- [ ] 进一步优化
 
 ### 2025.4.24
 今天开始阅读论文，大致完成了论文到训练细节之前，接下来是一些总结：
@@ -80,15 +88,21 @@ RuntimeError: CUDA error: device-side assert triggered  这个是最后的报错
 2. 当位置编码强度小于元素嵌入的强度时，此时相似度由元素嵌入决定，由于当crop比例越大，保留序列越多，重复序列越高，那么就可以转换为两个错序向量之间的余弦相似度最大化的问题，那么此时最优解将会使得每个元素之间的相似度最大化，但是要使得两个用户的序列之间的差异最大化，那么似乎也不会使每个元素相似度最大化。
 总结感觉是不是就是这样的限制使得优化难度比较大导致的?后续尝试使用均值构建向量来排除位置差异导致的两个相似向量之间的明显差异。
 
-对于mask操作来说，mask的概率越大，性能越好，并且当mask概率为0.8的时候超出了复现的没有使用对比学习的性能，但是因为提升幅度只有0.03，所以还是有可能是训练的随机性导致的，需要进一步去验证。当mask概率低的时候，因为用于对比的向量基本没有mask，所以相似度自然很高，这样为了优化目标，对比学习损失应该会使得不同用户之间的序列差异增大，因为数据集的密度相对还是很大的，所以用户之间的相似度实际上猜测并不会太高，所以低mask情况下的优化任务应该并不会太困那。同时在训练过程中观察到最后对比学习损失降为了0，个人认为这个现象还是合理的。
+对于mask操作来说，mask的概率越大，性能越好，并且当mask概率为0.8的时候超出了复现的没有使用对比学习的性能，但是因为提升幅度只有0.03，所以还是有可能是训练的随机性导致的，需要进一步去验证。当mask概率低的时候，因为用于对比的向量基本没有mask，所以相似度自然很高，这样为了优化目标，对比学习损失应该会使得不同用户之间的序列差异增大，因为数据集的密度相对还是很大的，所以用户之间的相似度实际上猜测并不会太高，所以低mask情况下的优化任务应该并不会太困难。同时在训练过程中观察到最后对比学习损失降为了0，个人认为这个现象还是合理的。
+
+### 2025.4.29
+今天首先是验证昨天提及的crop效果不好的现象猜想，这里使用mean将向量的seq_len维度进行压缩，然后进一步做对比学习。
+确实通过实验发现效果相比之前并不做处理的效果好了很多，说明对于不同的增强方式而言，对比学习所需要的嵌入输入的处理是有所区别的。
+而对于replace和mask的方式而言，似乎并没有使得原先的效果增加很多
+在观察训练日志的时候发现，如mask和replace操作都是当p值比较大的时候损失会从大致是5开始逐步降低，而当p值逐渐减小的时候损失可能就是从0开始，这个现象感觉是合理的，因为当p越小，实际上增强的序列就越接近原序列，那么之间的差异就并不大了，损失也就相应会小。
+而对于crop操作，随p值增加，在模型收敛（early stop）之前的对比学习损失降低的就越慢，当p为0.2时，最终对比学习损失可以降低至0，而当p比较大时可能最终只能停留在3左右。这个现象对应的就是提升上当p为0.2时提升最大。这里暂时没有一个很好的猜测，或许是不重叠的局部片段之间的分布相似可以进一步提升模型性能？
 
 
-
-## result（但是这个评估指标是SASRec这篇文章的采样评估，后面的文章感觉都没有用这个方式了，所以之后评估还是用回不采样的版本）
-|   METHOD  | Hit @ 10 | HDCG @ 10   |    SPEED    |
+## result（采用的是SASRec的采样评估版本）
+|   METHOD  | Hit @ 10 | HDCG @ 10   |    SPEED(但是似乎这个时间还是很有问题的，因为可能同时跑多个进程导致的记录的10个epoch的时间很震荡，这里记录的是log里面前几十个epoch的一个均值（大致）)    |
 |  :----:   |  :----:  |   :----:    |   :----:    |
-| SASRec    |  0.8245  |   0.5905    |   1.7s/epoch    |
-| Reproduct |  0.8442  |   0.6182    |   s/epoch    |
+| SASRec    |  0.8245  |   0.5905    | 1.7s/epoch  |
+| Reproduct |  0.8442  |   0.6182    |   4.2s/epoch    |
 | Contrastive learning(crop->p=0.8) |  0.8161  |   0.5479    |   4.5s/epoch    |
 | Contrastive learning(crop->p=0.6) |  0.8182  |   0.5511    |   5.1s/epoch    |
 | Contrastive learning(crop->p=0.4) |  0.8275  |   0.5646    |   4.5s/epoch    |
@@ -97,3 +111,19 @@ RuntimeError: CUDA error: device-side assert triggered  这个是最后的报错
 | Contrastive learning(mask->p=0.6) |  0.8440  |   0.6137    |   6.6s/epoch    |
 | Contrastive learning(mask->p=0.4) |  0.8386  |   0.6022    |   6.6s/epoch    |
 | Contrastive learning(mask->p=0.2) |  0.8366  |   0.5992    |   3.8s/epoch    |
+| Contrastive learning(replace->p=0.8) |  0.8136  |   0.5564    |   3.0s/epoch    |
+| Contrastive learning(replace->p=0.6) |  0.8474  |   0.6188    |   3.8s/epoch    |
+| Contrastive learning(replace->p=0.4) |  0.8411  |   0.6041    |   3.7s/epoch    |
+| Contrastive learning(replace->p=0.2) |  0.8437  |   0.6157    |   5.5s/epoch    |
+| Contrastive learning(crop->p=0.8)(mean) |  0.8419  |   0.6101    |   3.3s/epoch    |
+| Contrastive learning(crop->p=0.6)(mean) |  0.8381  |   0.6068    |   4.7s/epoch    |
+| Contrastive learning(crop->p=0.4)(mean) |  0.8452  |   0.6148    |   4.7s/epoch    |
+| Contrastive learning(crop->p=0.2)(mean) |  0.8503  |   0.6236    |   5.5s/epoch    |
+| Contrastive learning(mask->p=0.8)(mean) |  0.8439  |   0.6074    |   3.6s/epoch    |
+| Contrastive learning(mask->p=0.6)(mean) |  0.8369  |   0.5988    |   3.7s/epoch    |
+| Contrastive learning(mask->p=0.4)(mean) |  0.8470  |   0.6141    |   5.0s/epoch    |
+| Contrastive learning(mask->p=0.2)(mean) |  0.8412  |   0.6087    |   3.8s/epoch    |
+| Contrastive learning(replace->p=0.8)(mean) |  0.8411  |   0.6097    |   3.6s/epoch    |
+| Contrastive learning(replace->p=0.6)(mean) |  0.8334  |   0.5914    |   4.3s/epoch    |
+| Contrastive learning(replace->p=0.4)(mean) |  0.8439  |   0.6101    |   4.2s/epoch    |
+| Contrastive learning(replace->p=0.2)(mean) |  0.8432  |   0.6117    |   4.7s/epoch    |
