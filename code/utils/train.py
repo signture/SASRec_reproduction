@@ -8,7 +8,7 @@ def train_epoch(model, optimizer, criterion, num_batch, sampler, device, log=Non
     for step in range(num_batch):
         if configs.type != 'none':  # 如果contrastive不为None，就进行对比学习
             u, seq, pos, neg, aug1, aug2 = sampler.next_batch()  # 从sampler中获取一个batch的数据
-            seq, pos, neg, aug1, aug2 = np.array(seq), np.array(pos), np.array(neg), np.array(aug1), np.array(aug2)  # 将数据转换为numpy数组
+            # seq, pos, neg, aug1, aug2 = np.array(seq), np.array(pos), np.array(neg), np.array(aug1), np.array(aug2)  # 将数据转换为numpy数组
             aug_emb1 = model.get_embedding(aug1)
             aug_emb2 = model.get_embedding(aug2)
             batch_size = aug_emb1.shape[0]
@@ -18,8 +18,8 @@ def train_epoch(model, optimizer, criterion, num_batch, sampler, device, log=Non
                 cl_loss = model.cl_loss(aug_emb1.mean(dim=1), aug_emb2.mean(dim=1))
         else:
             u, seq, pos, neg = sampler.next_batch()
-            seq, pos, neg = np.array(seq), np.array(pos), np.array(neg)
-        pos_logits, neg_logits = model(seq, pos, neg) 
+            # seq, pos, neg = np.array(seq), np.array(pos), np.array(neg)
+        pos_logits, neg_logits, pos = model(seq, pos, neg) 
         pos_labels, neg_labels = torch.ones_like(pos_logits, device=device), torch.zeros_like(neg_logits, device=device)
         optimizer.zero_grad()
         indices = np.where(pos != 0)

@@ -1,5 +1,6 @@
 import torch
 import random
+import numpy as np
 from collections import defaultdict
 
 def set_seed(seed):
@@ -10,16 +11,30 @@ def set_seed(seed):
     torch.backends.cudnn.deterministic = True
     random.seed(seed)
     
-def load_data(data_path:str) -> list:
+def load_data(data_path:str, timestamp:bool) -> list:
     data = []
     with open(data_path, 'r') as f:
         for line in f.readlines():
             line = line.strip().split(' ')
-            data.append([int(line[0]), int(line[1])])  # userid, itemid
+            if timestamp:
+                data.append([int(line[0]), int(line[1]), int(line[2])])  # userid, itemid, timestamp
+            else:
+                data.append([int(line[0]), int(line[1])])  # userid, itemid
     return data
+
+def load_genre_data(genre_path:str, genre_num:int=18) -> dict:
+    genre = {}
+    init_vector = np.zeros(genre_num, dtype=np.float32)
+    with open(genre_path, 'r') as f:
+        for line in f.readlines():
+            line = line.strip().split(' ')
+            vector = init_vector.copy()
+            np.put(vector, [int(x) - 1 for x in line[1:]], 1.0)
+            genre[int(line[0])] = vector  # itemid, genreid
+    return genre
     
-def data_split(data_path: str):
-    data = load_data(data_path)
+def data_split(data_path: str, timestamp:bool=False):
+    data = load_data(data_path, timestamp)
     User = defaultdict(list)
     user_train = {}
     user_valid = {}
@@ -28,8 +43,13 @@ def data_split(data_path: str):
     user_num = max([row[0] for row in data])
     item_num = max([row[1] for row in data])
     
-    for user, item in data:
-        User[user].append(item)
+    
+    if timestamp:
+        for user, item, timestamp in data: 
+            User[user].append((timestamp, item))
+    else:
+        for user, item in data:
+            User[user].append(item)
     
     for user in User:
         nfeedback = len(User[user])
@@ -44,3 +64,38 @@ def data_split(data_path: str):
             user_test[user] = []  # 这里是为了保证每个用户至少有1个交互记录
             user_test[user].append(User[user][-1])  # 倒数第一个作为测试集
     return [user_train, user_valid, user_test, user_num, item_num]
+
+
+def getRelativePos(time_seq, time_span):
+    print(time_seq)
+    time_matrix = np.abs(time_seq[:, np.newaxis] - time_seq[np.newaxis, :])
+    # 这里需要防止全是0
+    min_time_span = np.min(time_matrix[time_matrix > 0]) if np.any(time_matrix > 0) else 1.0
+    # 对矩阵进行放缩处理(处于集合中的最小间隔并向下取整)
+    time_matrix = np.floor(time_matrix / min_time_span)
+    # 裁剪到[0, time_span]范围内
+    time_matrix = np.clip(time_matrix, 0, time_span)
+    print(time_matrix)
+    return time_matrix.astype(np.int32)
+
+
+def getRelations(user_set:dict, max_len, time_span):
+    user_relations = {}
+    for user in user_set:
+        time_seq = np.array([item[0] for item in user_set[user]]) - user_set[user][0][0]
+        if len(time_seq) < max_len:
+            # 如果时间序列长度小于max_len，则进行填充
+            time_seq = np.pad(time_seq, (max_len - len(time_seq), 0), 'constant', constant_values=0)
+        else:
+            # 如果时间序列长度大于max_len，则进行截断
+            time_seq = time_seq[-max_len:]
+        user_relations[user] = getRelativePos(time_seq, time_span)
+    return user_relations
+
+
+if __name__ == "__main__":
+    data_path = '../data/ml-1m/ratings_process_timestamp.txt'
+    user_train, user_valid, user_test, user_num, item_num = data_split(data_path, timestamp=True)
+    selected_keys = [1, 2, 3, 4]
+    sub_dict = {key: user_train[key] for key in selected_keys if key in user_train}
+    user_relations = getRelations(sub_dict, 10, 10)

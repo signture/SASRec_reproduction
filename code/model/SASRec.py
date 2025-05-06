@@ -32,7 +32,23 @@ class ContrastiveLoss(nn.Module):
         label = torch.zeros(batch_size, dtype=torch.long).to(self.device)  # [batch_size]
         
         return self.ce_loss(score, label)
-        
+    
+
+class Genre_embedding(nn.Module):
+    def __init__(self, hidden_dim, dropout):
+        super(Genre_embedding, self).__init__()
+        self.hidden_dim = hidden_dim
+        self.fc = nn.Linear(18, hidden_dim)  # 18是genre的数量，hidden_dim是embedding的维度
+        self.dropout = nn.Dropout(dropout)
+        self.layer_norm = nn.LayerNorm(hidden_dim)  # 对输入进行归一化，防止梯度爆炸
+    
+    def forward(self, x):
+        # x: [batch_size, seq_len, 18]
+        assert x.shape[2] == 18, 'expected dim 18 in input, but got {} instead.'.format(x.shape[2])
+        x = self.fc(x)  # x: [batch_size, seq_len, hidden_dim]
+        x = self.dropout(x)  # x: [batch_size, seq_len, hidden_dim]
+        x = self.layer_norm(x)  # x: [batch_size, seq_len, hidden_dim]
+        return x  # x: [batch_size, seq_len, hidden_dim
 
 
 class Point_Wise_Feed_Forward(nn.Module):
@@ -92,6 +108,25 @@ class Self_Attention(nn.Module):
             y, _ = self.attention(x_norm, x_norm, x_norm, attn_mask=mask)  # 这里只对Q进行标准化是官方的做法，但是感觉似乎没能理解为什么
             y = self.dropout(y)
             return x_norm + y  # 残差连接  # y: [seq_len, batch_size, hidden_dim]
+        
+class WeightedAdd(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.alpha = nn.Parameter(torch.tensor(0.5))  # 初始权重均衡
+    
+    def forward(self, e1, e2):
+        return self.alpha * e1 + (1 - self.alpha) * e2
+    
+class EfficientMultiHotEmbedding(nn.Module):
+    def __init__(self, num_features, embed_dim):
+        super().__init__()
+        # 初始化可学习的嵌入矩阵
+        self.embed_matrix = nn.Parameter(torch.randn(num_features, embed_dim))
+        nn.init.xavier_uniform_(self.embed_matrix)
+        
+    def forward(self, multi_hot):
+        # multi_hot: [batch_size, num_features]
+        return torch.matmul(multi_hot.float(), self.embed_matrix) 
 
 class SASRec(nn.Module):
     def __init__(self, item_num, hidden_dim, num_heads, num_blocks, device, l2_emb=0.0, dropout=0.2, max_len=200, temp=1, version='paper'):
@@ -102,6 +137,9 @@ class SASRec(nn.Module):
         # 模型首先是一个embedding层
         # item_num + 1是因为要考虑到0这个位置的embedding为0，因为0是用来填充的
         self.item_emb = nn.Embedding(item_num + 1, hidden_dim, padding_idx=0) 
+        self.genre_emb = EfficientMultiHotEmbedding(18, hidden_dim)
+        self.emb_gate = WeightedAdd()
+        # self.emb_gate = nn.Linear(hidden_dim * 2, hidden_dim)
         # 接下来的PE不使用transformer的，论文里用的是一个可学习的，然后实现里用的是embeddding层
         self.pos_emb = nn.Embedding(max_len + 1, hidden_dim, padding_idx=0)
         self.emb_dropout = nn.Dropout(dropout)
@@ -123,10 +161,22 @@ class SASRec(nn.Module):
                 if m.bias is not None:
                     nn.init.constant_(m.bias, 0.0)
                     
+    def embed_item(self, log_seqs):
+        if isinstance(log_seqs[0], tuple):
+            log_seqs = list(zip(*log_seqs))
+            item_seqs = self.item_emb(torch.LongTensor(np.array(log_seqs[0])).to(self.device))
+            genre_seqs = self.genre_emb(torch.Tensor(np.array(log_seqs[1])).to(self.device))
+            seqs = self.emb_gate(item_seqs, genre_seqs)  # seqs: [batch_size, seq_len, hidden_dim]
+            log_seqs = np.array(log_seqs[0])
+        else:
+            log_seqs = np.array(log_seqs)
+            seqs = self.item_emb(torch.LongTensor(log_seqs).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
+        return seqs, log_seqs  # seqs: [batch_size, seq_len, hidden_dim]  # log_seqs: [batch_size, seq_len]
+    
     def get_embedding(self, log_seqs):
-        # seqs: [batch_size, seq_len]
-        # 函数为对比学习做准备，用于获取一个序列的embedding
-        seqs = self.item_emb(torch.LongTensor(log_seqs).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
+        # seqs: [batch_size, seq_len]        
+        # 更改了一下，如果输入时tuple，那么就有两个embedding
+        seqs, log_seqs = self.embed_item(log_seqs)  # seqs: [batch_size, seq_len, hidden_dim]
         seqs *= self.item_emb.embedding_dim ** 0.5  # 似乎是经验设置
         
         # 提取位置信息
@@ -142,7 +192,7 @@ class SASRec(nn.Module):
         seqs = self.get_embedding(log_seqs)  # seqs: [batch_size, seq_len, hidden_dim]
         
         # 接下来是mask，感觉就是transformer的decoder的那个mask的做法
-        seq_len = log_seqs.shape[1] 
+        seq_len = seqs.shape[1] 
         atten_mask = ~torch.tril(torch.ones(seq_len, seq_len, dtype=torch.bool, device=self.device))  # atten_mask: [seq_len, seq_len]  
         
         for i in range(self.num_blocks):  # 这里是多头注意力机制
@@ -157,25 +207,30 @@ class SASRec(nn.Module):
         # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
         log_feats = self.log2feat(log_seqs)  # log_feats: [batch_size, seq_len, hidden_dim]
         
-        pos_embs = self.item_emb(torch.LongTensor(pos_seqs).to(self.device))  # pos_embs: [batch_size, seq_len, hidden_dim]  
-        neg_embs = self.item_emb(torch.LongTensor(neg_seqs).to(self.device))  # neg_embs: [batch_size, seq_len, hidden_dim] 
+        pos_embs, pos_seqs = self.embed_item(pos_seqs)  # pos_embs: [batch_size, seq_len, hidden_dim] 
+        neg_embs, _ = self.embed_item(neg_seqs)  # neg_embs: [batch_size, seq_len, hidden_dim]
+        
+        # pos_embs = self.item_emb(torch.LongTensor(pos_seqs).to(self.device))  # pos_embs: [batch_size, seq_len, hidden_dim]  
+        # neg_embs = self.item_emb(torch.LongTensor(neg_seqs).to(self.device))  # neg_embs: [batch_size, seq_len, hidden_dim] 
         
         pos_logits = (log_feats * pos_embs).sum(dim=-1)  # pos_logits: [batch_size, seq_len] 
         neg_logits = (log_feats * neg_embs).sum(dim=-1)  # neg_logits: [batch_size, seq_len]
         
-        return pos_logits, neg_logits  # pos_logits: [batch_size, seq_len]  # neg_logits: [batch_size, seq_len]
+        return pos_logits, neg_logits, pos_seqs  # pos_logits: [batch_size, seq_len]  # neg_logits: [batch_size, seq_len]
     
     def predict(self, log_seqs, item_indices):  # 这里的item_indices是用来预测的，就是没见过的物品
         # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
-        assert len(log_seqs.shape) == 2, 'log_seqs must be 2D'
-        
         log_feats = self.log2feat(log_seqs)  # log_feats: [batch_size, seq_len, hidden_dim]
         final_feat = log_feats[:, -1, :]  # final_feat: [batch_size, hidden_dim]  # 这里的-1是用来提取最后一个的
-        item_embs = self.item_emb(torch.LongTensor(item_indices).to(self.device))  # item_embs: [batch_size, item_num, hidden_dim]
+        item_embs, _ = self.embed_item(item_indices)
+        # item_embs = self.item_emb(torch.LongTensor(item_indices).to(self.device))  # item_embs: [batch_size, item_num, hidden_dim]
         if len(item_embs.shape) == 2:
             item_embs = item_embs.unsqueeze(0)
         logits = torch.einsum('bih,bh->bi', item_embs, final_feat)  # logits: [batch_size, item_num]
         return logits  # logits: [batch_size, item_num]
+    
+    def get_weight(self):
+        return self.emb_gate.alpha.item()  # 获取权重
     
 
 if __name__ == "__main__":

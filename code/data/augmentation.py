@@ -3,6 +3,18 @@ from math import ceil, floor
 import numpy as np
 
 
+class RandSeqPool(object):
+    def __init__(self, aug_num, item_num):
+        # 这个其实就传进来的参数暂时就不利用了，就直接使用测试的时候各个增强方式最好的参数
+        self.pool = []
+        self.pool.append(CropSeq(0.2, item_num))
+        self.pool.append(MaskSeq(0.4, item_num))
+        self.pool.append(ReplaceSeq(0.4, item_num))
+        
+    def __call__(self, orig_seq):
+        aug = np.random.choice(self.pool)
+        return aug(orig_seq)
+
 class CropSeq(object):
     def __init__(self, prop, item_num):
         self.prop = prop

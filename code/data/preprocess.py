@@ -10,7 +10,44 @@ def load_raw_data(data_path:str) -> list:
         data = f.read().split(b'\n')[:-1]
     return data     
 
-def process_data(raw_data:list, save_path:str):
+
+def process_movie_data(data_path:str, mapping_path):
+    # 电影data的字段之间使用::分割，分别是MovieID::Title::Genres
+    # 这里的话其实主要使用MovieID字段和Genres字段就好，也是将信息重新保存一下
+    # 预计保存为id g1 g2 g3 g4的形式，其中id是重映射过的id，g1也是重映射的电影类型
+    # 读取映射关系
+    movies_map = {}
+    with open(mapping_path, 'r') as f:
+        for line in f.readlines():
+            line = line.strip().split(' ')
+            movies_map[line[0]] = int(line[1])
+    # 第一步读取数据
+    data = []
+    genres_map = {}
+    with open(data_path, 'rb') as f:
+        for line in f.readlines():
+            genres = []
+            line = line.strip().split(b'::')
+            for genre in line[2].split(b'|'):  # 这里是将电影类型进行分割
+                mtype = str(genre, encoding='utf-8')
+                if mtype not in genres_map:
+                    genres_map[mtype] = len(genres_map) + 1
+                genres.append(genres_map[mtype])
+            map_id = str(line[0], encoding='utf-8')
+            if map_id in movies_map:
+                data.append([movies_map[str(line[0], encoding='utf-8')], genres])
+    with open('movies_process.txt', "w") as f:
+        for line in data:
+            f.write(str(line[0]) + " " + " ".join([str(x) for x in line[1]]) + "\n")
+    print(len(genres_map))
+    with open('genres_map.txt', "w") as f:
+        for key, value in genres_map.items():
+            f.write(key + " " + str(value) + "\n")
+    print(len(data))
+    print(len(genres_map))
+    return data
+
+def process_data(raw_data:list, save_path:str, timestamp:bool=False):
     # rating数据的格式是UserID::MovieID::Rating::Timestamp
     # 项目里面似乎没有对rating进行处理，需要查一下文献看一下方案，但是个人理解来说rating就是一个交互反馈
     # 大致处理一般是首先将用户交互比较少的和产品交互比较少的给筛出
@@ -67,11 +104,26 @@ def process_data(raw_data:list, save_path:str):
     for userid in User:
         User[userid].sort(key=lambda x: x[0])  # 按照时间戳排序
         
+    # 记录逆映射方式
+    with open(save_path + 'user2new.txt', 'w') as f:
+        for userid in usermap:
+            f.write('%d %d\n' % (userid, usermap[userid]))  # 左边是userid，右边是新映射的id
+
+    with open(save_path + 'item2new.txt', 'w') as f:
+        for movieid in itemmap:
+            f.write('%d %d\n' % (movieid, itemmap[movieid]))  # 左边是movieid，右边是新映射的id
+        
     # 记录
+    save_path = save_path + 'ratings_process.txt'
+    if timestamp:
+        save_path = save_path.replace('.txt', '_timestamp.txt')  # 如果有时间戳的话，文件名后面加上_timestamp
     with open(save_path, 'w') as f:
         for user in User:
             for i in User[user]:
-                f.write('%d %d\n' % (user, i[1]))  # 写入用户ID和产品ID，每行一个交互记录
+                if timestamp:
+                    f.write('%d %d %d\n' % (user, i[1], i[0]))  # 写入用户ID、产品ID和时间戳，每行一个交互记录
+                else:
+                    f.write('%d %d\n' % (user, i[1]))  # 写入用户ID和产品ID，每行一个交互记录
     print('Data preprocess finished!')
     return new_data
         
@@ -79,7 +131,7 @@ def process_data(raw_data:list, save_path:str):
 if __name__ == "__main__":
     data_path = '../data/ml-1m/ratings.dat'
     check_data = '../data/ml-1m/ml-1m.txt'
-    save_path = '../data/ml-1m/ratings_process.txt'
+    save_path = '../data/ml-1m/'
     real_data = []
     with open(check_data, 'r') as f:
         real_data = f.read().split('\n')[:-1]
@@ -89,8 +141,11 @@ if __name__ == "__main__":
     print(max([row[0] for row in real_data]))
     print(max([row[1] for row in real_data]))
     raw_data = load_raw_data(data_path)
-    new_data = process_data(raw_data, save_path)
+    new_data = process_data(raw_data, save_path, timestamp=True)
     print(len(new_data))
     print(max([row[0] for row in new_data]))
     print(max([row[1] for row in new_data]))
     print(1)
+    # data_path = '../data/ml-1m/movies.dat'
+    # mapping_path = '../data/ml-1m/item2new.txt'
+    # movie_data = process_movie_data(data_path, mapping_path)

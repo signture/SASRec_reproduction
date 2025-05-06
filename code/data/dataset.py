@@ -9,6 +9,7 @@ augmentations = {
     'mask': MaskSeq,
     'crop': CropSeq,
     'replace': ReplaceSeq,
+    'random': RandSeqPool,
     'none': None
 }
 
@@ -20,7 +21,7 @@ def random_neq(l, r, s):
     return t
 
 
-def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_queue, augmentation=None):
+def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_queue, augmentation=None, genre_dict=None):
     all_item_ids = set(range(1, itemnum + 1))
     def sample(uid):
 
@@ -53,7 +54,13 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
         #     nxt = i
         #     idx -= 1
         #     if idx == -1: break
-        
+        return_tuple = (uid, seq, pos, neg)
+        if genre_dict is not None:
+            pos_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in pos])
+            neg_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in neg])
+            seq_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in seq])
+            return_tuple = (uid, (seq, seq_genres), (pos, pos_genres), (neg, neg_genres))
+            
         if augmentation is not None:
             aug1 = np.zeros([maxlen], dtype=np.int32)
             aug2 = np.zeros([maxlen], dtype=np.int32)
@@ -64,10 +71,16 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
             aug1[-valid_length:] = np.array(aug_seq1)[-valid_length:]
             valid_length = min(len(aug_seq2), maxlen)
             aug2[-valid_length:] = np.array(aug_seq2)[-valid_length:]
+            
+            if genre_dict is not None:
+                aug1_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in aug1])
+                aug2_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in aug2])
+                return_tuple = (uid, (seq, seq_genres), (pos, pos_genres), (neg, neg_genres), (aug1, aug1_genres), (aug2, aug2_genres))
+                
+            else:    
+                return_tuple = (uid, seq, pos, neg, aug1, aug2) 
 
-            return (uid, seq, pos, neg, aug1, aug2)
-
-        return (uid, seq, pos, neg)
+        return return_tuple
     
     uids = np.arange(1, usernum+1, dtype=np.int32)
     counter = 0
@@ -82,13 +95,14 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
 
 
 class WarpSampler(object):
-    def __init__(self, User, usernum, itemnum, batch_size=64, maxlen=10, n_workers=1, augmentation=[None, 1]):
-        assert augmentation[0] in ['mask', 'crop', 'replace', 'none'], 'Invalid augmentation type'
+    def __init__(self, User, usernum, itemnum, batch_size=64, maxlen=10, n_workers=1, augmentation=[None, 1], genre_dict=None):
+        assert augmentation[0] in ['mask', 'crop', 'replace', 'random', 'none'], 'Invalid augmentation type'
         assert augmentation[1] >= 0 and augmentation[1] <= 1, 'Invalid augmentation probability'
         if augmentations[augmentation[0]] is not None:
             self.augmentation = augmentations[augmentation[0]](augmentation[1], itemnum) 
         else:
             self.augmentation = None
+        self.genre_dict = genre_dict
         self.result_queue = Queue(maxsize=n_workers * 10)
         self.processors = []
         for i in range(n_workers):
@@ -100,6 +114,7 @@ class WarpSampler(object):
                                                       maxlen,
                                                       self.result_queue,
                                                       self.augmentation, 
+                                                      self.genre_dict
                                                       )))
             self.processors[-1].daemon = True
             self.processors[-1].start()
@@ -172,7 +187,13 @@ if __name__ == "__main__":
     #     print(pos)  # [batch_size, max_len]  # 这里的pos是正样本
     #     print(neg)  # [batch_size, max_len]  # 这里的neg是负样本
     #     break
-    sampler = WarpSampler(u2i, user_num, item_num, batch_size=2, maxlen=10, n_workers=1, augmentation=['crop', 0.5])  # 这里的batch_size是批次大小，maxlen是序列最大长度，n_workers是进程数量
+    genre_dict = {1 : [1, 3], 2 : [3, 5], 3: [1, 3], 4: [2, 5], 5: [1, 2], 6: [3, 5], 7: [1, 2], 8: [3, 5], 9: [1, 2], 10: [3, 5]}
+    init_vector = np.zeros(18, dtype=np.float32)
+    for item in genre_dict:
+        vector = init_vector.copy()
+        np.put(vector, [int(x) - 1 for x in genre_dict[item]], 1.0)
+        genre_dict[item] = vector
+    sampler = WarpSampler(u2i, user_num, item_num, batch_size=2, maxlen=10, n_workers=1, augmentation=['crop', 0.5], genre_dict=genre_dict)  # 这里的batch_size是批次大小，maxlen是序列最大长度，n_workers是进程数量
     user_id, seq, pos, neg, aug1, aug2 = sampler.next_batch() # 这里的user_id是用户id，seq是序列，pos是正样本，neg是负样本
     print(user_id)  # [batch_size]  # 这里的user_id是用户id
     print(seq)  # [batch_size, max_len]  # 这里的seq是序列

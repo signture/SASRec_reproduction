@@ -7,7 +7,7 @@ import random
 import numpy as np
 from model.SASRec import SASRec
 
-def evaluate(model, dataset, valid=True, maxlen=200):
+def evaluate(model, dataset, valid=True, maxlen=200, genre_dict=None):
     model.eval()
     [train, valid, test, user_num, item_num] = copy.deepcopy(dataset)
     target_data = valid if valid else test
@@ -19,17 +19,18 @@ def evaluate(model, dataset, valid=True, maxlen=200):
     
     with torch.no_grad():
         for u in users:
+            
             if len(train[u]) < 1 or len(target_data[u]) < 1:
                 continue  # 排除没有训练数据或测试数据的用户
         
             # 构造输入序列
-            seq = np.zeros(maxlen, dtype=np.int32)
+            seq = np.zeros((1, maxlen), dtype=np.int32)
             idx = maxlen - 1  # 从序列的末尾开始填充
             if not valid:  # 测试的话就要将在验证里的倒数第二个填充进去
-                seq[idx] = valid[u][0]  # 填充最后一个物品
+                seq[0][idx] = valid[u][0]  # 填充最后一个物品
                 idx -= 1
             for i in reversed(train[u]):
-                seq[idx] = i
+                seq[0][idx] = i
                 idx -= 1
                 if idx == -1:
                     break  # 如果序列已经满了，就不再填充
@@ -43,8 +44,15 @@ def evaluate(model, dataset, valid=True, maxlen=200):
                 while t in rated:
                     t = np.random.randint(1, item_num + 1)        
                 item_idx.append(t)  # 这里是将还未交互的物品加入候选集
-
-            predictions = -model.predict(*[np.array(l) for l in [[seq], item_idx]])
+                
+            if genre_dict is not None:  # 如果有genre_dict，就将genre加入到输入序列中
+                seq_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in seq[0]])
+                item_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in item_idx])
+                seq = list(zip(seq, seq_genres))
+                item_idx = list(zip(item_idx, item_genres))
+            
+            
+            predictions = -model.predict((seq), (item_idx))
             predictions = predictions[0]
         
             rank = predictions.argsort().argsort()[0].item()  # 计算排名(降序排序)

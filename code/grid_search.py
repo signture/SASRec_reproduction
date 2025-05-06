@@ -2,8 +2,9 @@ import subprocess
 
 # 定义超参数的搜索空间
 types = ['none']
-probs = [0.]
-view_types = ['flatten']
+probs = [0.1]
+view_types = ['mean']
+enable_genre = True
 
 # 遍历所有超参数组合
 for type_ in types:
@@ -14,8 +15,10 @@ for type_ in types:
                 'python', 'main.py',
                 '--type', type_,
                 '--prob', str(prob),
-                '--view_type', view_type
+                '--view_type', view_type,
             ]
+            if enable_genre:
+                command.append('--genre') 
             print(f"Running command: {' '.join(command)}")
             try:
                 # 执行命令

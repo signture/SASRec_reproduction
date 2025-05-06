@@ -10,17 +10,19 @@ import argparse
 from data.dataset import SeqItemDataset, WarpSampler
 from model.SASRec import SASRec
 from utils.metric import evaluate
-from utils.utils import data_split, set_seed
+from utils.utils import data_split, set_seed, load_genre_data
 from utils.train import train_epoch, EarlyStopping
 
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--type', type=str, default='mask', choices=['mask', 'crop', 'replace', 'none'])
+    parser.add_argument('--type', type=str, default='none', choices=['mask', 'crop', 'replace', 'random', 'none'])
     parser.add_argument('--prob', type=float, default=0.8)
     parser.add_argument('--weight', type=float, default=0.1)
     parser.add_argument('--temp', type=float, default=1.0)
     parser.add_argument('--view_type', type=str, default='mean', choices=['flatten', 'mean'])
+    parser.add_argument('--timestamp', action="store_true", help='whether to use timestamp information')
+    parser.add_argument('--genre', action="store_true", help='whether to use genre information')
     
     return parser.parse_args()
 
@@ -45,6 +47,8 @@ if __name__ == "__main__":
     contrastive_weight = args.weight
     sim_temp = args.temp
     view_type = args.view_type
+    timestamp = args.timestamp
+    genre = args.genre
     # contrastive_type = 'mask'
     # contrastive_prob = 0.8
     # contrastive_weight = 0.1
@@ -60,6 +64,7 @@ if __name__ == "__main__":
     # 相关路径设置
     data_path = '../data/ml-1m/ratings_process.txt'
     state_dict_path = '../model/SASRec.pth'
+    genre_path = '../data/ml-1m/movies_process.txt'
     if os.path.exists(state_dict_path) == False:  # 如果不存在这个文件夹，则创建这个文件夹
         state_dict_path = None
     save_dir = '../result' + '/' + time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime(time.time()))
@@ -91,6 +96,8 @@ if __name__ == "__main__":
     setting.write('contrastive_weight: {}\n'.format(contrastive_weight))
     setting.write('contrastive_view_type: {}\n'.format(view_type))
     setting.write('sim_temp: {}\n'.format(sim_temp))
+    setting.write('genre: {}\n'.format(genre))
+    setting.write('timestamp: {}\n'.format(timestamp))
     
     setting.close()
     
@@ -98,7 +105,8 @@ if __name__ == "__main__":
     set_seed(seed)
     
     # 加载数据并划分
-    [user_train, user_valid, user_test, user_num, item_num] = data_split(data_path)
+    [user_train, user_valid, user_test, user_num, item_num] = data_split(data_path, timestamp=timestamp)
+    genre_dict = load_genre_data(genre_path) if genre else None  # 加载电影类型数据
     num_batch = (len(user_train) - 1) // batch_size + 1  # 计算batch数量
     print('the number of batch for a epoch is %.2f' % num_batch)
     asl = 0.0  # 计算平均序列长度
@@ -106,7 +114,7 @@ if __name__ == "__main__":
         asl += len(user_train[user])
     print('the average sequence length is %.2f' % (asl / len(user_train)))
     sampler = WarpSampler(user_train, user_num, item_num, batch_size=batch_size, maxlen=max_seq_len, \
-                          n_workers=num_workers, augmentation=[contrastive_type, contrastive_prob])
+                          n_workers=num_workers, augmentation=[contrastive_type, contrastive_prob], genre_dict=genre_dict)
     # dataset = SeqItemDataset(user_train, user_num, item_num, max_seq_len)
     # dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
     
@@ -140,13 +148,16 @@ if __name__ == "__main__":
     for epoch in range(1, epochs + 1):  # 训练
         print('Epoch: %d' % epoch)
         log.write('Epoch: %d\n' % epoch)
+        if genre:
+            weight = model.get_weight()
+            log.write('weight: %s\n' % str(weight))
         train_epoch(model, optimizer, criterion, num_batch, sampler, device, log, args)  # 训练一个epoch
         if epoch % patience == 0:
             t1 = time.time() - start_time
             print('Evaluate')
             log.write('Evaluate\n')
-            t_valid = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], True, max_seq_len)  # 计算验证集上的指标
-            t_test = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], False, max_seq_len)  # 计算测试集上的指标
+            t_valid = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], True, max_seq_len, genre_dict=genre_dict)  # 计算验证集上的指标
+            t_test = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], False, max_seq_len, genre_dict=genre_dict)  # 计算测试集上的指标
             print('epoch:%d, time: %f(s), valid (HT@10: %.4f, NDCG@10: %.4f), test (HT@10: %.4f, NDCG@10: %.4f)'
                     % (epoch, t1, t_valid[0], t_valid[1], t_test[0], t_test[1]))
             log.write('epoch:%d, time: %f(s), valid (HT@10: %.4f, NDCG@10: %.4f), test (HT@10: %.4f, NDCG@10: %.4f)\n'
