@@ -17,9 +17,13 @@ def train_epoch(model, optimizer, criterion, num_batch, sampler, device, log=Non
             elif configs.view_type == 'mean':
                 cl_loss = model.cl_loss(aug_emb1.mean(dim=1), aug_emb2.mean(dim=1))
         else:
-            u, seq, pos, neg = sampler.next_batch()
+            if configs.timestamp:
+                u, seq, pos, neg, time_seq = sampler.next_batch()  # 从sampler中获取一个batch的数据
+                pos_logits, neg_logits, pos = model(seq, pos, neg, time_seq=np.array(time_seq))
+            else:
+                u, seq, pos, neg = sampler.next_batch()
             # seq, pos, neg = np.array(seq), np.array(pos), np.array(neg)
-        pos_logits, neg_logits, pos = model(seq, pos, neg) 
+                pos_logits, neg_logits, pos = model(seq, pos, neg) 
         pos_labels, neg_labels = torch.ones_like(pos_logits, device=device), torch.zeros_like(neg_logits, device=device)
         optimizer.zero_grad()
         indices = np.where(pos != 0)

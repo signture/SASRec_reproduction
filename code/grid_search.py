@@ -4,7 +4,8 @@ import subprocess
 types = ['none']
 probs = [0.1]
 view_types = ['mean']
-enable_genre = True
+enable_genre = False
+time_stamp = True
 
 # 遍历所有超参数组合
 for type_ in types:
@@ -19,6 +20,8 @@ for type_ in types:
             ]
             if enable_genre:
                 command.append('--genre') 
+            if time_stamp:
+                command.append('--timestamp')
             print(f"Running command: {' '.join(command)}")
             try:
                 # 执行命令

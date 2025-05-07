@@ -21,7 +21,7 @@ def get_args():
     parser.add_argument('--weight', type=float, default=0.1)
     parser.add_argument('--temp', type=float, default=1.0)
     parser.add_argument('--view_type', type=str, default='mean', choices=['flatten', 'mean'])
-    parser.add_argument('--timestamp', action="store_true", help='whether to use timestamp information')
+    parser.add_argument('--timestamp', default='True', action="store_true", help='whether to use timestamp information')
     parser.add_argument('--genre', action="store_true", help='whether to use genre information')
     
     return parser.parse_args()
@@ -62,7 +62,10 @@ if __name__ == "__main__":
     l2_emb = 0.0
     
     # 相关路径设置
-    data_path = '../data/ml-1m/ratings_process.txt'
+    if timestamp:
+        data_path = '../data/ml-1m/ratings_process_timestamp.txt'
+    else:
+        data_path = '../data/ml-1m/ratings_process.txt'
     state_dict_path = '../model/SASRec.pth'
     genre_path = '../data/ml-1m/movies_process.txt'
     if os.path.exists(state_dict_path) == False:  # 如果不存在这个文件夹，则创建这个文件夹
@@ -114,7 +117,8 @@ if __name__ == "__main__":
         asl += len(user_train[user])
     print('the average sequence length is %.2f' % (asl / len(user_train)))
     sampler = WarpSampler(user_train, user_num, item_num, batch_size=batch_size, maxlen=max_seq_len, \
-                          n_workers=num_workers, augmentation=[contrastive_type, contrastive_prob], genre_dict=genre_dict)
+                          n_workers=num_workers, augmentation=[contrastive_type, contrastive_prob], genre_dict=genre_dict, \
+                          timestamp=timestamp)  # 采样器
     # dataset = SeqItemDataset(user_train, user_num, item_num, max_seq_len)
     # dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
     
@@ -156,8 +160,8 @@ if __name__ == "__main__":
             t1 = time.time() - start_time
             print('Evaluate')
             log.write('Evaluate\n')
-            t_valid = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], True, max_seq_len, genre_dict=genre_dict)  # 计算验证集上的指标
-            t_test = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], False, max_seq_len, genre_dict=genre_dict)  # 计算测试集上的指标
+            t_valid = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], True, max_seq_len, genre_dict=genre_dict, timestamp=timestamp)  # 计算验证集上的指标
+            t_test = evaluate(model, [user_train, user_valid, user_test, user_num, item_num], False, max_seq_len, genre_dict=genre_dict, timestamp=timestamp)  # 计算测试集上的指标
             print('epoch:%d, time: %f(s), valid (HT@10: %.4f, NDCG@10: %.4f), test (HT@10: %.4f, NDCG@10: %.4f)'
                     % (epoch, t1, t_valid[0], t_valid[1], t_test[0], t_test[1]))
             log.write('epoch:%d, time: %f(s), valid (HT@10: %.4f, NDCG@10: %.4f), test (HT@10: %.4f, NDCG@10: %.4f)\n'

@@ -4,6 +4,7 @@ from torch.utils import data
 import numpy as np
 from multiprocessing import Process, Queue
 from data.augmentation import *
+from utils.utils import *
 
 augmentations = {
     'mask': MaskSeq,
@@ -21,12 +22,16 @@ def random_neq(l, r, s):
     return t
 
 
-def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_queue, augmentation=None, genre_dict=None):
+def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_queue, augmentation=None, genre_dict=None, timestamp=False):
     all_item_ids = set(range(1, itemnum + 1))
     def sample(uid):
 
         # uid = np.random.randint(1, usernum + 1)
-        item_ids = user_train[uid]
+        if timestamp:
+            item_ids = [i[1] for i in user_train[uid]]
+            time_seq = scaleTime([i[0] for i in user_train[uid]])
+        else:    
+            item_ids = user_train[uid]
         while len(user_train[uid]) <= 1: uid = np.random.randint(1, usernum + 1)
 
         seq = np.zeros([maxlen], dtype=np.int32)
@@ -41,6 +46,9 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
         # 赋值seq
         seq[-valid_length:] = np.array(item_ids[:-1])[-valid_length:]
         pos[-valid_length:] = np.array(item_ids[1:])[-valid_length:]
+        if timestamp:
+            tseq = np.zeros([maxlen], dtype=np.float32)
+            tseq[-valid_length:] = np.array(time_seq[:-1])[-valid_length:]
 
         ts = set(user_train[uid])
         non_interacted_items = np.array(list(all_item_ids - ts))  # 未交互物品的 ID 数组
@@ -55,6 +63,9 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
         #     idx -= 1
         #     if idx == -1: break
         return_tuple = (uid, seq, pos, neg)
+        # 这里暂时只考虑原先的情况进行添加
+        if timestamp:
+            return_tuple = (uid, seq, pos, neg, tseq)
         if genre_dict is not None:
             pos_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in pos])
             neg_genres = np.array([genre_dict.get(i, np.zeros_like(genre_dict[1])) for i in neg])
@@ -95,7 +106,7 @@ def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_que
 
 
 class WarpSampler(object):
-    def __init__(self, User, usernum, itemnum, batch_size=64, maxlen=10, n_workers=1, augmentation=[None, 1], genre_dict=None):
+    def __init__(self, User, usernum, itemnum, batch_size=64, maxlen=10, n_workers=1, augmentation=[None, 1], genre_dict=None, timestamp=False):
         assert augmentation[0] in ['mask', 'crop', 'replace', 'random', 'none'], 'Invalid augmentation type'
         assert augmentation[1] >= 0 and augmentation[1] <= 1, 'Invalid augmentation probability'
         if augmentations[augmentation[0]] is not None:
@@ -114,7 +125,8 @@ class WarpSampler(object):
                                                       maxlen,
                                                       self.result_queue,
                                                       self.augmentation, 
-                                                      self.genre_dict
+                                                      self.genre_dict,
+                                                      timestamp
                                                       )))
             self.processors[-1].daemon = True
             self.processors[-1].start()

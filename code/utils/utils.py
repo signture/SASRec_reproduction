@@ -47,6 +47,7 @@ def data_split(data_path: str, timestamp:bool=False):
     if timestamp:
         for user, item, timestamp in data: 
             User[user].append((timestamp, item))
+        # 对每个用户的时间戳进行放缩处理
     else:
         for user, item in data:
             User[user].append(item)
@@ -67,7 +68,6 @@ def data_split(data_path: str, timestamp:bool=False):
 
 
 def getRelativePos(time_seq, time_span):
-    print(time_seq)
     time_matrix = np.abs(time_seq[:, np.newaxis] - time_seq[np.newaxis, :])
     # 这里需要防止全是0
     min_time_span = np.min(time_matrix[time_matrix > 0]) if np.any(time_matrix > 0) else 1.0
@@ -75,7 +75,6 @@ def getRelativePos(time_seq, time_span):
     time_matrix = np.floor(time_matrix / min_time_span)
     # 裁剪到[0, time_span]范围内
     time_matrix = np.clip(time_matrix, 0, time_span)
-    print(time_matrix)
     return time_matrix.astype(np.int32)
 
 
@@ -92,10 +91,34 @@ def getRelations(user_set:dict, max_len, time_span):
         user_relations[user] = getRelativePos(time_seq, time_span)
     return user_relations
 
+# 简单统计一下时间间隔集里面的一些信息
+def getTimeSet(user_set:dict, max_len, time_span):
+    time_span_set = set()
+    for user in user_set:
+        time_seq = np.array([item[0] for item in user_set[user]]) - user_set[user][0][0]
+        diff_matrix = np.abs(time_seq[:, np.newaxis] - time_seq[np.newaxis, :])
+        min_time_span = np.min(diff_matrix[diff_matrix > 0]) if np.any(diff_matrix > 0) else 1.0
+        # 对矩阵进行放缩处理(处于集合中的最小间隔并向下取整)
+        diff_matrix = np.floor(diff_matrix / min_time_span)
+        diff_set = set(diff_matrix[np.triu_indices(len(time_seq), k=1)])
+        time_span_set.update(diff_set)
+    time_span_set = sorted(list(time_span_set))
+    time_span_set = [int(x) for x in time_span_set]
+    import matplotlib.pyplot as plt
+    plt.hist(time_span_set, bins=100)
+    plt.show()
+    print(min(time_span_set), max(time_span_set), len(time_span_set))
+    return time_span_set
+
+def scaleTime(time_seq:list):
+    time_seq = (np.array(time_seq) - time_seq[0]) / (time_seq[-1] - time_seq[0])
+    return time_seq
+    
 
 if __name__ == "__main__":
     data_path = '../data/ml-1m/ratings_process_timestamp.txt'
     user_train, user_valid, user_test, user_num, item_num = data_split(data_path, timestamp=True)
-    selected_keys = [1, 2, 3, 4]
-    sub_dict = {key: user_train[key] for key in selected_keys if key in user_train}
-    user_relations = getRelations(sub_dict, 10, 10)
+    # selected_keys = [1, 2, 3, 4]
+    # sub_dict = {key: user_train[key] for key in selected_keys if key in user_train}
+    # user_relations = getRelations(sub_dict, 10, 10)
+    time_span_set = scaleTime(user_train)

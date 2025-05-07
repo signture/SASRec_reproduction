@@ -139,6 +139,9 @@ class SASRec(nn.Module):
         self.item_emb = nn.Embedding(item_num + 1, hidden_dim, padding_idx=0) 
         self.genre_emb = EfficientMultiHotEmbedding(18, hidden_dim)
         self.emb_gate = WeightedAdd()
+        
+        # 额外增加一个时间戳的嵌入
+        self.time_emb = nn.Linear(1, hidden_dim)  # 这里的时间戳是一个一维的向量，所以用线性层
         # self.emb_gate = nn.Linear(hidden_dim * 2, hidden_dim)
         # 接下来的PE不使用transformer的，论文里用的是一个可学习的，然后实现里用的是embeddding层
         self.pos_emb = nn.Embedding(max_len + 1, hidden_dim, padding_idx=0)
@@ -173,7 +176,7 @@ class SASRec(nn.Module):
             seqs = self.item_emb(torch.LongTensor(log_seqs).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
         return seqs, log_seqs  # seqs: [batch_size, seq_len, hidden_dim]  # log_seqs: [batch_size, seq_len]
     
-    def get_embedding(self, log_seqs):
+    def get_embedding(self, log_seqs, **kwargs):
         # seqs: [batch_size, seq_len]        
         # 更改了一下，如果输入时tuple，那么就有两个embedding
         seqs, log_seqs = self.embed_item(log_seqs)  # seqs: [batch_size, seq_len, hidden_dim]
@@ -184,12 +187,17 @@ class SASRec(nn.Module):
         positions = torch.tile(torch.arange(1, log_seqs.shape[1] + 1), [log_seqs.shape[0], 1])  # positions: [batch_size, seq_len]
         positions = positions * (log_seqs != 0)
         seqs += self.pos_emb(torch.LongTensor(positions).to(self.device))  # seqs: [batch_size, seq_len, hidden_dim] 
+        if kwargs.get('time_seq') is not None:
+            seqs += self.time_emb(torch.FloatTensor(kwargs['time_seq']).to(self.device).unsqueeze(-1))  # seqs: [batch_size, seq_len, hidden_dim]
         seqs = self.emb_dropout(seqs)  # seqs: [batch_size, seq_len, hidden_dim] 
         return seqs  # seqs: [batch_size, seq_len, hidden_dim]
         
-    def log2feat(self, log_seqs):
+    def log2feat(self, log_seqs, **kwargs):
         # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
-        seqs = self.get_embedding(log_seqs)  # seqs: [batch_size, seq_len, hidden_dim]
+        if kwargs.get('time_seq') is not None:
+            seqs = self.get_embedding(log_seqs, time_seq=kwargs['time_seq'])
+        else:
+            seqs = self.get_embedding(log_seqs)  # seqs: [batch_size, seq_len, hidden_dim]
         
         # 接下来是mask，感觉就是transformer的decoder的那个mask的做法
         seq_len = seqs.shape[1] 
@@ -203,9 +211,12 @@ class SASRec(nn.Module):
         log_feats = self.layer_norm(seqs)  # seqs: [batch_size, seq_len, hidden_dim]
         return log_feats  # log_feats: [batch_size, seq_len, hidden_dim]
     
-    def forward(self, log_seqs, pos_seqs, neg_seqs):  # 这里的pos_seqs和neg_seqs都是用来计算损失的，pos_seqs是用来预测的
+    def forward(self, log_seqs, pos_seqs, neg_seqs, **kwargs):  # 这里的pos_seqs和neg_seqs都是用来计算损失的，pos_seqs是用来预测的
         # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
-        log_feats = self.log2feat(log_seqs)  # log_feats: [batch_size, seq_len, hidden_dim]
+        if kwargs.get('time_seq') is not None:
+            log_feats = self.log2feat(log_seqs, time_seq=kwargs['time_seq'])
+        else:
+            log_feats = self.log2feat(log_seqs)  # log_feats: [batch_size, seq_len, hidden_dim]
         
         pos_embs, pos_seqs = self.embed_item(pos_seqs)  # pos_embs: [batch_size, seq_len, hidden_dim] 
         neg_embs, _ = self.embed_item(neg_seqs)  # neg_embs: [batch_size, seq_len, hidden_dim]
@@ -218,9 +229,12 @@ class SASRec(nn.Module):
         
         return pos_logits, neg_logits, pos_seqs  # pos_logits: [batch_size, seq_len]  # neg_logits: [batch_size, seq_len]
     
-    def predict(self, log_seqs, item_indices):  # 这里的item_indices是用来预测的，就是没见过的物品
+    def predict(self, log_seqs, item_indices, **kwargs):  # 这里的item_indices是用来预测的，就是没见过的物品
         # log_seqs: [batch_size, seq_len]  # 这里的seq_len是不包括最后一个的，因为最后一个是用来预测的
-        log_feats = self.log2feat(log_seqs)  # log_feats: [batch_size, seq_len, hidden_dim]
+        if kwargs.get('time_seq') is not None:
+            log_feats = self.log2feat(log_seqs, time_seq=kwargs['time_seq'])
+        else:
+            log_feats = self.log2feat(log_seqs)  # log_feats: [batch_size, seq_len, hidden_dim]
         final_feat = log_feats[:, -1, :]  # final_feat: [batch_size, hidden_dim]  # 这里的-1是用来提取最后一个的
         item_embs, _ = self.embed_item(item_indices)
         # item_embs = self.item_emb(torch.LongTensor(item_indices).to(self.device))  # item_embs: [batch_size, item_num, hidden_dim]

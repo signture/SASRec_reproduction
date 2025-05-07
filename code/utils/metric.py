@@ -7,9 +7,16 @@ import random
 import numpy as np
 from model.SASRec import SASRec
 
-def evaluate(model, dataset, valid=True, maxlen=200, genre_dict=None):
+def evaluate(model, dataset, valid=True, maxlen=200, genre_dict=None, timestamp=False):
     model.eval()
     [train, valid, test, user_num, item_num] = copy.deepcopy(dataset)
+    if timestamp:
+        train_time_seq = {k: [i[0] for i in v] for k, v in train.items()}
+        valid_time_seq = {k: [i[0] for i in v] for k, v in valid.items()}
+        test_time_seq = {k: [i[0] for i in v] for k, v in test.items()}
+        train = {k: [i[1] for i in v] for k, v in train.items()}
+        valid = {k: [i[1] for i in v] for k, v in valid.items()}
+        test = {k: [i[1] for i in v] for k, v in test.items()}
     target_data = valid if valid else test
     
     users = range(1, user_num + 1)
@@ -22,15 +29,37 @@ def evaluate(model, dataset, valid=True, maxlen=200, genre_dict=None):
             
             if len(train[u]) < 1 or len(target_data[u]) < 1:
                 continue  # 排除没有训练数据或测试数据的用户
+            
+            # # 构造输入序列
+            # seq = np.zeros((1, maxlen), dtype=np.int32)
+            # # 新增：构造时间序列
+            time_seq = np.zeros((1, maxlen), dtype=np.float32) if timestamp else None
+
+            # train_seq = np.array(train[u][-maxlen + (1 if not valid else 0):])[::-1]
+            # start_idx = maxlen - len(train_seq) - (1 if not valid else 0)
+
+            # if not valid:
+            #     seq[0, -1] = valid[u][0]
+            #     if timestamp:
+            #         time_seq[0, -1] = valid_time_seq[u][0]
+
+            # seq[0, start_idx:-1 if not valid else None] = train_seq
+            # if timestamp:
+            #     train_time = np.array(train_time_seq[u][-maxlen + (1 if not valid else 0):])[::-1]
+            #     time_seq[0, start_idx:-1 if not valid else None] = (train_time - train_time[0]) / (train_time[-1] - train_time[0] + 1e-6)  # 归一化时间序列
         
             # 构造输入序列
             seq = np.zeros((1, maxlen), dtype=np.int32)
             idx = maxlen - 1  # 从序列的末尾开始填充
             if not valid:  # 测试的话就要将在验证里的倒数第二个填充进去
                 seq[0][idx] = valid[u][0]  # 填充最后一个物品
+                if timestamp:
+                    time_seq[0][idx] = valid_time_seq[u][0]
                 idx -= 1
-            for i in reversed(train[u]):
-                seq[0][idx] = i
+            for i in reversed(range(len(train[u]))):
+                seq[0][idx] = train[u][i]
+                if timestamp:
+                    time_seq[0][idx] = train_time_seq[u][i]
                 idx -= 1
                 if idx == -1:
                     break  # 如果序列已经满了，就不再填充
@@ -51,8 +80,11 @@ def evaluate(model, dataset, valid=True, maxlen=200, genre_dict=None):
                 seq = list(zip(seq, seq_genres))
                 item_idx = list(zip(item_idx, item_genres))
             
-            
-            predictions = -model.predict((seq), (item_idx))
+            if timestamp:
+                time_seq[0][idx+1:] = (time_seq[0][idx+1:] - time_seq[0][idx+1]) / (time_seq[0][-1] - time_seq[0][idx+1] + 1e-6)  # 归一化时间序列
+                predictions = -model.predict((seq), (item_idx), time_seq=time_seq)
+            else:
+                predictions = -model.predict((seq), (item_idx))
             predictions = predictions[0]
         
             rank = predictions.argsort().argsort()[0].item()  # 计算排名(降序排序)
