@@ -5,7 +5,8 @@ types = ['none']
 probs = [0.1]
 view_types = ['mean']
 enable_genre = False
-time_stamp = True
+time_stamp = False
+model_name = 'BSARec'
 
 # 遍历所有超参数组合
 for type_ in types:
@@ -17,6 +18,7 @@ for type_ in types:
                 '--type', type_,
                 '--prob', str(prob),
                 '--view_type', view_type,
+                '--model', model_name,
             ]
             if enable_genre:
                 command.append('--genre') 

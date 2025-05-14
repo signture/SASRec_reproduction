@@ -129,7 +129,7 @@ class EfficientMultiHotEmbedding(nn.Module):
         return torch.matmul(multi_hot.float(), self.embed_matrix) 
 
 class SASRec(nn.Module):
-    def __init__(self, item_num, hidden_dim, num_heads, num_blocks, device, l2_emb=0.0, dropout=0.2, max_len=200, temp=1, version='paper'):
+    def __init__(self, item_num, hidden_dim, num_heads, num_blocks, device, l2_emb=0.0, dropout=0.2, max_len=200, temp=1, version='paper', **kwargs):
         super(SASRec, self).__init__()
         self.device = device
         self.l2_emb = l2_emb  # 这个是实现里有的一个正则项

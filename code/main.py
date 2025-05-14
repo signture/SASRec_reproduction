@@ -8,6 +8,7 @@ import time
 import logging
 import argparse
 from data.dataset import SeqItemDataset, WarpSampler
+from model.BSARec import BSARec
 from model.SASRec import SASRec
 from utils.metric import evaluate
 from utils.utils import data_split, set_seed, load_genre_data
@@ -21,8 +22,10 @@ def get_args():
     parser.add_argument('--weight', type=float, default=0.1)
     parser.add_argument('--temp', type=float, default=1.0)
     parser.add_argument('--view_type', type=str, default='mean', choices=['flatten', 'mean'])
-    parser.add_argument('--timestamp', default='True', action="store_true", help='whether to use timestamp information')
+    parser.add_argument('--timestamp', action="store_true", help='whether to use timestamp information')
     parser.add_argument('--genre', action="store_true", help='whether to use genre information')
+    parser.add_argument('--model', type=str, default='SASRec', choices=['SASRec', 'BSARec'])
+    parser.add_argument('--c', type=float, default=9)
     
     return parser.parse_args()
 
@@ -32,7 +35,7 @@ if __name__ == "__main__":
     # 训练超参数
     max_seq_len = 200
     batch_size = 128
-    learning_rate = 0.001
+    learning_rate = 0.001 # 0.001
     epochs = 1000
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     inference_only = False
@@ -49,6 +52,8 @@ if __name__ == "__main__":
     view_type = args.view_type
     timestamp = args.timestamp
     genre = args.genre
+    model_name = args.model
+    c = args.c
     # contrastive_type = 'mask'
     # contrastive_prob = 0.8
     # contrastive_weight = 0.1
@@ -101,6 +106,8 @@ if __name__ == "__main__":
     setting.write('sim_temp: {}\n'.format(sim_temp))
     setting.write('genre: {}\n'.format(genre))
     setting.write('timestamp: {}\n'.format(timestamp))
+    setting.write('model_name: {}\n'.format(model_name))
+    setting.write('c: {}\n'.format(c))
     
     setting.close()
     
@@ -123,7 +130,8 @@ if __name__ == "__main__":
     # dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
     
     # 模型加载与训练准备
-    model = SASRec(item_num, hidden_dim, num_heads, num_blocks, device, l2_emb, dropout_rate, max_seq_len, temp=sim_temp)
+    model = eval(model_name)(item_num, hidden_dim, num_heads, num_blocks, device, l2_emb, dropout_rate, max_seq_len, temp=sim_temp, c=c)  # 模型加载
+    # model = SASRec(item_num, hidden_dim, num_heads, num_blocks, device, l2_emb, dropout_rate, max_seq_len, temp=sim_temp)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate, betas=(0.9, 0.98))
     criterion = nn.BCEWithLogitsLoss()  # 交叉熵损失函数
     # early_stopping = EarlyStopping(save_dir + '/checkpoint', log, patience=patience, verbose=True)  # 早停策略
